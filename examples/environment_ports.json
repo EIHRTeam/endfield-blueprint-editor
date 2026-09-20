@@ -1,0 +1,921 @@
+{
+  "schemaVersion": 2,
+  "name": "环境与接口标记示例",
+  "size": {
+    "x": 40,
+    "z": 20
+  },
+  "nodes": [
+    {
+      "templateId": "mix_pool_1",
+      "position": {
+        "x": 5,
+        "z": 2
+      },
+      "direction": 2,
+      "productIcon": "item_liquid_plant_grass_1"
+    },
+    {
+      "templateId": "gas_reactor_1",
+      "position": {
+        "x": 12,
+        "z": 3
+      },
+      "direction": 3,
+      "productIcon": "item_liquid_xiranite"
+    },
+    {
+      "templateId": "xiranite_oven_1",
+      "position": {
+        "x": 20,
+        "z": 2
+      },
+      "direction": 0,
+      "productIcon": "item_xiranite_powder",
+      "environmentEffect": "stable",
+      "closedPorts": [
+        "input:0",
+        "input:1",
+        "input:2",
+        "input:3",
+        "input:4"
+      ]
+    },
+    {
+      "templateId": "gas_reactor_1",
+      "position": {
+        "x": 5,
+        "z": 9
+      },
+      "direction": 0,
+      "productIcon": "item_xiranite_powder"
+    },
+    {
+      "templateId": "gas_reactor_1",
+      "position": {
+        "x": 12,
+        "z": 10
+      },
+      "direction": 3,
+      "productIcon": "item_liquid_xiranite"
+    },
+    {
+      "templateId": "xiranite_oven_1",
+      "position": {
+        "x": 19,
+        "z": 9
+      },
+      "direction": 0,
+      "productIcon": "item_xiranite_powder",
+      "environmentEffect": "stable",
+      "closedPorts": [
+        "input:0",
+        "input:1",
+        "input:2",
+        "input:3",
+        "input:4"
+      ]
+    },
+    {
+      "templateId": "vaporizer_1",
+      "position": {
+        "x": 17,
+        "z": 6
+      },
+      "direction": 0,
+      "productIcon": "[gas]stable"
+    },
+    {
+      "templateId": "power_station_1",
+      "position": {
+        "x": 1,
+        "z": 0
+      },
+      "direction": 0
+    },
+    {
+      "templateId": "power_diffuser_1",
+      "position": {
+        "x": 6,
+        "z": 0
+      },
+      "direction": 0
+    },
+    {
+      "templateId": "power_diffuser_1",
+      "position": {
+        "x": 2,
+        "z": 6
+      },
+      "direction": 0
+    },
+    {
+      "templateId": "power_diffuser_1",
+      "position": {
+        "x": 25,
+        "z": 8
+      },
+      "direction": 0
+    },
+    {
+      "templateId": "furnance_1",
+      "position": {
+        "x": 28,
+        "z": 3
+      },
+      "direction": 0,
+      "productIcon": "item_iron_nugget"
+    },
+    {
+      "templateId": "shaper_1",
+      "position": {
+        "x": 28,
+        "z": 10
+      },
+      "direction": 1,
+      "productIcon": "item_copper_nugget"
+    },
+    {
+      "templateId": "grinder_1",
+      "position": {
+        "x": 34,
+        "z": 3
+      },
+      "direction": 0,
+      "productIcon": "item_plant_grass_powder_1"
+    },
+    {
+      "templateId": "unloader_1",
+      "position": {
+        "x": 0,
+        "z": 17
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_plant_grass_1"
+    },
+    {
+      "templateId": "unloader_1",
+      "position": {
+        "x": 5,
+        "z": 17
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_xiranite"
+    },
+    {
+      "templateId": "unloader_1",
+      "position": {
+        "x": 10,
+        "z": 17
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_plant_grass_1"
+    },
+    {
+      "templateId": "unloader_1",
+      "position": {
+        "x": 15,
+        "z": 17
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_xiranite"
+    },
+    {
+      "templateId": "loader_1",
+      "position": {
+        "x": 20,
+        "z": 17
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_plant_grass_1"
+    },
+    {
+      "templateId": "loader_1",
+      "position": {
+        "x": 25,
+        "z": 17
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_xiranite"
+    },
+    {
+      "templateId": "loader_1",
+      "position": {
+        "x": 30,
+        "z": 17
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_plant_grass_1"
+    },
+    {
+      "templateId": "loader_1",
+      "position": {
+        "x": 35,
+        "z": 17
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_xiranite"
+    },
+    {
+      "templateId": "log_pipe_conditioner",
+      "position": {
+        "x": 11,
+        "z": 15
+      },
+      "direction": 0,
+      "productIcon": "item_liquid_xiranite"
+    },
+    {
+      "templateId": "log_conditioner",
+      "position": {
+        "x": 11,
+        "z": 8
+      },
+      "direction": 0,
+      "productIcon": "item_iron_nugget"
+    },
+    {
+      "templateId": "log_pipe_converger",
+      "position": {
+        "x": 26,
+        "z": 15
+      },
+      "direction": 0
+    }
+  ],
+  "conveyors": [
+    {
+      "x": 10,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 2
+    },
+    {
+      "x": 10,
+      "z": 3,
+      "kind": "fluid",
+      "dir": 2,
+      "fromDir": 1
+    },
+    {
+      "x": 15,
+      "z": 9,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 3
+    },
+    {
+      "x": 16,
+      "z": 9,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 17,
+      "z": 9,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 18,
+      "z": 9,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 0
+    },
+    {
+      "x": 18,
+      "z": 10,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 18,
+      "z": 11,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 1
+    },
+    {
+      "x": 10,
+      "z": 12,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 11,
+      "z": 12,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 0
+    },
+    {
+      "x": 11,
+      "z": 11,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 10,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 9,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 8,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 7,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 6,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 5,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 4,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 3,
+      "kind": "fluid",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 3
+    },
+    {
+      "x": 12,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 13,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 14,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 15,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 16,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 17,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 18,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 19,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 0
+    },
+    {
+      "x": 19,
+      "z": 3,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 19,
+      "z": 4,
+      "kind": "fluid",
+      "dir": 0,
+      "fromDir": 1
+    },
+    {
+      "x": 6,
+      "z": 16,
+      "kind": "item",
+      "dir": 0
+    },
+    {
+      "x": 7,
+      "z": 16,
+      "kind": "item",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 8,
+      "z": 16,
+      "kind": "item",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 9,
+      "z": 16,
+      "kind": "item",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 10,
+      "z": 16,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 0
+    },
+    {
+      "x": 10,
+      "z": 15,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 10,
+      "z": 14,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 10,
+      "z": 13,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 10,
+      "z": 12,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 10,
+      "z": 11,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 10,
+      "z": 10,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 10,
+      "z": 9,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 10,
+      "z": 8,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 10,
+      "z": 7,
+      "kind": "item",
+      "dir": 2,
+      "fromDir": 3
+    },
+    {
+      "x": 9,
+      "z": 7,
+      "kind": "item",
+      "dir": 2,
+      "fromDir": 2
+    },
+    {
+      "x": 8,
+      "z": 7,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 2
+    },
+    {
+      "x": 22,
+      "z": 7,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 22,
+      "z": 8,
+      "kind": "item",
+      "dir": 0,
+      "fromDir": 1
+    },
+    {
+      "x": 23,
+      "z": 8,
+      "kind": "item",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 24,
+      "z": 8,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 0
+    },
+    {
+      "x": 24,
+      "z": 9,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 24,
+      "z": 10,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 24,
+      "z": 11,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 24,
+      "z": 12,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 24,
+      "z": 13,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 24,
+      "z": 14,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 24,
+      "z": 15,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 24,
+      "z": 16,
+      "kind": "item",
+      "dir": 0,
+      "fromDir": 1
+    },
+    {
+      "x": 25,
+      "z": 16,
+      "kind": "item",
+      "dir": 0,
+      "fromDir": 0
+    },
+    {
+      "x": 26,
+      "z": 16,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 0
+    },
+    {
+      "x": 20,
+      "z": 14,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 20,
+      "z": 15,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 20,
+      "z": 16,
+      "kind": "item",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 11,
+      "z": 16,
+      "kind": "item",
+      "dir": 3
+    },
+    {
+      "x": 11,
+      "z": 15,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 14,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 13,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 12,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 11,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 10,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 9,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 8,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 7,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 6,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 5,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 4,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 3,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 2,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 11,
+      "z": 1,
+      "kind": "item",
+      "dir": 3,
+      "fromDir": 3
+    },
+    {
+      "x": 39,
+      "z": 1,
+      "kind": "fluid",
+      "dir": 1
+    },
+    {
+      "x": 39,
+      "z": 2,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 3,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 4,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 5,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 6,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 7,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 8,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 9,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 10,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 11,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 12,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 13,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 14,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 15,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    },
+    {
+      "x": 39,
+      "z": 16,
+      "kind": "fluid",
+      "dir": 1,
+      "fromDir": 1
+    }
+  ],
+  "presentation": {
+    "creatorId": "",
+    "tags": [],
+    "coverId": "item_liquid_xiranite",
+    "coverColor": "orange",
+    "viewport": {
+      "zoom": 1.32,
+      "x": 0.2,
+      "y": 0.45
+    }
+  }
+}

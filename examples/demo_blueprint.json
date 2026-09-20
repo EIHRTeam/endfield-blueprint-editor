@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 2,
+  "name": "原图蓝图 · 接口与管线示例",
+  "size": {"x": 32, "z": 28},
+  "nodes": [
+    {"templateId": "loader_1", "position": {"x": 3, "z": 2}, "direction": 0, "productIcon": "item_copper_ore"},
+    {"templateId": "loader_1", "position": {"x": 11, "z": 2}, "direction": 0, "productIcon": "item_iron_ore"},
+    {"templateId": "furnance_1", "position": {"x": 3, "z": 6}, "direction": 0, "productIcon": "item_copper_nugget"},
+    {"templateId": "furnance_1", "position": {"x": 11, "z": 6}, "direction": 0, "productIcon": "item_iron_nugget"},
+    {"templateId": "liquid_storager_1", "position": {"x": 18, "z": 6}, "direction": 0},
+    {"templateId": "udpipe_loader_2", "position": {"x": 8, "z": 13}, "direction": 1},
+    {"templateId": "power_pole_2", "position": {"x": 3, "z": 13}, "direction": 0},
+    {"templateId": "udpipe_unloader_1", "position": {"x": 18, "z": 13}, "direction": 0},
+    {"templateId": "vaporizer_1", "position": {"x": 23, "z": 13}, "direction": 0, "productIcon": "[gas]Acid"},
+    {"templateId": "log_splitter", "position": {"x": 8, "z": 9}, "direction": 0},
+    {"templateId": "log_pipe_splitter", "position": {"x": 15, "z": 7}, "direction": 1}
+  ],
+  "conveyors": [
+    {"x":4,"z":3,"dir":1,"kind":"item"},{"x":4,"z":4,"dir":1,"kind":"item"},{"x":4,"z":5,"dir":1,"kind":"item"},
+    {"x":12,"z":3,"dir":1,"kind":"item"},{"x":12,"z":4,"dir":1,"kind":"item"},{"x":12,"z":5,"dir":1,"kind":"item"},
+    {"x":4,"z":9,"dir":1,"kind":"item"},{"x":4,"z":10,"dir":0,"fromDir":1,"kind":"item"},
+    {"x":5,"z":10,"dir":0,"kind":"item"},{"x":6,"z":10,"dir":0,"kind":"item"},{"x":7,"z":10,"dir":0,"kind":"item"},
+    {"x":8,"z":10,"dir":3,"fromDir":0,"kind":"item"},
+    {"x":14,"z":7,"dir":0,"kind":"fluid"},{"x":16,"z":7,"dir":0,"kind":"fluid"},{"x":17,"z":7,"dir":0,"kind":"fluid"},
+    {"x":10,"z":12,"dir":1,"kind":"fluid"},{"x":10,"z":11,"dir":1,"kind":"fluid"},
+    {"x":10,"z":10,"dir":1,"fromDir":0,"kind":"fluid"},{"x":9,"z":10,"dir":0,"kind":"fluid"},
+    {"x":8,"z":10,"dir":0,"kind":"fluid"},{"x":7,"z":10,"dir":0,"kind":"fluid"}
+  ]
+}

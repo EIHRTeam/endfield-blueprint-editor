@@ -1,0 +1,62 @@
+{
+  "deco_fac_blueprint_light": {
+    "file": "deco_fac_blueprint_light.png",
+    "objectId": "CAB-f40d9757ca49dc1661813473211b4a21__8437610535492888701",
+    "width": 12,
+    "height": 832,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_29": {
+    "file": "deco_fac_blueprint_29.png",
+    "objectId": "CAB-8e82f512cdc44bb1e3d3db411ebb9999__-3115709650395913881",
+    "width": 24,
+    "height": 396,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_30": {
+    "file": "deco_fac_blueprint_30.png",
+    "objectId": "CAB-8e82f512cdc44bb1e3d3db411ebb9999__-3752889556534914167",
+    "width": 28,
+    "height": 368,
+    "border": [
+      6.0,
+      0.0,
+      6.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_28": {
+    "file": "deco_fac_blueprint_28.png",
+    "objectId": "CAB-8e82f512cdc44bb1e3d3db411ebb9999__6597895911947195455",
+    "width": 356,
+    "height": 60,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_save_big": {
+    "file": "icon_fac_blueprint_save_big.png",
+    "objectId": "CAB-8e82f512cdc44bb1e3d3db411ebb9999__3008771145573570080",
+    "width": 212,
+    "height": 212,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

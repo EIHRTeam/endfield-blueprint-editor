@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.png binary
+*.jpg binary
+*.webp binary
+*.ttf binary
+*.zip binary
+# Input hashes are byte based; preserve source JSON as well as images.
+assets/** -text whitespace=cr-at-eol
+data/** -text whitespace=cr-at-eol
+# Preserve the original third-party license byte for byte.
+assets/fonts/LICENSE-update.txt -text

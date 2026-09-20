@@ -1,0 +1,4426 @@
+{
+  "blueprint/bg_logistic_log_conditioner": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_logistic_log_conditioner.png",
+    "file": "blueprint/bg_logistic_log_conditioner.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-7408893098224838231"
+  },
+  "blueprint/bg_logistic_log_connector": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_logistic_log_connector.png",
+    "file": "blueprint/bg_logistic_log_connector.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__7519987753813946405"
+  },
+  "blueprint/bg_logistic_log_converger": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_logistic_log_converger.png",
+    "file": "blueprint/bg_logistic_log_converger.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-8863525158596569664"
+  },
+  "blueprint/bg_logistic_log_pipe_conditioner": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_logistic_log_pipe_conditioner.png",
+    "file": "blueprint/bg_logistic_log_pipe_conditioner.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__3498819343545482176"
+  },
+  "blueprint/bg_logistic_log_pipe_connector": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_logistic_log_pipe_connector.png",
+    "file": "blueprint/bg_logistic_log_pipe_connector.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__356436525936389193"
+  },
+  "blueprint/bg_logistic_log_pipe_converger": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_logistic_log_pipe_converger.png",
+    "file": "blueprint/bg_logistic_log_pipe_converger.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__1053125297973524192"
+  },
+  "blueprint/bg_logistic_log_pipe_splitter": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_logistic_log_pipe_splitter.png",
+    "file": "blueprint/bg_logistic_log_pipe_splitter.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__5012092784236062215"
+  },
+  "blueprint/bg_logistic_log_splitter": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_logistic_log_splitter.png",
+    "file": "blueprint/bg_logistic_log_splitter.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-8088044693701505612"
+  },
+  "blueprint/bg_machine_carrier_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_carrier_1.png",
+    "file": "blueprint/bg_machine_carrier_1.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-6139282494865344232"
+  },
+  "blueprint/bg_machine_combat_building": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_combat_building.png",
+    "file": "blueprint/bg_machine_combat_building.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-688952127002496378"
+  },
+  "blueprint/bg_machine_default": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_default.png",
+    "file": "blueprint/bg_machine_default.png",
+    "width": 64,
+    "height": 64,
+    "border": [
+      29.0,
+      29.0,
+      30.0,
+      30.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-6217972059333940890"
+  },
+  "blueprint/bg_machine_liquid_storager_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_liquid_storager_1.png",
+    "file": "blueprint/bg_machine_liquid_storager_1.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__6704339266914133207"
+  },
+  "blueprint/bg_machine_loader": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_loader.png",
+    "file": "blueprint/bg_machine_loader.png",
+    "width": 384,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__4395738558112301721"
+  },
+  "blueprint/bg_machine_log_hongs_bus": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_log_hongs_bus.png",
+    "file": "blueprint/bg_machine_log_hongs_bus.png",
+    "width": 512,
+    "height": 1024,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-a4c00c07b951f3ac86b6b533f77fbcb9__-521359019692322902"
+  },
+  "blueprint/bg_machine_log_hongs_bus_source": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_log_hongs_bus_source.png",
+    "file": "blueprint/bg_machine_log_hongs_bus_source.png",
+    "width": 512,
+    "height": 512,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__4107766330128721118"
+  },
+  "blueprint/bg_machine_marker_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_marker_1.png",
+    "file": "blueprint/bg_machine_marker_1.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__4428405915265693817"
+  },
+  "blueprint/bg_machine_power": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_power.png",
+    "file": "blueprint/bg_machine_power.png",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-4994562604988606648"
+  },
+  "blueprint/bg_machine_power_pole_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_power_pole_2.png",
+    "file": "blueprint/bg_machine_power_pole_2.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__4501211772974892173"
+  },
+  "blueprint/bg_machine_squirter_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_squirter_1.png",
+    "file": "blueprint/bg_machine_squirter_1.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__5576721902275421622"
+  },
+  "blueprint/bg_machine_travel_pole_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_travel_pole_1.png",
+    "file": "blueprint/bg_machine_travel_pole_1.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-2523639646392791515"
+  },
+  "blueprint/bg_machine_udpipe_loader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_udpipe_loader_1.png",
+    "file": "blueprint/bg_machine_udpipe_loader_1.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-7179445838141258340"
+  },
+  "blueprint/bg_machine_udpipe_loader_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_udpipe_loader_2.png",
+    "file": "blueprint/bg_machine_udpipe_loader_2.png",
+    "width": 384,
+    "height": 640,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-e4e15b810fbd47745ee8874b13e08d2f__7574191984338506100"
+  },
+  "blueprint/bg_machine_udpipe_unloader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_udpipe_unloader_1.png",
+    "file": "blueprint/bg_machine_udpipe_unloader_1.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__2932023962236954259"
+  },
+  "blueprint/bg_machine_udpipe_unloader_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_udpipe_unloader_2.png",
+    "file": "blueprint/bg_machine_udpipe_unloader_2.png",
+    "width": 384,
+    "height": 640,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-684fd2fba73a76d49f8b61abba507a18__8805583675512211805"
+  },
+  "blueprint/bg_machine_underground_pipe_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_underground_pipe_1.png",
+    "file": "blueprint/bg_machine_underground_pipe_1.png",
+    "width": 384,
+    "height": 384,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-8634587081012275931"
+  },
+  "blueprint/bg_machine_underground_pipe_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_underground_pipe_2.png",
+    "file": "blueprint/bg_machine_underground_pipe_2.png",
+    "width": 384,
+    "height": 640,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-a09d59a85b72c6dcfe1b573319e86e43__-1670777144261489365"
+  },
+  "blueprint/bg_machine_unloader": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/bg_machine_unloader.png",
+    "file": "blueprint/bg_machine_unloader.png",
+    "width": 384,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__3923482391516797862"
+  },
+  "blueprint/deco_center_big": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/deco_center_big.png",
+    "file": "blueprint/deco_center_big.png",
+    "width": 232,
+    "height": 232,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__7996507443874505242"
+  },
+  "blueprint/deco_edge_big": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/deco_edge_big.png",
+    "file": "blueprint/deco_edge_big.png",
+    "width": 208,
+    "height": 154,
+    "border": [
+      76.0,
+      0.0,
+      121.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__8714333818708251841"
+  },
+  "blueprint/deco_edge_small": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/deco_edge_small.png",
+    "file": "blueprint/deco_edge_small.png",
+    "width": 80,
+    "height": 64,
+    "border": [
+      33.0,
+      0.0,
+      37.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-1384308158019387660"
+  },
+  "blueprint/deco_waist": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/deco_waist.png",
+    "file": "blueprint/deco_waist.png",
+    "width": 152,
+    "height": 144,
+    "border": [
+      66.0,
+      66.0,
+      66.0,
+      66.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__1725760391272350533"
+  },
+  "blueprint/icon_belt_corner_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/icon_belt_corner_1.png",
+    "file": "blueprint/icon_belt_corner_1.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-2586262182169157878"
+  },
+  "blueprint/icon_belt_corner_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/icon_belt_corner_2.png",
+    "file": "blueprint/icon_belt_corner_2.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__1512982530303723954"
+  },
+  "blueprint/icon_belt_grid": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/icon_belt_grid.png",
+    "file": "blueprint/icon_belt_grid.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__9030368996230018228"
+  },
+  "blueprint/icon_concealed_frame_activated": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/icon_concealed_frame_activated.png",
+    "file": "blueprint/icon_concealed_frame_activated.png",
+    "width": 56,
+    "height": 56,
+    "border": [
+      20.0,
+      20.0,
+      20.0,
+      20.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__1392551216062437025"
+  },
+  "blueprint/icon_concealed_frame_inactive": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/icon_concealed_frame_inactive.png",
+    "file": "blueprint/icon_concealed_frame_inactive.png",
+    "width": 60,
+    "height": 60,
+    "border": [
+      20.0,
+      20.0,
+      20.0,
+      20.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-4168742713240329148"
+  },
+  "blueprint/icon_pipe_corner_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/icon_pipe_corner_1.png",
+    "file": "blueprint/icon_pipe_corner_1.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__1054273581576190365"
+  },
+  "blueprint/icon_pipe_corner_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/icon_pipe_corner_2.png",
+    "file": "blueprint/icon_pipe_corner_2.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-6539538499369638865"
+  },
+  "blueprint/icon_pipe_grid": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/icon_pipe_grid.png",
+    "file": "blueprint/icon_pipe_grid.png",
+    "width": 128,
+    "height": 128,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-5537829059854161132"
+  },
+  "blueprint/pipe_port_in_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_in_1.png",
+    "file": "blueprint/pipe_port_in_1.png",
+    "width": 128,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-3315914037300213782"
+  },
+  "blueprint/pipe_port_in_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_in_2.png",
+    "file": "blueprint/pipe_port_in_2.png",
+    "width": 256,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__7618134532391494855"
+  },
+  "blueprint/pipe_port_in_2_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_in_2_1.png",
+    "file": "blueprint/pipe_port_in_2_1.png",
+    "width": 256,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-5488528343387570978"
+  },
+  "blueprint/pipe_port_in_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_in_3.png",
+    "file": "blueprint/pipe_port_in_3.png",
+    "width": 384,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__409077871268755888"
+  },
+  "blueprint/pipe_port_in_3_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_in_3_2.png",
+    "file": "blueprint/pipe_port_in_3_2.png",
+    "width": 384,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__80855430619785143"
+  },
+  "blueprint/pipe_port_in_4": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_in_4.png",
+    "file": "blueprint/pipe_port_in_4.png",
+    "width": 512,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__6535902182181293779"
+  },
+  "blueprint/pipe_port_in_5_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_in_5_2.png",
+    "file": "blueprint/pipe_port_in_5_2.png",
+    "width": 640,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-6ae6cbeed3679f0f01ff638e70699434__-4539144616623291332"
+  },
+  "blueprint/pipe_port_out_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_out_1.png",
+    "file": "blueprint/pipe_port_out_1.png",
+    "width": 128,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__3308679244182702898"
+  },
+  "blueprint/pipe_port_out_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_out_2.png",
+    "file": "blueprint/pipe_port_out_2.png",
+    "width": 256,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-6849916436414730862"
+  },
+  "blueprint/pipe_port_out_2_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_out_2_1.png",
+    "file": "blueprint/pipe_port_out_2_1.png",
+    "width": 256,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__1956246440650429715"
+  },
+  "blueprint/pipe_port_out_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_out_3.png",
+    "file": "blueprint/pipe_port_out_3.png",
+    "width": 384,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__4928460324936562188"
+  },
+  "blueprint/pipe_port_out_3_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_out_3_2.png",
+    "file": "blueprint/pipe_port_out_3_2.png",
+    "width": 384,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-4974449569502375366"
+  },
+  "blueprint/pipe_port_out_4": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_out_4.png",
+    "file": "blueprint/pipe_port_out_4.png",
+    "width": 512,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-7425032034281368845"
+  },
+  "blueprint/pipe_port_out_5_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/pipe_port_out_5_2.png",
+    "file": "blueprint/pipe_port_out_5_2.png",
+    "width": 640,
+    "height": 92,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-7faf03a39b20b83a568d8f4d6745fcb3__-5895799463679244583"
+  },
+  "blueprint/port_in_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_1.png",
+    "file": "blueprint/port_in_1.png",
+    "width": 138,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-1321384719845388491"
+  },
+  "blueprint/port_in_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_2.png",
+    "file": "blueprint/port_in_2.png",
+    "width": 256,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-4976408741929825726"
+  },
+  "blueprint/port_in_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_3.png",
+    "file": "blueprint/port_in_3.png",
+    "width": 384,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-2204158350574506743"
+  },
+  "blueprint/port_in_3_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_3_2.png",
+    "file": "blueprint/port_in_3_2.png",
+    "width": 384,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__4153931604058493311"
+  },
+  "blueprint/port_in_4": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_4.png",
+    "file": "blueprint/port_in_4.png",
+    "width": 512,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-5523280477715220233"
+  },
+  "blueprint/port_in_5": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_5.png",
+    "file": "blueprint/port_in_5.png",
+    "width": 640,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-8fff8086a6803e8483dbca9cb38b99d8__-87227306370712943"
+  },
+  "blueprint/port_in_5_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_5_2.png",
+    "file": "blueprint/port_in_5_2.png",
+    "width": 640,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-6b5ff0493fef52d2cce84043f0e74961__-7016042657034824929"
+  },
+  "blueprint/port_in_5_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_5_3.png",
+    "file": "blueprint/port_in_5_3.png",
+    "width": 640,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-2273243caa4177ba5bbc81794d543989__3621122915988622411"
+  },
+  "blueprint/port_in_6": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_6.png",
+    "file": "blueprint/port_in_6.png",
+    "width": 768,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-5c83f7474ab6143b1596f089d32fb46c__7008387587157468343"
+  },
+  "blueprint/port_in_6_4": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_in_6_4.png",
+    "file": "blueprint/port_in_6_4.png",
+    "width": 768,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-ab03d8741851c76648b32914b7f6ebb8__1902071221089963286"
+  },
+  "blueprint/port_out_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_1.png",
+    "file": "blueprint/port_out_1.png",
+    "width": 138,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-7972520650730512337"
+  },
+  "blueprint/port_out_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_2.png",
+    "file": "blueprint/port_out_2.png",
+    "width": 256,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__168413456781764723"
+  },
+  "blueprint/port_out_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_3.png",
+    "file": "blueprint/port_out_3.png",
+    "width": 384,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-6823380323466363141"
+  },
+  "blueprint/port_out_3_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_3_2.png",
+    "file": "blueprint/port_out_3_2.png",
+    "width": 384,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__3277749758642577389"
+  },
+  "blueprint/port_out_4": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_4.png",
+    "file": "blueprint/port_out_4.png",
+    "width": 512,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77e3e4cf1020aa18151f955ec529bece__-2045412762212025343"
+  },
+  "blueprint/port_out_5": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_5.png",
+    "file": "blueprint/port_out_5.png",
+    "width": 640,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-20a52f58aebe6311ad08cfc1114b64fb__5324227306893077711"
+  },
+  "blueprint/port_out_5_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_5_2.png",
+    "file": "blueprint/port_out_5_2.png",
+    "width": 640,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-780518adf5e0300b3e1425a3ae0d9699__4448229097972858885"
+  },
+  "blueprint/port_out_5_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_5_3.png",
+    "file": "blueprint/port_out_5_3.png",
+    "width": 640,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-e02a6344e7a7954292efc44c84db219d__-5761269621488247508"
+  },
+  "blueprint/port_out_6": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_6.png",
+    "file": "blueprint/port_out_6.png",
+    "width": 768,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-79969c5074681059525627d76c0844d5__-9173210191091143220"
+  },
+  "blueprint/port_out_6_4": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/blueprint/port_out_6_4.png",
+    "file": "blueprint/port_out_6_4.png",
+    "width": 768,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-35c3caa55f58b047578d9c1d18d017db__-4897457871791192795"
+  },
+  "machine_icon/icon_buildmode": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_buildmode.png",
+    "file": "machine_icon/icon_buildmode.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__1424378369988823674"
+  },
+  "machine_icon/icon_buildmode_decorate": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_buildmode_decorate.png",
+    "file": "machine_icon/icon_buildmode_decorate.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-402625805522486920"
+  },
+  "machine_icon/icon_electric": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_electric.png",
+    "file": "machine_icon/icon_electric.png",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1139646955039802993"
+  },
+  "machine_icon/icon_handcraft_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_handcraft_1.png",
+    "file": "machine_icon/icon_handcraft_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__7884841531894169462"
+  },
+  "machine_icon/icon_log_belt_01": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_belt_01.png",
+    "file": "machine_icon/icon_log_belt_01.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__3118867862998022940"
+  },
+  "machine_icon/icon_log_conditioner": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_conditioner.png",
+    "file": "machine_icon/icon_log_conditioner.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__3074410020853571904"
+  },
+  "machine_icon/icon_log_connector": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_connector.png",
+    "file": "machine_icon/icon_log_connector.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-5956949968327868987"
+  },
+  "machine_icon/icon_log_converger": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_converger.png",
+    "file": "machine_icon/icon_log_converger.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__5400180836106920627"
+  },
+  "machine_icon/icon_log_pipe_01": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_pipe_01.png",
+    "file": "machine_icon/icon_log_pipe_01.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-4551189741201511926"
+  },
+  "machine_icon/icon_log_pipe_connector": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_pipe_connector.png",
+    "file": "machine_icon/icon_log_pipe_connector.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-4593513446881772659"
+  },
+  "machine_icon/icon_log_pipe_converger": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_pipe_converger.png",
+    "file": "machine_icon/icon_log_pipe_converger.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1779045835702870787"
+  },
+  "machine_icon/icon_log_pipe_splitter": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_pipe_splitter.png",
+    "file": "machine_icon/icon_log_pipe_splitter.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8150014217084130032"
+  },
+  "machine_icon/icon_log_splitter": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_log_splitter.png",
+    "file": "machine_icon/icon_log_splitter.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__952750906636741431"
+  },
+  "machine_icon/icon_logic_basic": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_logic_basic.png",
+    "file": "machine_icon/icon_logic_basic.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8149150170216027536"
+  },
+  "machine_icon/icon_pending_buildings": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_pending_buildings.png",
+    "file": "machine_icon/icon_pending_buildings.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-5976605790502163734"
+  },
+  "machine_icon/icon_port_balloon": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_balloon.png",
+    "file": "machine_icon/icon_port_balloon.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__292443311732563323"
+  },
+  "machine_icon/icon_port_battle_cannon_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_cannon_1.png",
+    "file": "machine_icon/icon_port_battle_cannon_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__3055313492684657328"
+  },
+  "machine_icon/icon_port_battle_cannon_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_cannon_2.png",
+    "file": "machine_icon/icon_port_battle_cannon_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-3553713090211486678"
+  },
+  "machine_icon/icon_port_battle_debuff_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_debuff_1.png",
+    "file": "machine_icon/icon_port_battle_debuff_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-3020123289728089579"
+  },
+  "machine_icon/icon_port_battle_fog_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_fog_1.png",
+    "file": "machine_icon/icon_port_battle_fog_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__2630815955912040719"
+  },
+  "machine_icon/icon_port_battle_frost_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_frost_1.png",
+    "file": "machine_icon/icon_port_battle_frost_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__52742378492039668"
+  },
+  "machine_icon/icon_port_battle_jet_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_jet_1.png",
+    "file": "machine_icon/icon_port_battle_jet_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__5978783770651193394"
+  },
+  "machine_icon/icon_port_battle_laser_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_laser_1.png",
+    "file": "machine_icon/icon_port_battle_laser_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8341822274619054985"
+  },
+  "machine_icon/icon_port_battle_laser_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_laser_2.png",
+    "file": "machine_icon/icon_port_battle_laser_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__1590718634114905492"
+  },
+  "machine_icon/icon_port_battle_lightning_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_lightning_1.png",
+    "file": "machine_icon/icon_port_battle_lightning_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-7380489381329385726"
+  },
+  "machine_icon/icon_port_battle_lightning_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_lightning_2.png",
+    "file": "machine_icon/icon_port_battle_lightning_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__897514568862228630"
+  },
+  "machine_icon/icon_port_battle_medic_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_medic_1.png",
+    "file": "machine_icon/icon_port_battle_medic_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-4686002924695319766"
+  },
+  "machine_icon/icon_port_battle_rocket_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_rocket_1.png",
+    "file": "machine_icon/icon_port_battle_rocket_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-2153664771810127462"
+  },
+  "machine_icon/icon_port_battle_shockwave_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_shockwave_1.png",
+    "file": "machine_icon/icon_port_battle_shockwave_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__6365008332006633351"
+  },
+  "machine_icon/icon_port_battle_sniper_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_sniper_1.png",
+    "file": "machine_icon/icon_port_battle_sniper_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__7631649949675236970"
+  },
+  "machine_icon/icon_port_battle_trap_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_trap_1.png",
+    "file": "machine_icon/icon_port_battle_trap_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__4997963915976728963"
+  },
+  "machine_icon/icon_port_battle_turret_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_turret_1.png",
+    "file": "machine_icon/icon_port_battle_turret_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-5530709993126292400"
+  },
+  "machine_icon/icon_port_battle_turret_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_turret_2.png",
+    "file": "machine_icon/icon_port_battle_turret_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8090685663481603912"
+  },
+  "machine_icon/icon_port_battle_turret_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_battle_turret_3.png",
+    "file": "machine_icon/icon_port_battle_turret_3.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__5787132405633437893"
+  },
+  "machine_icon/icon_port_carrier_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_carrier_1.png",
+    "file": "machine_icon/icon_port_carrier_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1889981641043825592"
+  },
+  "machine_icon/icon_port_cmpt_mc_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_cmpt_mc_1.png",
+    "file": "machine_icon/icon_port_cmpt_mc_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-2097369750481632802"
+  },
+  "machine_icon/icon_port_decorate_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_decorate_1.png",
+    "file": "machine_icon/icon_port_decorate_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__8166383350367652273"
+  },
+  "machine_icon/icon_port_dismantler_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_dismantler_1.png",
+    "file": "machine_icon/icon_port_dismantler_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1845912901981330494"
+  },
+  "machine_icon/icon_port_dumper_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_dumper_1.png",
+    "file": "machine_icon/icon_port_dumper_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__4180651054765851161"
+  },
+  "machine_icon/icon_port_filling_pd_mc_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_filling_pd_mc_1.png",
+    "file": "machine_icon/icon_port_filling_pd_mc_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__7962332644087883845"
+  },
+  "machine_icon/icon_port_filter_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_filter_1.png",
+    "file": "machine_icon/icon_port_filter_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__6752776061034947990"
+  },
+  "machine_icon/icon_port_furnance_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_furnance_1.png",
+    "file": "machine_icon/icon_port_furnance_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__8811475282001281911"
+  },
+  "machine_icon/icon_port_gas_pump_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_gas_pump_1.png",
+    "file": "machine_icon/icon_port_gas_pump_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__8948916349526908085"
+  },
+  "machine_icon/icon_port_gas_reactor_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_gas_reactor_1.png",
+    "file": "machine_icon/icon_port_gas_reactor_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-3619504981544884474"
+  },
+  "machine_icon/icon_port_gas_storager_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_gas_storager_1.png",
+    "file": "machine_icon/icon_port_gas_storager_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-6775271448306564318"
+  },
+  "machine_icon/icon_port_grinder_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_grinder_1.png",
+    "file": "machine_icon/icon_port_grinder_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-6067627357687234772"
+  },
+  "machine_icon/icon_port_lightning_tower_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_lightning_tower_1.png",
+    "file": "machine_icon/icon_port_lightning_tower_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-7088012153815968768"
+  },
+  "machine_icon/icon_port_liquid": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_liquid.png",
+    "file": "machine_icon/icon_port_liquid.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-5681761877005193336"
+  },
+  "machine_icon/icon_port_liquid_clean_gate_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_liquid_clean_gate_1.png",
+    "file": "machine_icon/icon_port_liquid_clean_gate_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__5536346776008841987"
+  },
+  "machine_icon/icon_port_liquid_cleaner": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_liquid_cleaner.png",
+    "file": "machine_icon/icon_port_liquid_cleaner.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-626083365862192501"
+  },
+  "machine_icon/icon_port_liquid_cleaner_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_liquid_cleaner_1.png",
+    "file": "machine_icon/icon_port_liquid_cleaner_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-7550970791893181647"
+  },
+  "machine_icon/icon_port_liquid_miner": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_liquid_miner.png",
+    "file": "machine_icon/icon_port_liquid_miner.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__2869290023580783790"
+  },
+  "machine_icon/icon_port_liquid_purifier_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_liquid_purifier_1.png",
+    "file": "machine_icon/icon_port_liquid_purifier_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-3382516006953639833"
+  },
+  "machine_icon/icon_port_liquid_recycle_gate_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_liquid_recycle_gate_1.png",
+    "file": "machine_icon/icon_port_liquid_recycle_gate_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-6351823614612513519"
+  },
+  "machine_icon/icon_port_liquid_storager_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_liquid_storager_1.png",
+    "file": "machine_icon/icon_port_liquid_storager_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__6282208135961349180"
+  },
+  "machine_icon/icon_port_loader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_loader_1.png",
+    "file": "machine_icon/icon_port_loader_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8356685753075209019"
+  },
+  "machine_icon/icon_port_log_hongs_bus": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_log_hongs_bus.png",
+    "file": "machine_icon/icon_port_log_hongs_bus.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8033334954545424446"
+  },
+  "machine_icon/icon_port_log_hongs_bus_source": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_log_hongs_bus_source.png",
+    "file": "machine_icon/icon_port_log_hongs_bus_source.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-3891330034529460192"
+  },
+  "machine_icon/icon_port_marker_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_marker_1.png",
+    "file": "machine_icon/icon_port_marker_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-353307485128917561"
+  },
+  "machine_icon/icon_port_medic_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_medic_1.png",
+    "file": "machine_icon/icon_port_medic_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1752541667866578202"
+  },
+  "machine_icon/icon_port_miner_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_miner_1.png",
+    "file": "machine_icon/icon_port_miner_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__2377108997175349833"
+  },
+  "machine_icon/icon_port_miner_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_miner_2.png",
+    "file": "machine_icon/icon_port_miner_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__78420504237604384"
+  },
+  "machine_icon/icon_port_miner_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_miner_3.png",
+    "file": "machine_icon/icon_port_miner_3.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-3923070589830107698"
+  },
+  "machine_icon/icon_port_mix_pool_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_mix_pool_1.png",
+    "file": "machine_icon/icon_port_mix_pool_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__529768924918468430"
+  },
+  "machine_icon/icon_port_mix_pool_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_mix_pool_2.png",
+    "file": "machine_icon/icon_port_mix_pool_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__7843119407479792140"
+  },
+  "machine_icon/icon_port_normal": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_normal.png",
+    "file": "machine_icon/icon_port_normal.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__7635268516900851929"
+  },
+  "machine_icon/icon_port_planter_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_planter_1.png",
+    "file": "machine_icon/icon_port_planter_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1958493788152085619"
+  },
+  "machine_icon/icon_port_power_diffuser_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_power_diffuser_1.png",
+    "file": "machine_icon/icon_port_power_diffuser_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__4461503808258506254"
+  },
+  "machine_icon/icon_port_power_diffuser_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_power_diffuser_2.png",
+    "file": "machine_icon/icon_port_power_diffuser_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-4355613174964632260"
+  },
+  "machine_icon/icon_port_power_pole_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_power_pole_2.png",
+    "file": "machine_icon/icon_port_power_pole_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1932877994049182728"
+  },
+  "machine_icon/icon_port_power_pole_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_power_pole_3.png",
+    "file": "machine_icon/icon_port_power_pole_3.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8242290979332279919"
+  },
+  "machine_icon/icon_port_power_sta_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_power_sta_1.png",
+    "file": "machine_icon/icon_port_power_sta_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__8731521375922270378"
+  },
+  "machine_icon/icon_port_pump_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_pump_1.png",
+    "file": "machine_icon/icon_port_pump_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-5384924397816812714"
+  },
+  "machine_icon/icon_port_pump_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_pump_2.png",
+    "file": "machine_icon/icon_port_pump_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-4845249933634561233"
+  },
+  "machine_icon/icon_port_rift_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_rift_1.png",
+    "file": "machine_icon/icon_port_rift_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__3261607970140399860"
+  },
+  "machine_icon/icon_port_seedcol_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_seedcol_1.png",
+    "file": "machine_icon/icon_port_seedcol_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__1458736794765227027"
+  },
+  "machine_icon/icon_port_shaper_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_shaper_1.png",
+    "file": "machine_icon/icon_port_shaper_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__4170017555782698336"
+  },
+  "machine_icon/icon_port_soil_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_soil_1.png",
+    "file": "machine_icon/icon_port_soil_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__3855503410542556630"
+  },
+  "machine_icon/icon_port_solution_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_solution_1.png",
+    "file": "machine_icon/icon_port_solution_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8425973683258900039"
+  },
+  "machine_icon/icon_port_sp_hub_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_sp_hub_1.png",
+    "file": "machine_icon/icon_port_sp_hub_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__7739587729335229251"
+  },
+  "machine_icon/icon_port_squirter_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_squirter_1.png",
+    "file": "machine_icon/icon_port_squirter_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-3395717195957333476"
+  },
+  "machine_icon/icon_port_storager_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_storager_1.png",
+    "file": "machine_icon/icon_port_storager_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-577567549247974177"
+  },
+  "machine_icon/icon_port_submit": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_submit.png",
+    "file": "machine_icon/icon_port_submit.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-5195742563606643507"
+  },
+  "machine_icon/icon_port_thickener_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_thickener_1.png",
+    "file": "machine_icon/icon_port_thickener_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__8645720084110828330"
+  },
+  "machine_icon/icon_port_tools_asm_mc_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_tools_asm_mc_1.png",
+    "file": "machine_icon/icon_port_tools_asm_mc_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-4711114889393438759"
+  },
+  "machine_icon/icon_port_transmuter_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_transmuter_1.png",
+    "file": "machine_icon/icon_port_transmuter_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1575036553068830535"
+  },
+  "machine_icon/icon_port_transmuter_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_transmuter_2.png",
+    "file": "machine_icon/icon_port_transmuter_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__2820373460855557140"
+  },
+  "machine_icon/icon_port_travel_pole_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_travel_pole_1.png",
+    "file": "machine_icon/icon_port_travel_pole_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__5651883462898268956"
+  },
+  "machine_icon/icon_port_travel_pole_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_travel_pole_2.png",
+    "file": "machine_icon/icon_port_travel_pole_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-8598376647691251634"
+  },
+  "machine_icon/icon_port_unloader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_unloader_1.png",
+    "file": "machine_icon/icon_port_unloader_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__5133990092330127505"
+  },
+  "machine_icon/icon_port_vaporizer": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_vaporizer.png",
+    "file": "machine_icon/icon_port_vaporizer.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__6179349338920606816"
+  },
+  "machine_icon/icon_port_vaporizer_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_vaporizer_1.png",
+    "file": "machine_icon/icon_port_vaporizer_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__1304495023299008651"
+  },
+  "machine_icon/icon_port_winder_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_winder_1.png",
+    "file": "machine_icon/icon_port_winder_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-4861592591037168067"
+  },
+  "machine_icon/icon_port_xiranite_oven_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_port_xiranite_oven_1.png",
+    "file": "machine_icon/icon_port_xiranite_oven_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-3631419511343585713"
+  },
+  "machine_icon/icon_pot_udpipe_loader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_pot_udpipe_loader_1.png",
+    "file": "machine_icon/icon_pot_udpipe_loader_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__7902469884615882905"
+  },
+  "machine_icon/icon_pot_udpipe_loader_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_pot_udpipe_loader_2.png",
+    "file": "machine_icon/icon_pot_udpipe_loader_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__3067953909223604542"
+  },
+  "machine_icon/icon_pot_udpipe_unloader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_pot_udpipe_unloader_1.png",
+    "file": "machine_icon/icon_pot_udpipe_unloader_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-4367785670268616950"
+  },
+  "machine_icon/icon_pot_udpipe_unloader_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_pot_udpipe_unloader_2.png",
+    "file": "machine_icon/icon_pot_udpipe_unloader_2.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__230679926750791890"
+  },
+  "machine_icon/icon_power_port_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_power_port_1.png",
+    "file": "machine_icon/icon_power_port_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__5667780044746386861"
+  },
+  "machine_icon/icon_power_terminal_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_power_terminal_1.png",
+    "file": "machine_icon/icon_power_terminal_1.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-2077589928346169592"
+  },
+  "machine_icon/icon_workshop": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_workshop.png",
+    "file": "machine_icon/icon_workshop.png",
+    "width": 72,
+    "height": 72,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-6761315216961377120"
+  },
+  "machine_icon/icon_workshop01": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_workshop01.png",
+    "file": "machine_icon/icon_workshop01.png",
+    "width": 35,
+    "height": 41,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__5286598475281854565"
+  },
+  "machine_icon/icon_workshop02": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpanelicon/icon_workshop02.png",
+    "file": "machine_icon/icon_workshop02.png",
+    "width": 29,
+    "height": 16,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-38e1fc5018a6d7ce45ab79a9b3bbd591__-1576199079500779974"
+  },
+  "machine_big/icon_log_belt_01": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_belt_01.png",
+    "file": "machine_big/icon_log_belt_01.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__6370050456574762302"
+  },
+  "machine_big/icon_log_conditioner": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_conditioner.png",
+    "file": "machine_big/icon_log_conditioner.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__2551838546295203394"
+  },
+  "machine_big/icon_log_connector": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_connector.png",
+    "file": "machine_big/icon_log_connector.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-4795599512059780698"
+  },
+  "machine_big/icon_log_converger": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_converger.png",
+    "file": "machine_big/icon_log_converger.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-121858417365459729"
+  },
+  "machine_big/icon_log_pipe_01": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_pipe_01.png",
+    "file": "machine_big/icon_log_pipe_01.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-7123677186569551540"
+  },
+  "machine_big/icon_log_pipe_connector": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_pipe_connector.png",
+    "file": "machine_big/icon_log_pipe_connector.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-2196330926377462191"
+  },
+  "machine_big/icon_log_pipe_converger": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_pipe_converger.png",
+    "file": "machine_big/icon_log_pipe_converger.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-7702165373049239779"
+  },
+  "machine_big/icon_log_pipe_splitter": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_pipe_splitter.png",
+    "file": "machine_big/icon_log_pipe_splitter.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__4912187867621527834"
+  },
+  "machine_big/icon_log_splitter": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_log_splitter.png",
+    "file": "machine_big/icon_log_splitter.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-8278283853791700516"
+  },
+  "machine_big/icon_port_battle_cannon_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_cannon_1.png",
+    "file": "machine_big/icon_port_battle_cannon_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__4457492540672856979"
+  },
+  "machine_big/icon_port_battle_cannon_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_cannon_2.png",
+    "file": "machine_big/icon_port_battle_cannon_2.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__6759137031878798595"
+  },
+  "machine_big/icon_port_battle_debuff_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_debuff_1.png",
+    "file": "machine_big/icon_port_battle_debuff_1.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-3543963621054707870"
+  },
+  "machine_big/icon_port_battle_fog_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_fog_1.png",
+    "file": "machine_big/icon_port_battle_fog_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__5523771553358876449"
+  },
+  "machine_big/icon_port_battle_frost_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_frost_1.png",
+    "file": "machine_big/icon_port_battle_frost_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__1967875011037752926"
+  },
+  "machine_big/icon_port_battle_jet_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_jet_1.png",
+    "file": "machine_big/icon_port_battle_jet_1.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-2165818709465488777"
+  },
+  "machine_big/icon_port_battle_laser_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_laser_1.png",
+    "file": "machine_big/icon_port_battle_laser_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__7618915919945694155"
+  },
+  "machine_big/icon_port_battle_laser_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_laser_2.png",
+    "file": "machine_big/icon_port_battle_laser_2.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__3702184083250102020"
+  },
+  "machine_big/icon_port_battle_lightning_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_lightning_1.png",
+    "file": "machine_big/icon_port_battle_lightning_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__2560604242904095823"
+  },
+  "machine_big/icon_port_battle_lightning_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_lightning_2.png",
+    "file": "machine_big/icon_port_battle_lightning_2.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__5653919671842640869"
+  },
+  "machine_big/icon_port_battle_medic_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_medic_1.png",
+    "file": "machine_big/icon_port_battle_medic_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-1366800860997305662"
+  },
+  "machine_big/icon_port_battle_rocket_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_rocket_1.png",
+    "file": "machine_big/icon_port_battle_rocket_1.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-6622787695151972541"
+  },
+  "machine_big/icon_port_battle_shockwave_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_shockwave_1.png",
+    "file": "machine_big/icon_port_battle_shockwave_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__2528873776936653571"
+  },
+  "machine_big/icon_port_battle_sniper_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_sniper_1.png",
+    "file": "machine_big/icon_port_battle_sniper_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-7616363800237096935"
+  },
+  "machine_big/icon_port_battle_trap_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_trap_1.png",
+    "file": "machine_big/icon_port_battle_trap_1.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__5371001710799551241"
+  },
+  "machine_big/icon_port_battle_turret_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_turret_1.png",
+    "file": "machine_big/icon_port_battle_turret_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__1233291983415441001"
+  },
+  "machine_big/icon_port_battle_turret_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_turret_2.png",
+    "file": "machine_big/icon_port_battle_turret_2.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__982919256898921428"
+  },
+  "machine_big/icon_port_battle_turret_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_battle_turret_3.png",
+    "file": "machine_big/icon_port_battle_turret_3.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-5272866420667246714"
+  },
+  "machine_big/icon_port_carrier_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_carrier_1.png",
+    "file": "machine_big/icon_port_carrier_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-2155691316459395734"
+  },
+  "machine_big/icon_port_cmpt_mc_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_cmpt_mc_1.png",
+    "file": "machine_big/icon_port_cmpt_mc_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__7463814456538564071"
+  },
+  "machine_big/icon_port_dismantler_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_dismantler_1.png",
+    "file": "machine_big/icon_port_dismantler_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-7674518714307578941"
+  },
+  "machine_big/icon_port_dumper_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_dumper_1.png",
+    "file": "machine_big/icon_port_dumper_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__981924068602024505"
+  },
+  "machine_big/icon_port_filling_pd_mc_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_filling_pd_mc_1.png",
+    "file": "machine_big/icon_port_filling_pd_mc_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-142494584733561384"
+  },
+  "machine_big/icon_port_furnance_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_furnance_1.png",
+    "file": "machine_big/icon_port_furnance_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-7309066697825044576"
+  },
+  "machine_big/icon_port_gas_pump_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_gas_pump_1.png",
+    "file": "machine_big/icon_port_gas_pump_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-3365751145771288928"
+  },
+  "machine_big/icon_port_gas_reactor_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_gas_reactor_1.png",
+    "file": "machine_big/icon_port_gas_reactor_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-3855351760983828556"
+  },
+  "machine_big/icon_port_gas_storager_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_gas_storager_1.png",
+    "file": "machine_big/icon_port_gas_storager_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-8377310965529564059"
+  },
+  "machine_big/icon_port_grinder_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_grinder_1.png",
+    "file": "machine_big/icon_port_grinder_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__1857096895715221821"
+  },
+  "machine_big/icon_port_liquid_cleaner_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_liquid_cleaner_1.png",
+    "file": "machine_big/icon_port_liquid_cleaner_1.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__4119496783257389684"
+  },
+  "machine_big/icon_port_liquid_miner": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_liquid_miner.png",
+    "file": "machine_big/icon_port_liquid_miner.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__5914445465350159904"
+  },
+  "machine_big/icon_port_liquid_purifier_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_liquid_purifier_1.png",
+    "file": "machine_big/icon_port_liquid_purifier_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__4874000577266958993"
+  },
+  "machine_big/icon_port_liquid_storager_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_liquid_storager_1.png",
+    "file": "machine_big/icon_port_liquid_storager_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-5913199587506499734"
+  },
+  "machine_big/icon_port_loader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_loader_1.png",
+    "file": "machine_big/icon_port_loader_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__3386699489450189926"
+  },
+  "machine_big/icon_port_log_hongs_bus": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_log_hongs_bus.png",
+    "file": "machine_big/icon_port_log_hongs_bus.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-3966207846042232099"
+  },
+  "machine_big/icon_port_log_hongs_bus_source": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_log_hongs_bus_source.png",
+    "file": "machine_big/icon_port_log_hongs_bus_source.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-188322655426588272"
+  },
+  "machine_big/icon_port_marker_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_marker_1.png",
+    "file": "machine_big/icon_port_marker_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__9199225722267921872"
+  },
+  "machine_big/icon_port_medic_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_medic_1.png",
+    "file": "machine_big/icon_port_medic_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__111861438401720765"
+  },
+  "machine_big/icon_port_miner_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_miner_1.png",
+    "file": "machine_big/icon_port_miner_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__6473724985893969393"
+  },
+  "machine_big/icon_port_miner_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_miner_2.png",
+    "file": "machine_big/icon_port_miner_2.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__519893498458476689"
+  },
+  "machine_big/icon_port_miner_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_miner_3.png",
+    "file": "machine_big/icon_port_miner_3.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__8479476252664476136"
+  },
+  "machine_big/icon_port_mix_pool_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_mix_pool_1.png",
+    "file": "machine_big/icon_port_mix_pool_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__8424281217411157377"
+  },
+  "machine_big/icon_port_mix_pool_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_mix_pool_2.png",
+    "file": "machine_big/icon_port_mix_pool_2.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__442768892799912858"
+  },
+  "machine_big/icon_port_planter_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_planter_1.png",
+    "file": "machine_big/icon_port_planter_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-2605686822058555446"
+  },
+  "machine_big/icon_port_power_diffuser_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_power_diffuser_1.png",
+    "file": "machine_big/icon_port_power_diffuser_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-4856602813382538029"
+  },
+  "machine_big/icon_port_power_diffuser_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_power_diffuser_2.png",
+    "file": "machine_big/icon_port_power_diffuser_2.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-1327869947757473146"
+  },
+  "machine_big/icon_port_power_pole_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_power_pole_2.png",
+    "file": "machine_big/icon_port_power_pole_2.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-5278072046043880279"
+  },
+  "machine_big/icon_port_power_pole_3": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_power_pole_3.png",
+    "file": "machine_big/icon_port_power_pole_3.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__1996754009575976812"
+  },
+  "machine_big/icon_port_power_sta_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_power_sta_1.png",
+    "file": "machine_big/icon_port_power_sta_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-3549763875236373741"
+  },
+  "machine_big/icon_port_pump_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_pump_1.png",
+    "file": "machine_big/icon_port_pump_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__456922791991376083"
+  },
+  "machine_big/icon_port_pump_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_pump_2.png",
+    "file": "machine_big/icon_port_pump_2.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__5773874729357174642"
+  },
+  "machine_big/icon_port_seedcol_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_seedcol_1.png",
+    "file": "machine_big/icon_port_seedcol_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__1095983097941809778"
+  },
+  "machine_big/icon_port_shaper_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_shaper_1.png",
+    "file": "machine_big/icon_port_shaper_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__4786183823903146915"
+  },
+  "machine_big/icon_port_sp_hub_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_sp_hub_1.png",
+    "file": "machine_big/icon_port_sp_hub_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__1611330075641968509"
+  },
+  "machine_big/icon_port_squirter_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_squirter_1.png",
+    "file": "machine_big/icon_port_squirter_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__2793127573666242698"
+  },
+  "machine_big/icon_port_storager_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_storager_1.png",
+    "file": "machine_big/icon_port_storager_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-3445673731542171872"
+  },
+  "machine_big/icon_port_thickener_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_thickener_1.png",
+    "file": "machine_big/icon_port_thickener_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__6794879120136745111"
+  },
+  "machine_big/icon_port_tools_asm_mc_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_tools_asm_mc_1.png",
+    "file": "machine_big/icon_port_tools_asm_mc_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__1265316572977522097"
+  },
+  "machine_big/icon_port_transmuter_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_transmuter_1.png",
+    "file": "machine_big/icon_port_transmuter_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__5612562554843510934"
+  },
+  "machine_big/icon_port_transmuter_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_transmuter_2.png",
+    "file": "machine_big/icon_port_transmuter_2.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-3087289601399069735"
+  },
+  "machine_big/icon_port_travel_pole_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_travel_pole_1.png",
+    "file": "machine_big/icon_port_travel_pole_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__7765451042230247056"
+  },
+  "machine_big/icon_port_travel_pole_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_travel_pole_2.png",
+    "file": "machine_big/icon_port_travel_pole_2.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__3216239283003093254"
+  },
+  "machine_big/icon_port_unloader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_unloader_1.png",
+    "file": "machine_big/icon_port_unloader_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__8085214482768915536"
+  },
+  "machine_big/icon_port_vaporizer": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_vaporizer.png",
+    "file": "machine_big/icon_port_vaporizer.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__5921975751443490440"
+  },
+  "machine_big/icon_port_vaporizer_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_vaporizer_1.png",
+    "file": "machine_big/icon_port_vaporizer_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-5869056558866901820"
+  },
+  "machine_big/icon_port_winder_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_winder_1.png",
+    "file": "machine_big/icon_port_winder_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-8645112758605625669"
+  },
+  "machine_big/icon_port_xiranite_oven_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_port_xiranite_oven_1.png",
+    "file": "machine_big/icon_port_xiranite_oven_1.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-1769460145190885249"
+  },
+  "machine_big/icon_pot_udpipe_loader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_pot_udpipe_loader_1.png",
+    "file": "machine_big/icon_pot_udpipe_loader_1.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__-7060565018193990622"
+  },
+  "machine_big/icon_pot_udpipe_loader_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_pot_udpipe_loader_2.png",
+    "file": "machine_big/icon_pot_udpipe_loader_2.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__393839828328918926"
+  },
+  "machine_big/icon_pot_udpipe_unloader_1": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_pot_udpipe_unloader_1.png",
+    "file": "machine_big/icon_pot_udpipe_unloader_1.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__5398194368605382098"
+  },
+  "machine_big/icon_pot_udpipe_unloader_2": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/buildingpaneliconbig/icon_pot_udpipe_unloader_2.png",
+    "file": "machine_big/icon_pot_udpipe_unloader_2.png",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d1dae5cc2be996932ae622d371bdd73b__3393243138163242484"
+  },
+  "gas/icon_gas_env_acid": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_acid.png",
+    "file": "gas/icon_gas_env_acid.png",
+    "width": 126,
+    "height": 126,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__8334709193024559471"
+  },
+  "gas/icon_gas_env_effected_acid": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_effected_acid.png",
+    "file": "gas/icon_gas_env_effected_acid.png",
+    "width": 290,
+    "height": 70,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__-4733394614507751043"
+  },
+  "gas/icon_gas_env_effected_humidity": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_effected_humidity.png",
+    "file": "gas/icon_gas_env_effected_humidity.png",
+    "width": 290,
+    "height": 70,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__-7820636236920913071"
+  },
+  "gas/icon_gas_env_effected_inactive": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_effected_inactive.png",
+    "file": "gas/icon_gas_env_effected_inactive.png",
+    "width": 226,
+    "height": 226,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__-2448188264549197249"
+  },
+  "gas/icon_gas_env_effected_stable": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_effected_stable.png",
+    "file": "gas/icon_gas_env_effected_stable.png",
+    "width": 290,
+    "height": 70,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__4223736398897048231"
+  },
+  "gas/icon_gas_env_effected_xiranite": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_effected_xiranite.png",
+    "file": "gas/icon_gas_env_effected_xiranite.png",
+    "width": 290,
+    "height": 70,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__-2933990051913456275"
+  },
+  "gas/icon_gas_env_humidity": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_humidity.png",
+    "file": "gas/icon_gas_env_humidity.png",
+    "width": 126,
+    "height": 126,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__3774665384170554541"
+  },
+  "gas/icon_gas_env_inactive": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_inactive.png",
+    "file": "gas/icon_gas_env_inactive.png",
+    "width": 226,
+    "height": 226,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__-1952328447526114834"
+  },
+  "gas/icon_gas_env_stable": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_stable.png",
+    "file": "gas/icon_gas_env_stable.png",
+    "width": 126,
+    "height": 126,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__6411203750744986550"
+  },
+  "gas/icon_gas_env_xiranite": {
+    "path": "assets/beyond/dynamicassets/gameplay/ui/sprites/factory/gas/icon_gas_env_xiranite.png",
+    "file": "gas/icon_gas_env_xiranite.png",
+    "width": 126,
+    "height": 126,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1aa35a2842bfa5dd7e27ecba4a163c85__8034808146329116709"
+  },
+  "ui/icon_wiki_limited_time_event_2_-2446541119818145758": {
+    "path": "",
+    "file": "ui/icon_wiki_limited_time_event_2_-2446541119818145758.png",
+    "width": 52,
+    "height": 64,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-60270ac4ab22f2fbdc0b73623b1955fd__-2446541119818145758"
+  },
+  "ui/line_shadow_r8_s3_246903694070926373": {
+    "path": "",
+    "file": "ui/line_shadow_r8_s3_246903694070926373.png",
+    "width": 52,
+    "height": 56,
+    "border": [
+      25.0,
+      26.0,
+      25.0,
+      26.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-216440d14f9c864652ffb1c7827b661b__246903694070926373"
+  },
+  "ui/bg_fac_blueprint_light_2148198312298527418": {
+    "path": "",
+    "file": "ui/bg_fac_blueprint_light_2148198312298527418.png",
+    "width": 152,
+    "height": 64,
+    "border": [
+      1.0,
+      0.0,
+      144.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-fff69bce5a31cd4c548b5be8b699ee87__2148198312298527418"
+  },
+  "ui/deco_fac_blueprint_bg_6748272348725871870": {
+    "path": "",
+    "file": "ui/deco_fac_blueprint_bg_6748272348725871870.png",
+    "width": 44,
+    "height": 44,
+    "border": [
+      20.0,
+      0.0,
+      20.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d9839041386b2bd2d5222e6fb01219be__6748272348725871870"
+  },
+  "ui/bg_fac_blueprint_preview_quality_big_-560204574242332203": {
+    "path": "",
+    "file": "ui/bg_fac_blueprint_preview_quality_big_-560204574242332203.png",
+    "width": 100,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-f170d83f4dce6e2c961b37659eec8558__-560204574242332203"
+  },
+  "ui/bg_fac_blueprint_popup_label_-3123392282831861443": {
+    "path": "",
+    "file": "ui/bg_fac_blueprint_popup_label_-3123392282831861443.png",
+    "width": 108,
+    "height": 256,
+    "border": [
+      47.0,
+      43.0,
+      47.0,
+      209.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-c476e0b70b9ef57a612bd47be4a10b40__-3123392282831861443"
+  },
+  "ui/deco_fac_blueprint_31_3121692108118264844": {
+    "path": "",
+    "file": "ui/deco_fac_blueprint_31_3121692108118264844.png",
+    "width": 24,
+    "height": 4,
+    "border": [
+      1.0,
+      0.0,
+      2.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-819dc0cf11c298fa2a1a2277e456fad4__3121692108118264844"
+  },
+  "ui/bg_common_r8_p2_3718706520330752490": {
+    "path": "",
+    "file": "ui/bg_common_r8_p2_3718706520330752490.png",
+    "width": 66,
+    "height": 66,
+    "border": [
+      14.0,
+      14.0,
+      14.0,
+      14.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-dd19a3b5af3a1f10591891df60561850__3718706520330752490"
+  },
+  "ui/icon_fac_blueprint_countdown_2_9074213212138212509": {
+    "path": "",
+    "file": "ui/icon_fac_blueprint_countdown_2_9074213212138212509.png",
+    "width": 44,
+    "height": 48,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-152b3d44355b9cbaeb6d4049d73d3ed9__9074213212138212509"
+  },
+  "ui/bg_common_shadow_05_20_05_05_p2_7220843780902264948": {
+    "path": "",
+    "file": "ui/bg_common_shadow_05_20_05_05_p2_7220843780902264948.png",
+    "width": 144,
+    "height": 144,
+    "border": [
+      67.0,
+      69.0,
+      74.0,
+      71.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-44884658c16188438d9c3fa753a6dc94__7220843780902264948"
+  },
+  "ui/slash_keyhint_1506130900193342468": {
+    "path": "",
+    "file": "ui/slash_keyhint_1506130900193342468.png",
+    "width": 16,
+    "height": 28,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-4ba12d041f6085232fbddf3bd5bce07d__1506130900193342468"
+  },
+  "ui/icon_fac_blueprint_abnormal_big_2_-1853907740282667039": {
+    "path": "",
+    "file": "ui/icon_fac_blueprint_abnormal_big_2_-1853907740282667039.png",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-4e3000b1bb8913259426014ba18eba6e__-1853907740282667039"
+  },
+  "ui/icon_fac_blueprint_abnormal_big_-1219275788694115301": {
+    "path": "",
+    "file": "ui/icon_fac_blueprint_abnormal_big_-1219275788694115301.png",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-97836503c4756fe1616cab1ac7c99eb3__-1219275788694115301"
+  },
+  "ui/item_rev_potion_1_-8721653842621744912": {
+    "path": "",
+    "file": "ui/item_rev_potion_1_-8721653842621744912.png",
+    "width": 126,
+    "height": 126,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-f4c297749466b8864259039765483efd__-8721653842621744912"
+  },
+  "ui/bg_fac_blueprint_bar_light_h_4097225624664633497": {
+    "path": "",
+    "file": "ui/bg_fac_blueprint_bar_light_h_4097225624664633497.png",
+    "width": 40,
+    "height": 28,
+    "border": [
+      18.0,
+      0.0,
+      18.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-3b54c667d025e87132b9e8d42d446c41__4097225624664633497"
+  },
+  "ui/icon_common_playstation_base_press_-5947046374092429622": {
+    "path": "",
+    "file": "ui/icon_common_playstation_base_press_-5947046374092429622.png",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-a925a86e9e23745662c53f784f51cc5c__-5947046374092429622"
+  },
+  "ui/sprite_pointer_7830432202775088891": {
+    "path": "",
+    "file": "ui/sprite_pointer_7830432202775088891.png",
+    "width": 112,
+    "height": 90,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-4f752522bc8042fabbad15724e95f882__7830432202775088891"
+  },
+  "ui/deco_cross02_3651877124990030316": {
+    "path": "",
+    "file": "ui/deco_cross02_3651877124990030316.png",
+    "width": 56,
+    "height": 56,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-3ee44c2cd27885d7b0eb49de0aeb8984__3651877124990030316"
+  },
+  "ui/icon_playstation_a_4230457488197884367": {
+    "path": "",
+    "file": "ui/icon_playstation_a_4230457488197884367.png",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-fb5c03fb438b9c19b660c69a632959be__4230457488197884367"
+  },
+  "ui/deco_fac_blueprint_abnormal_big_2892332340042654035": {
+    "path": "",
+    "file": "ui/deco_fac_blueprint_abnormal_big_2892332340042654035.png",
+    "width": 100,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-1354187f3128867b9bef0572e070ff52__2892332340042654035"
+  },
+  "ui/bg_fac_blueprint_bar_h_4061465717286741671": {
+    "path": "",
+    "file": "ui/bg_fac_blueprint_bar_h_4061465717286741671.png",
+    "width": 20,
+    "height": 8,
+    "border": [
+      3.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-6528ce86a93be92ceca695789d089761__4061465717286741671"
+  },
+  "ui/icon_playstation_a_press_5045912268068773400": {
+    "path": "",
+    "file": "ui/icon_playstation_a_press_5045912268068773400.png",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-7547a828867bcac5726f0b6306a4baf2__5045912268068773400"
+  },
+  "ui/img_udpipe_-3446569809897050586": {
+    "path": "",
+    "file": "ui/img_udpipe_-3446569809897050586.png",
+    "width": 384,
+    "height": 128,
+    "border": [
+      100.0,
+      0.0,
+      100.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-3a9ba7054a61d38c9d2e5132c68d7308__-3446569809897050586"
+  },
+  "ui/icon_fac_blueprint_no_connection_bg_-4074903478011435956": {
+    "path": "",
+    "file": "ui/icon_fac_blueprint_no_connection_bg_-4074903478011435956.png",
+    "width": 148,
+    "height": 32,
+    "border": [
+      72.0,
+      0.0,
+      72.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-ceacf9df4afa89f7a04671573c821ee1__-4074903478011435956"
+  },
+  "ui/bg_fac_blueprint_preview_2_big_5464491502049935521": {
+    "path": "",
+    "file": "ui/bg_fac_blueprint_preview_2_big_5464491502049935521.png",
+    "width": 100,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-3e1bf8f6c7e0f6490f22933f95d5a80d__5464491502049935521"
+  },
+  "ui/icon_fac_blueprint_no_connection_-5829378376804871859": {
+    "path": "",
+    "file": "ui/icon_fac_blueprint_no_connection_-5829378376804871859.png",
+    "width": 42,
+    "height": 42,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-137fbe3b2c586d2735d2e1f943fcb07c__-5829378376804871859"
+  },
+  "ui/slider_line_364696017941109123": {
+    "path": "",
+    "file": "ui/slider_line_364696017941109123.png",
+    "width": 9,
+    "height": 66,
+    "border": [
+      0.0,
+      2.0,
+      0.0,
+      2.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__364696017941109123"
+  },
+  "ui/bg_item_quality_bar_8772888444283884783": {
+    "path": "",
+    "file": "ui/bg_item_quality_bar_8772888444283884783.png",
+    "width": 180,
+    "height": 6,
+    "border": [
+      74.0,
+      0.0,
+      81.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__8772888444283884783"
+  },
+  "ui/icon_plusmark_4244160070224601178": {
+    "path": "",
+    "file": "ui/icon_plusmark_4244160070224601178.png",
+    "width": 36,
+    "height": 36,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-34e14c345c1e7a7b12f6687b78fc6e27__4244160070224601178"
+  },
+  "ui/bg_settlement_selectmode_-3046513793316549854": {
+    "path": "",
+    "file": "ui/bg_settlement_selectmode_-3046513793316549854.png",
+    "width": 69,
+    "height": 75,
+    "border": [
+      33.0,
+      33.0,
+      33.0,
+      33.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-191dd9b4dcd12d339ab05fcc4443cf78__-3046513793316549854"
+  },
+  "ui/bg_common_r5_5_0_0_p2_-377394357788722894": {
+    "path": "",
+    "file": "ui/bg_common_r5_5_0_0_p2_-377394357788722894.png",
+    "width": 20,
+    "height": 16,
+    "border": [
+      9.0,
+      5.0,
+      9.0,
+      10.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-4d219dcb323a592998513013bf9d33be__-377394357788722894"
+  },
+  "ui/icon_playstation_y_127770897963786474": {
+    "path": "",
+    "file": "ui/icon_playstation_y_127770897963786474.png",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-0f2cae54954df058ff834d441d3c3183__127770897963786474"
+  },
+  "ui/bg_item_rarity_bar_common_-4773466393498917792": {
+    "path": "",
+    "file": "ui/bg_item_rarity_bar_common_-4773466393498917792.png",
+    "width": 10,
+    "height": 28,
+    "border": [
+      4.0,
+      0.0,
+      4.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-aec25147f167be6bb128eda090ca491a__-4773466393498917792"
+  },
+  "ui/icon_key_leftshift_7266210014551200033": {
+    "path": "",
+    "file": "ui/icon_key_leftshift_7266210014551200033.png",
+    "width": 108,
+    "height": 48,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-5513e7f1805a1abb120781b4c18f20a8__7266210014551200033"
+  },
+  "ui/deco_txt03_-3876535091973527251": {
+    "path": "",
+    "file": "ui/deco_txt03_-3876535091973527251.png",
+    "width": 74,
+    "height": 12,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-e40862309038f21fe22ef2fac22fd531__-3876535091973527251"
+  },
+  "ui/icon_fac_blueprint_abnormal_shadow_5293003482009924335": {
+    "path": "",
+    "file": "ui/icon_fac_blueprint_abnormal_shadow_5293003482009924335.png",
+    "width": 124,
+    "height": 124,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-82e4c69fc243f89b9a7097f975e11444__5293003482009924335"
+  },
+  "ui/btn_fac_blueprint_show_-3114727227210006368": {
+    "path": "",
+    "file": "ui/btn_fac_blueprint_show_-3114727227210006368.png",
+    "width": 24,
+    "height": 24,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-77093363c2da07e5cba222f2abce1100__-3114727227210006368"
+  },
+  "ui/bg_fac_blueprint_bar_light_-3981217772727455683": {
+    "path": "",
+    "file": "ui/bg_fac_blueprint_bar_light_-3981217772727455683.png",
+    "width": 28,
+    "height": 40,
+    "border": [
+      0.0,
+      18.0,
+      0.0,
+      19.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-d07133d27effb941db1d4582c74e0d30__-3981217772727455683"
+  },
+  "ui/img_hover_8850568795831537073": {
+    "path": "",
+    "file": "ui/img_hover_8850568795831537073.png",
+    "width": 116,
+    "height": 116,
+    "border": [
+      50.0,
+      50.0,
+      50.0,
+      50.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-c654a8c39a9dc8d8766e659a0ffc665e__8850568795831537073"
+  },
+  "ui/bg_grids_-6076494053678258276": {
+    "path": "",
+    "file": "ui/bg_grids_-6076494053678258276.png",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-038ddfbd787f522ef175a931d025d869__-6076494053678258276"
+  },
+  "ui/deco_fac_blueprint_32_-8151932639259230240": {
+    "path": "",
+    "file": "ui/deco_fac_blueprint_32_-8151932639259230240.png",
+    "width": 64,
+    "height": 12,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-04e3ea332b62fe1dcba8be3ba738a76c__-8151932639259230240"
+  },
+  "ui/deco_fac_blueprint_base_color_icon_-4077638228770976970": {
+    "path": "",
+    "file": "ui/deco_fac_blueprint_base_color_icon_-4077638228770976970.png",
+    "width": 328,
+    "height": 352,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-c123219a3429b88d3acf26eb804b8bc5__-4077638228770976970"
+  },
+  "ui/line_common_circle12_s3_p2_-3314687379373507804": {
+    "path": "",
+    "file": "ui/line_common_circle12_s3_p2_-3314687379373507804.png",
+    "width": 16,
+    "height": 16,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-056855e8442e3399870650a8448be180__-3314687379373507804"
+  },
+  "ui/bg_common_shadowin_r5_p2_-6475094052664643703": {
+    "path": "",
+    "file": "ui/bg_common_shadowin_r5_p2_-6475094052664643703.png",
+    "width": 44,
+    "height": 44,
+    "border": [
+      21.0,
+      21.0,
+      21.0,
+      21.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-f4603e025681adda9e4ca44e55b05a80__-6475094052664643703"
+  },
+  "ui/btn_fac_blueprint_hide_536256473489114487": {
+    "path": "",
+    "file": "ui/btn_fac_blueprint_hide_536256473489114487.png",
+    "width": 24,
+    "height": 24,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-f32ac56ad4e5894a44ae50705304ef09__536256473489114487"
+  },
+  "ui/bg_fac_blueprint_bar_6481765205093854319": {
+    "path": "",
+    "file": "ui/bg_fac_blueprint_bar_6481765205093854319.png",
+    "width": 8,
+    "height": 20,
+    "border": [
+      0.0,
+      2.0,
+      0.0,
+      2.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-65b1efb132bb649a7cb9d58ce6328d85__6481765205093854319"
+  },
+  "ui/btn_fac_blueprint_change_4318012692717485753": {
+    "path": "",
+    "file": "ui/btn_fac_blueprint_change_4318012692717485753.png",
+    "width": 44,
+    "height": 44,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-98025ff4ca93c771e45105829a5b2f18__4318012692717485753"
+  },
+  "ui/bg_minitips_02_p2_-1960524648256915596": {
+    "path": "",
+    "file": "ui/bg_minitips_02_p2_-1960524648256915596.png",
+    "width": 36,
+    "height": 10,
+    "border": [
+      13.0,
+      0.0,
+      19.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-a4bfe7dc2bacfb882caf022a734076f4__-1960524648256915596"
+  },
+  "ui/icon_common_playstation_triangle_press_4638324044124518951": {
+    "path": "",
+    "file": "ui/icon_common_playstation_triangle_press_4638324044124518951.png",
+    "width": 30,
+    "height": 30,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-96bd7a998f102fba846f03f62fb94265__4638324044124518951"
+  },
+  "ui/icon_common_playstation_progress_press_6950258065236772508": {
+    "path": "",
+    "file": "ui/icon_common_playstation_progress_press_6950258065236772508.png",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-f08fd2bae72aa76c62ba311c6d6eb8b0__6950258065236772508"
+  },
+  "ui/deco_fac_blueprint_4_-891282521971086335": {
+    "path": "",
+    "file": "ui/deco_fac_blueprint_4_-891282521971086335.png",
+    "width": 48,
+    "height": 12,
+    "border": [
+      36.0,
+      0.0,
+      8.0,
+      0.0
+    ],
+    "pixelsPerUnit": 100.0,
+    "objectId": "CAB-0ace63cbd625e90d18bcc258d1756266__-891282521971086335"
+  }
+}

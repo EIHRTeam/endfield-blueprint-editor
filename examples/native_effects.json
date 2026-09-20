@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "name": "暗管原始显示效果",
+  "size": {
+    "x": 30,
+    "z": 24
+  },
+  "nodes": [
+    {
+      "templateId": "udpipe_unloader_2",
+      "position": {
+        "x": 18,
+        "z": 13
+      },
+      "direction": 1,
+      "undergroundPair": "pipe-1"
+    },
+    {
+      "templateId": "udpipe_loader_2",
+      "position": {
+        "x": 2,
+        "z": 3
+      },
+      "direction": 0,
+      "undergroundPair": "pipe-1"
+    },
+    {
+      "templateId": "udpipe_loader_1",
+      "position": {
+        "x": 11,
+        "z": 2
+      },
+      "direction": 2
+    }
+  ],
+  "conveyors": [],
+  "presentation": {
+    "creatorId": "",
+    "tags": [],
+    "description": "",
+    "coverId": "",
+    "coverColor": "blue",
+    "showChangeHints": false,
+    "connectionPair": "pipe-1",
+    "viewport": {
+      "zoom": 1,
+      "x": 0.5,
+      "y": 0.5
+    }
+  }
+}

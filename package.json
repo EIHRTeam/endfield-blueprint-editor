@@ -1,0 +1,23 @@
+{
+  "name": "endfield-blueprint-editor",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@11.19.0",
+  "description": "Offline Endfield blueprint drawing and full preview export tool",
+  "scripts": {
+    "build": "python scripts/build.py",
+    "start": "python scripts/serve.py",
+    "test": "node scripts/test.cjs",
+    "verify-inputs": "python scripts/verify_inputs.py",
+    "smoke": "python scripts/smoke.py",
+    "example": "node scripts/generate_example.cjs",
+    "release": "python scripts/package_release.py"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

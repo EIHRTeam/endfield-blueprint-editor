@@ -1,0 +1,2594 @@
+{
+  "bg_fac_blueprint_audit_short": {
+    "file": "bg_fac_blueprint_audit_short.png",
+    "objectId": "CAB-7cb24efdce10e6fc166c0b95ef6aba0b__6101635779064593373",
+    "width": 232,
+    "height": 56,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_industrial_Plan": {
+    "file": "bg_fac_blueprint_industrial_Plan.png",
+    "objectId": "CAB-c5ddf5997ac59ed828c02768a8444619__2376197992880196584",
+    "width": 148,
+    "height": 148,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_share_2": {
+    "file": "bg_fac_blueprint_share_2.png",
+    "objectId": "CAB-c21c1c2001c2d41364c2803fde12a20d__-6282167128909718668",
+    "width": 40,
+    "height": 40,
+    "border": [
+      18.0,
+      21.0,
+      19.0,
+      16.0
+    ]
+  },
+  "deco_levebreak_01": {
+    "file": "deco_levebreak_01.png",
+    "objectId": "CAB-e34db91befc1aa2542f40a2a87f2c78e__6193662105521474571",
+    "width": 26,
+    "height": 18,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_share_friend": {
+    "file": "icon_fac_blueprint_share_friend.png",
+    "objectId": "CAB-42d0cf0f686263b759c0c31c69a1b45a__-6518774204770500200",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_share_external": {
+    "file": "icon_fac_blueprint_share_external.png",
+    "objectId": "CAB-42d0cf0f686263b759c0c31c69a1b45a__5826212894016938077",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_shadow_r10_p2_03": {
+    "file": "bg_common_shadow_r10_p2_03.png",
+    "objectId": "CAB-2a738e197c1bfeee65ee2c7662e5915c__-4877871070834406208",
+    "width": 91,
+    "height": 81,
+    "border": [
+      35.0,
+      28.0,
+      37.0,
+      35.0
+    ]
+  },
+  "UISprite": {
+    "file": "UISprite.png",
+    "objectId": "CAB-42d0cf0f686263b759c0c31c69a1b45a__5837791642106728268",
+    "width": 32,
+    "height": 32,
+    "border": [
+      10.0,
+      10.0,
+      10.0,
+      10.0
+    ]
+  },
+  "deco_num03": {
+    "file": "deco_num03.png",
+    "objectId": "CAB-35d315edcdb2d571de981559336aab72__2570614410527511574",
+    "width": 46,
+    "height": 7,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_input_light": {
+    "file": "deco_fac_blueprint_input_light.png",
+    "objectId": "CAB-c1466edae547445afe34f43677507abc__6770007353807092956",
+    "width": 44,
+    "height": 44,
+    "border": [
+      20.0,
+      20.0,
+      20.0,
+      20.0
+    ]
+  },
+  "icon_playstation_a": {
+    "file": "icon_playstation_a.png",
+    "objectId": "CAB-fb5c03fb438b9c19b660c69a632959be__4230457488197884367",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "item_rev_potion_1": {
+    "file": "item_rev_potion_1.png",
+    "objectId": "CAB-f4c297749466b8864259039765483efd__-8721653842621744912",
+    "width": 126,
+    "height": 126,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_playstation_a_press": {
+    "file": "icon_playstation_a_press.png",
+    "objectId": "CAB-7547a828867bcac5726f0b6306a4baf2__5045912268068773400",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_17": {
+    "file": "deco_fac_blueprint_17.png",
+    "objectId": "CAB-2f33df22eed422ba147faec78899b446__4632538625154919546",
+    "width": 76,
+    "height": 8,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_btnline": {
+    "file": "deco_btnline.png",
+    "objectId": "CAB-10f564be6a51e2d478be54c3ab54a2b6__-2077120817182422164",
+    "width": 25,
+    "height": 10,
+    "border": [
+      10.0,
+      0.0,
+      12.0,
+      0.0
+    ]
+  },
+  "icon_common_playstation_triangle_press": {
+    "file": "icon_common_playstation_triangle_press.png",
+    "objectId": "CAB-96bd7a998f102fba846f03f62fb94265__4638324044124518951",
+    "width": 30,
+    "height": 30,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_settlement_change_arrow": {
+    "file": "icon_settlement_change_arrow.png",
+    "objectId": "CAB-27fa7128079086959e6da32a51cd5f6d__-6215326652175129777",
+    "width": 62,
+    "height": 46,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Background": {
+    "file": "Background.png",
+    "objectId": "CAB-511da4413f9888979ba2a2b396b87428__1660267235368898380",
+    "width": 32,
+    "height": 32,
+    "border": [
+      10.0,
+      10.0,
+      10.0,
+      10.0
+    ]
+  },
+  "slider_line": {
+    "file": "slider_line.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__364696017941109123",
+    "width": 9,
+    "height": 66,
+    "border": [
+      0.0,
+      2.0,
+      0.0,
+      2.0
+    ]
+  },
+  "common_scroll_bar_handle_p80": {
+    "file": "common_scroll_bar_handle_p80.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-2007997101676324944",
+    "width": 24,
+    "height": 36,
+    "border": [
+      0.0,
+      14.0,
+      0.0,
+      16.0
+    ]
+  },
+  "slash_keyhint": {
+    "file": "slash_keyhint.png",
+    "objectId": "CAB-4ba12d041f6085232fbddf3bd5bce07d__1506130900193342468",
+    "width": 16,
+    "height": 28,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "line_shadow_r8_s3": {
+    "file": "line_shadow_r8_s3.png",
+    "objectId": "CAB-216440d14f9c864652ffb1c7827b661b__246903694070926373",
+    "width": 52,
+    "height": 56,
+    "border": [
+      25.0,
+      26.0,
+      25.0,
+      26.0
+    ]
+  },
+  "icon_playstation_rt": {
+    "file": "icon_playstation_rt.png",
+    "objectId": "CAB-f8c9dc1ef95f8f7012ef94f7502e2258__-7491745045788073828",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_icontick": {
+    "file": "deco_icontick.png",
+    "objectId": "CAB-a9e380428d0b3724b041cac98dd1efea__-6277477395246829490",
+    "width": 29,
+    "height": 22,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_item_rarity_bar_common": {
+    "file": "bg_item_rarity_bar_common.png",
+    "objectId": "CAB-aec25147f167be6bb128eda090ca491a__-4773466393498917792",
+    "width": 10,
+    "height": 28,
+    "border": [
+      4.0,
+      0.0,
+      4.0,
+      0.0
+    ]
+  },
+  "btn_common_normal_bg": {
+    "file": "btn_common_normal_bg.png",
+    "objectId": "CAB-10f564be6a51e2d478be54c3ab54a2b6__3973521261885058101",
+    "width": 116,
+    "height": 96,
+    "border": [
+      57.0,
+      0.0,
+      57.0,
+      0.0
+    ]
+  },
+  "line_common_btn_bg_outline": {
+    "file": "line_common_btn_bg_outline.png",
+    "objectId": "CAB-8e3aa08d6482742e6f86b6ff38bfef2c__-4134797981448096374",
+    "width": 100,
+    "height": 80,
+    "border": [
+      48.0,
+      0.0,
+      48.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_change_related_icon": {
+    "file": "icon_fac_blueprint_change_related_icon.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-3254623137197127820",
+    "width": 152,
+    "height": 152,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_plusmark": {
+    "file": "icon_plusmark.png",
+    "objectId": "CAB-34e14c345c1e7a7b12f6687b78fc6e27__4244160070224601178",
+    "width": 36,
+    "height": 36,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_common_shadow_stroke_bg_reverse": {
+    "file": "btn_common_shadow_stroke_bg_reverse.png",
+    "objectId": "CAB-9b9d968dd520467f149df6798f6109fd__2826281816569792679",
+    "width": 68,
+    "height": 68,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_bg_blue": {
+    "file": "icon_fac_blueprint_bg_blue.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-198723013396993211",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_key_leftshift": {
+    "file": "icon_key_leftshift.png",
+    "objectId": "CAB-5513e7f1805a1abb120781b4c18f20a8__7266210014551200033",
+    "width": 108,
+    "height": 48,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "common_btn_bg": {
+    "file": "common_btn_bg.png",
+    "objectId": "CAB-ef912f7caf0b1e9dbb0a95657119f6e7__-8218571107008857697",
+    "width": 77,
+    "height": 77,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_abnormal_big": {
+    "file": "icon_fac_blueprint_abnormal_big.png",
+    "objectId": "CAB-97836503c4756fe1616cab1ac7c99eb3__-1219275788694115301",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_playstation_y": {
+    "file": "icon_playstation_y.png",
+    "objectId": "CAB-0f2cae54954df058ff834d441d3c3183__127770897963786474",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_common_bg_shadow": {
+    "file": "btn_common_bg_shadow.png",
+    "objectId": "CAB-10f564be6a51e2d478be54c3ab54a2b6__6510046744264207605",
+    "width": 116,
+    "height": 96,
+    "border": [
+      56.0,
+      0.0,
+      56.0,
+      0.0
+    ]
+  },
+  "bg_common_shadowin_r5_p2": {
+    "file": "bg_common_shadowin_r5_p2.png",
+    "objectId": "CAB-f4603e025681adda9e4ca44e55b05a80__-6475094052664643703",
+    "width": 44,
+    "height": 44,
+    "border": [
+      21.0,
+      21.0,
+      21.0,
+      21.0
+    ]
+  },
+  "deco_fac_blueprint_16": {
+    "file": "deco_fac_blueprint_16.png",
+    "objectId": "CAB-4af814438a3e6973f216fd350ce807b4__5393713879830769984",
+    "width": 424,
+    "height": 64,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_common_magnifying_glass": {
+    "file": "btn_common_magnifying_glass.png",
+    "objectId": "CAB-346d198f810f6c28569b393b7aa7de63__-6959957339919118435",
+    "width": 30,
+    "height": 29,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "wiki_bg_r4_s1_p2": {
+    "file": "wiki_bg_r4_s1_p2.png",
+    "objectId": "CAB-fd95e6960416102eaf77df4f17ca77c7__-2973212304186668012",
+    "width": 20,
+    "height": 20,
+    "border": [
+      8.0,
+      8.0,
+      8.0,
+      8.0
+    ]
+  },
+  "deco_fac_blueprint_6": {
+    "file": "deco_fac_blueprint_6.png",
+    "objectId": "CAB-47d885b8745f28c9cbad6881ce067f2e__-224860318270618078",
+    "width": 720,
+    "height": 108,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_common_playstation_base_press": {
+    "file": "icon_common_playstation_base_press.png",
+    "objectId": "CAB-a925a86e9e23745662c53f784f51cc5c__-5947046374092429622",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_bar_light": {
+    "file": "bg_fac_blueprint_bar_light.png",
+    "objectId": "CAB-d07133d27effb941db1d4582c74e0d30__-3981217772727455683",
+    "width": 28,
+    "height": 40,
+    "border": [
+      0.0,
+      18.0,
+      0.0,
+      19.0
+    ]
+  },
+  "icon_fac_blueprint_abnormal_big_2": {
+    "file": "icon_fac_blueprint_abnormal_big_2.png",
+    "objectId": "CAB-4e3000b1bb8913259426014ba18eba6e__-1853907740282667039",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_r4_p2_2": {
+    "file": "bg_common_r4_p2_2.png",
+    "objectId": "CAB-ba33082ecd8792e6329debabfd44ac08__-9058509645046293866",
+    "width": 18,
+    "height": 12,
+    "border": [
+      8.0,
+      5.0,
+      8.0,
+      6.0
+    ]
+  },
+  "icon_common_playstation_progress_press": {
+    "file": "icon_common_playstation_progress_press.png",
+    "objectId": "CAB-f08fd2bae72aa76c62ba311c6d6eb8b0__6950258065236772508",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_key_e": {
+    "file": "icon_key_e.png",
+    "objectId": "CAB-57288956ebd71acac71a0af7285a0ec4__1400084769903575300",
+    "width": 48,
+    "height": 48,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_industrial_plan_tundra_1_big": {
+    "file": "icon_industrial_plan_tundra_1_big.png",
+    "objectId": "CAB-0d904612e5681eb8d7257ab707aebcb3__-6756726315109619542",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_early_access": {
+    "file": "icon_early_access.png",
+    "objectId": "CAB-f0c9c90618798f2fa19d08e7658ff570__3427990858770854013",
+    "width": 28,
+    "height": 28,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_4": {
+    "file": "deco_fac_blueprint_4.png",
+    "objectId": "CAB-0ace63cbd625e90d18bcc258d1756266__-891282521971086335",
+    "width": 48,
+    "height": 12,
+    "border": [
+      36.0,
+      0.0,
+      8.0,
+      0.0
+    ]
+  },
+  "btn_common_mask": {
+    "file": "btn_common_mask.png",
+    "objectId": "CAB-10f564be6a51e2d478be54c3ab54a2b6__-5829573748419096031",
+    "width": 80,
+    "height": 72,
+    "border": [
+      39.0,
+      0.0,
+      39.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_27": {
+    "file": "deco_fac_blueprint_27.png",
+    "objectId": "CAB-511da4413f9888979ba2a2b396b87428__4742625065998608089",
+    "width": 132,
+    "height": 8,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_21": {
+    "file": "deco_fac_blueprint_21.png",
+    "objectId": "CAB-b3f06588d1d03203211bbdaf5d6d2c8f__7430736027175813226",
+    "width": 272,
+    "height": 8,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_submit_long": {
+    "file": "bg_fac_blueprint_submit_long.png",
+    "objectId": "CAB-23afe14cd0d709150be5e0832cd3cc86__-6226553777842046247",
+    "width": 276,
+    "height": 56,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_base_color": {
+    "file": "icon_fac_blueprint_base_color.png",
+    "objectId": "CAB-cf55ded17f616bf998fd705efc1520d8__5089675694281218645",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_6starcolour_w": {
+    "file": "bg_6starcolour_w.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-5108691978693423457",
+    "width": 180,
+    "height": 83,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_shadow_r15_p2_03": {
+    "file": "bg_common_shadow_r15_p2_03.png",
+    "objectId": "CAB-388f230f7bbd7a645cea97a59dd93f0d__5869747487475357900",
+    "width": 52,
+    "height": 48,
+    "border": [
+      24.0,
+      0.0,
+      24.0,
+      0.0
+    ]
+  },
+  "bg_common_r5_p2": {
+    "file": "bg_common_r5_p2.png",
+    "objectId": "CAB-4b5ec4694c532299b6753cca407c6019__1394427805909956772",
+    "width": 50,
+    "height": 50,
+    "border": [
+      9.0,
+      9.0,
+      9.0,
+      9.0
+    ]
+  },
+  "bg_fac_blueprint_bar": {
+    "file": "bg_fac_blueprint_bar.png",
+    "objectId": "CAB-65b1efb132bb649a7cb9d58ce6328d85__6481765205093854319",
+    "width": 8,
+    "height": 20,
+    "border": [
+      0.0,
+      2.0,
+      0.0,
+      2.0
+    ]
+  },
+  "bg_common_08_00_00_00_p2": {
+    "file": "bg_common_08_00_00_00_p2.png",
+    "objectId": "CAB-0fde3107ddbd0a115b4c44c0d7723442__326416648776093588",
+    "width": 24,
+    "height": 24,
+    "border": [
+      10.0,
+      4.0,
+      6.0,
+      13.0
+    ]
+  },
+  "btn_mc_tips_arrows": {
+    "file": "btn_mc_tips_arrows.png",
+    "objectId": "CAB-8e7412d8e371cdb37bb431fe323c7a32__-5051177868629529026",
+    "width": 19,
+    "height": 31,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_3": {
+    "file": "deco_fac_blueprint_3.png",
+    "objectId": "CAB-a6793e113f9a2d742b8370df7d8c62fa__860263217836537902",
+    "width": 64,
+    "height": 64,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "line_common_r15_s3_p2": {
+    "file": "line_common_r15_s3_p2.png",
+    "objectId": "CAB-39fb7d411d9874e54deb1c6bb04a5a99__1522274529906531055",
+    "width": 44,
+    "height": 32,
+    "border": [
+      20.0,
+      0.0,
+      20.0,
+      0.0
+    ]
+  },
+  "common_deco_white": {
+    "file": "common_deco_white.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-7918538170742024252",
+    "width": 64,
+    "height": 64,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_change_icon": {
+    "file": "icon_fac_blueprint_change_icon.png",
+    "objectId": "CAB-9dc1f5f2bdd26a0662681b7b414d94fb__-3334385746672335599",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_popup_label": {
+    "file": "bg_fac_blueprint_popup_label.png",
+    "objectId": "CAB-c476e0b70b9ef57a612bd47be4a10b40__-3123392282831861443",
+    "width": 108,
+    "height": 256,
+    "border": [
+      47.0,
+      43.0,
+      47.0,
+      209.0
+    ]
+  },
+  "bg_item_small_black": {
+    "file": "bg_item_small_black.png",
+    "objectId": "CAB-74296198fdacaacc2f015970bab7cf8c__9170591299362119003",
+    "width": 100,
+    "height": 100,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_icon_commom_share": {
+    "file": "btn_icon_commom_share.png",
+    "objectId": "CAB-44083a88766407ccd78d15da2a75e25d__5519640965292290167",
+    "width": 56,
+    "height": 56,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "line_common_r0_s2_p2": {
+    "file": "line_common_r0_s2_p2.png",
+    "objectId": "CAB-c7a9c43bf42a35418a8f51128246b361__-3483540591309468948",
+    "width": 12,
+    "height": 12,
+    "border": [
+      4.0,
+      4.0,
+      5.0,
+      5.0
+    ]
+  },
+  "bg_fac_blueprint_industrial_plan_select": {
+    "file": "bg_fac_blueprint_industrial_plan_select.png",
+    "objectId": "CAB-972aa5e83d577ab7b048f77582467d33__2406908626650120177",
+    "width": 52,
+    "height": 52,
+    "border": [
+      24.0,
+      24.0,
+      24.0,
+      24.0
+    ]
+  },
+  "bg_common_r8_p2": {
+    "file": "bg_common_r8_p2.png",
+    "objectId": "CAB-dd19a3b5af3a1f10591891df60561850__3718706520330752490",
+    "width": 66,
+    "height": 66,
+    "border": [
+      14.0,
+      14.0,
+      14.0,
+      14.0
+    ]
+  },
+  "bg_common_r21_p2": {
+    "file": "bg_common_r21_p2.png",
+    "objectId": "CAB-4b5ec4694c532299b6753cca407c6019__1220555917741013082",
+    "width": 79,
+    "height": 46,
+    "border": [
+      31.0,
+      0.0,
+      34.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_19": {
+    "file": "deco_fac_blueprint_19.png",
+    "objectId": "CAB-eebd5b7f2d78056693902a1cb0d49dbf__-3505674900163697333",
+    "width": 36,
+    "height": 16,
+    "border": [
+      3.0,
+      0.0,
+      11.0,
+      0.0
+    ]
+  },
+  "deco_item_dot": {
+    "file": "deco_item_dot.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__8324944793443166876",
+    "width": 34,
+    "height": 4,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_change_btn": {
+    "file": "bg_fac_blueprint_change_btn.png",
+    "objectId": "CAB-ec2bf85501ca79266e8223420af2f84b__-6087012938511218770",
+    "width": 64,
+    "height": 64,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "cover_quality_frame04": {
+    "file": "cover_quality_frame04.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-286284847029151256",
+    "width": 115,
+    "height": 115,
+    "border": [
+      54.0,
+      54.0,
+      54.0,
+      53.0
+    ]
+  },
+  "icon_key_q": {
+    "file": "icon_key_q.png",
+    "objectId": "CAB-e3735612eb7d5836d410ad61fc4fbb9f__2652181570802380739",
+    "width": 48,
+    "height": 48,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_more": {
+    "file": "bg_fac_blueprint_more.png",
+    "objectId": "CAB-c52a77341ae43ba808b41388a99900ff__8750708413022661032",
+    "width": 44,
+    "height": 44,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_2": {
+    "file": "deco_fac_blueprint_2.png",
+    "objectId": "CAB-79c355c03e494fc8c84dabfec8cb843a__-3640755091260409602",
+    "width": 28,
+    "height": 28,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_emptymark_img": {
+    "file": "icon_emptymark_img.png",
+    "objectId": "CAB-2a0ae329fb4d4d0e9e5ff05b2b4ca767__8889189638959826799",
+    "width": 26,
+    "height": 26,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_shareable_short": {
+    "file": "bg_fac_blueprint_shareable_short.png",
+    "objectId": "CAB-7e929448b9d6329b28a69037879f95e2__3716447218803462031",
+    "width": 232,
+    "height": 56,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_9": {
+    "file": "deco_fac_blueprint_9.png",
+    "objectId": "CAB-33390fd8d5167cc56a8747ee0cad9f4a__-6977520356862006916",
+    "width": 56,
+    "height": 748,
+    "border": [
+      20.0,
+      0.0,
+      20.0,
+      700.0
+    ]
+  },
+  "icon_btn_common_add": {
+    "file": "icon_btn_common_add.png",
+    "objectId": "CAB-10f564be6a51e2d478be54c3ab54a2b6__3700680889324844232",
+    "width": 24,
+    "height": 24,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_change_bg": {
+    "file": "bg_fac_blueprint_change_bg.png",
+    "objectId": "CAB-a6c9ae349733b1b1358505b979b68db6__-5640400866799231964",
+    "width": 46,
+    "height": 46,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_25": {
+    "file": "deco_fac_blueprint_25.png",
+    "objectId": "CAB-1931b42d246a0e04e017bb0ffb8b4ca9__-3010283541223735588",
+    "width": 568,
+    "height": 484,
+    "border": [
+      200.0,
+      200.0,
+      200.0,
+      200.0
+    ]
+  },
+  "icon_playstation_touchpanel": {
+    "file": "icon_playstation_touchpanel.png",
+    "objectId": "CAB-474a375891ed5dbef8d9bf348f48b360__-1605178064964632870",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_edit": {
+    "file": "icon_fac_blueprint_edit.png",
+    "objectId": "CAB-e3675775de3787141dd8c56bc156f757__678728721908462113",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_friend_sony": {
+    "file": "icon_friend_sony.png",
+    "objectId": "CAB-5f6a225d6033240b64dfdb22b7c22b2b__3003957307604233717",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_btn_contour_lines": {
+    "file": "deco_btn_contour_lines.png",
+    "objectId": "CAB-10f564be6a51e2d478be54c3ab54a2b6__3363654689493422891",
+    "width": 340,
+    "height": 68,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_share_3": {
+    "file": "bg_fac_blueprint_share_3.png",
+    "objectId": "CAB-94ce0a3517d2944e4022520bda26a927__7322289092421497032",
+    "width": 304,
+    "height": 80,
+    "border": [
+      283.0,
+      0.0,
+      17.0,
+      0.0
+    ]
+  },
+  "bg_common_r2_p2_02": {
+    "file": "bg_common_r2_p2_02.png",
+    "objectId": "CAB-4d5e8aa8d242907170fbb7dc50f49566__148237939410474912",
+    "width": 58,
+    "height": 58,
+    "border": [
+      18.0,
+      24.0,
+      26.0,
+      27.0
+    ]
+  },
+  "icon_empty": {
+    "file": "icon_empty.png",
+    "objectId": "CAB-d7d148ba9e5d3712530027dcee86eb4d__8171172502993898998",
+    "width": 32,
+    "height": 32,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "common_scroll_bar_bg_p20": {
+    "file": "common_scroll_bar_bg_p20.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-9026979940661702187",
+    "width": 4,
+    "height": 8,
+    "border": [
+      0.0,
+      3.0,
+      0.0,
+      4.0
+    ]
+  },
+  "deco_fac_blueprint_tag_parentheses": {
+    "file": "deco_fac_blueprint_tag_parentheses.png",
+    "objectId": "CAB-9e4331b8319f96084b47d75c6d992b4e__4649217343694521429",
+    "width": 20,
+    "height": 40,
+    "border": [
+      0.0,
+      20.0,
+      0.0,
+      20.0
+    ]
+  },
+  "icon_industrial_plan_hongs_1": {
+    "file": "icon_industrial_plan_hongs_1.png",
+    "objectId": "CAB-0d904612e5681eb8d7257ab707aebcb3__-5424559822692816079",
+    "width": 112,
+    "height": 112,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_26": {
+    "file": "deco_fac_blueprint_26.png",
+    "objectId": "CAB-511da4413f9888979ba2a2b396b87428__-71835457781502784",
+    "width": 436,
+    "height": 440,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_input": {
+    "file": "bg_fac_blueprint_input.png",
+    "objectId": "CAB-f550abc2d7370fad760f7130c0753d9b__3244192006379928317",
+    "width": 44,
+    "height": 44,
+    "border": [
+      18.0,
+      18.0,
+      18.0,
+      18.0
+    ]
+  },
+  "close_btn_bg_shadeless": {
+    "file": "close_btn_bg_shadeless.png",
+    "objectId": "CAB-a97e797f75f0b3f53e620b4c3ee9b419__-7184788762192864295",
+    "width": 78,
+    "height": 78,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_10": {
+    "file": "deco_fac_blueprint_10.png",
+    "objectId": "CAB-56884b2a51018e90222c8ce14e91f3a2__2703520651191681535",
+    "width": 268,
+    "height": 132,
+    "border": [
+      11.0,
+      0.0,
+      243.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_del_bg": {
+    "file": "bg_fac_blueprint_del_bg.png",
+    "objectId": "CAB-e31e0dc6dabf85f4c8faefcbc80e7a9a__4172314309332978356",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_suffix_equipment": {
+    "file": "icon_suffix_equipment.png",
+    "objectId": "CAB-29271183e969ecbd4316d02e51c11751__6646722492290445086",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_base_color_icon": {
+    "file": "deco_fac_blueprint_base_color_icon.png",
+    "objectId": "CAB-c123219a3429b88d3acf26eb804b8bc5__-4077638228770976970",
+    "width": 328,
+    "height": 352,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_common_settlement_icon": {
+    "file": "btn_common_settlement_icon.png",
+    "objectId": "CAB-5fe54b3aac93c12867f6c0b2c5232e13__-4010254669473783731",
+    "width": 60,
+    "height": 60,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_compared_img": {
+    "file": "btn_compared_img.png",
+    "objectId": "CAB-2ff08b81d47e9d5f95e5fda7b802cada__-3353742658481656859",
+    "width": 60,
+    "height": 60,
+    "border": [
+      0.0,
+      30.0,
+      0.0,
+      30.0
+    ]
+  },
+  "icon_fac_blueprint_share_2": {
+    "file": "icon_fac_blueprint_share_2.png",
+    "objectId": "CAB-f67064995b2ee9d6a65a61c85f186261__7138270703873448262",
+    "width": 84,
+    "height": 84,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "line_common_circle_r5_s2_p2": {
+    "file": "line_common_circle_r5_s2_p2.png",
+    "objectId": "CAB-194853e3f1c439c3b26d7e2ad9a7b553__3869277694146729936",
+    "width": 16,
+    "height": 16,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "line_common_r38_s4_p2": {
+    "file": "line_common_r38_s4_p2.png",
+    "objectId": "CAB-02c0eb07cd0a3be65361a2287e2da04e__-3067244781076224590",
+    "width": 84,
+    "height": 80,
+    "border": [
+      41.0,
+      0.0,
+      41.0,
+      0.0
+    ]
+  },
+  "icon_playstation_rightstick_vertical": {
+    "file": "icon_playstation_rightstick_vertical.png",
+    "objectId": "CAB-53e59c7e90422acbdf8bd5177f95f667__-1772438229917916798",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "cover_quality_frame05": {
+    "file": "cover_quality_frame05.png",
+    "objectId": "CAB-9fbeef688d718b28d758bd37366a7e3e__2569584487201006906",
+    "width": 115,
+    "height": 115,
+    "border": [
+      26.0,
+      30.0,
+      32.0,
+      30.0
+    ]
+  },
+  "deco_fac_blueprint_11": {
+    "file": "deco_fac_blueprint_11.png",
+    "objectId": "CAB-7e1c9c73d30e2b5baae8126a309a8506__7128314958537549761",
+    "width": 136,
+    "height": 124,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_5": {
+    "file": "deco_fac_blueprint_5.png",
+    "objectId": "CAB-8a60fc2f37d52285ad8a3641e19f2141__-1178737591978038924",
+    "width": 972,
+    "height": 108,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_suffix_check": {
+    "file": "icon_suffix_check.png",
+    "objectId": "CAB-bc01551222442768e895a5489299597a__4537135317268103528",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_18": {
+    "file": "deco_fac_blueprint_18.png",
+    "objectId": "CAB-1b62351485940f605b2b9f8d1fa57551__823617386897654109",
+    "width": 76,
+    "height": 8,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_base_color": {
+    "file": "deco_fac_blueprint_base_color.png",
+    "objectId": "CAB-0d8cba4da813399b0cdf7cee0eed28a0__1958562348544929348",
+    "width": 120,
+    "height": 120,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_common_shadow_stroke_bg": {
+    "file": "btn_common_shadow_stroke_bg.png",
+    "objectId": "CAB-80b90e28bfa59233f8fdd9e81538793c__6915108197356036671",
+    "width": 68,
+    "height": 68,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_suffix_blueprint_gray": {
+    "file": "icon_suffix_blueprint_gray.png",
+    "objectId": "CAB-8f2b7db6fde878b297d90c1ea7b28aba__367104235856653119",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_btn_mine": {
+    "file": "icon_fac_blueprint_btn_mine.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-7961589088800905698",
+    "width": 60,
+    "height": 60,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_common_hover_bg": {
+    "file": "btn_common_hover_bg.png",
+    "objectId": "CAB-2e2a4fbc76490b2f5867907371ed85d0__-1877471609721093746",
+    "width": 92,
+    "height": 80,
+    "border": [
+      45.0,
+      0.0,
+      45.0,
+      0.0
+    ]
+  },
+  "bg_common_r4_p2_3": {
+    "file": "bg_common_r4_p2_3.png",
+    "objectId": "CAB-6547dd489781072dd1179400be85900b__-2566588850676958305",
+    "width": 38,
+    "height": 38,
+    "border": [
+      12.0,
+      15.0,
+      12.0,
+      14.0
+    ]
+  },
+  "deco_fac_blueprint_handle": {
+    "file": "deco_fac_blueprint_handle.png",
+    "objectId": "CAB-1ebefe354d6b6a2f8002198526cae3e7__-605409715566712938",
+    "width": 100,
+    "height": 112,
+    "border": [
+      46.0,
+      51.0,
+      46.0,
+      43.0
+    ]
+  },
+  "red_dot": {
+    "file": "red_dot.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__1206393168504411954",
+    "width": 48,
+    "height": 48,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_exhibit_icon": {
+    "file": "btn_exhibit_icon.png",
+    "objectId": "CAB-ea224033e3f7999c9736afc321bf05de__-1879355641326830209",
+    "width": 46,
+    "height": 46,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_white_full": {
+    "file": "bg_white_full.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__3028710119131825478",
+    "width": 64,
+    "height": 64,
+    "border": [
+      15.0,
+      13.0,
+      15.0,
+      14.0
+    ]
+  },
+  "bgshadowoutline_common_circle_r27_p2": {
+    "file": "bgshadowoutline_common_circle_r27_p2.png",
+    "objectId": "CAB-929b63200ec0e2be0dac4455e02a0613__-8970597495052216972",
+    "width": 72,
+    "height": 68,
+    "border": [
+      35.0,
+      0.0,
+      35.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_share_1": {
+    "file": "icon_fac_blueprint_share_1.png",
+    "objectId": "CAB-81219b4125534c89039d988629a120f6__-6710586015522257596",
+    "width": 84,
+    "height": 84,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_assembly07_new": {
+    "file": "deco_assembly07_new.png",
+    "objectId": "CAB-d8a1eb584ac5c6dc9bdc9204b7c954c8__4145008257563622",
+    "width": 81,
+    "height": 15,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_24": {
+    "file": "deco_fac_blueprint_24.png",
+    "objectId": "CAB-109a69d0b1ef34eca6bffedd2e24b452__6846201103418293350",
+    "width": 216,
+    "height": 108,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "cover_quality_frame03": {
+    "file": "cover_quality_frame03.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-2417359651710637152",
+    "width": 115,
+    "height": 115,
+    "border": [
+      27.0,
+      28.0,
+      30.0,
+      30.0
+    ]
+  },
+  "icon_fac_blueprint_shareable": {
+    "file": "icon_fac_blueprint_shareable.png",
+    "objectId": "CAB-1f4fc82b73f9690036b54221d782daf4__-729485660100417565",
+    "width": 44,
+    "height": 44,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_20": {
+    "file": "deco_fac_blueprint_20.png",
+    "objectId": "CAB-e8d90cc5b704a4acfbd7ca5fcb754d6c__1774330134188287088",
+    "width": 36,
+    "height": 12,
+    "border": [
+      12.0,
+      0.0,
+      12.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_name": {
+    "file": "deco_fac_blueprint_name.png",
+    "objectId": "CAB-f3245ab0835347fb25aab46f61567df6__4910531095535876542",
+    "width": 16,
+    "height": 24,
+    "border": [
+      8.0,
+      0.0,
+      8.0,
+      0.0
+    ]
+  },
+  "icon_suffix_blueprint": {
+    "file": "icon_suffix_blueprint.png",
+    "objectId": "CAB-befa03e428154b00c9a131a28c7e9b3a__188332693499563222",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_settlement_change_p2": {
+    "file": "icon_settlement_change_p2.png",
+    "objectId": "CAB-19890d2f84c4089a49cebfa38a2673ff__6776937805196254992",
+    "width": 32,
+    "height": 34,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_common_settlement_icon_new": {
+    "file": "btn_common_settlement_icon_new.png",
+    "objectId": "CAB-758a71488a430125e72cd0b4e0343102__-8569575119713634551",
+    "width": 80,
+    "height": 80,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_popup_label": {
+    "file": "icon_fac_blueprint_popup_label.png",
+    "objectId": "CAB-30d86d06c104dcd76c88af163f0a0361__-8897076703737368747",
+    "width": 336,
+    "height": 336,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_item_quality_bar": {
+    "file": "bg_item_quality_bar.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__8772888444283884783",
+    "width": 180,
+    "height": 6,
+    "border": [
+      74.0,
+      0.0,
+      81.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_base_color_select": {
+    "file": "deco_fac_blueprint_base_color_select.png",
+    "objectId": "CAB-c42c19c74d564babd61733b6c5509417__-7101802215402562545",
+    "width": 108,
+    "height": 96,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "wiki_magnifying_glass": {
+    "file": "wiki_magnifying_glass.png",
+    "objectId": "CAB-28dec965b99d394a65c3ce86327dba59__5346187264084192006",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_r15_p2": {
+    "file": "bg_common_r15_p2.png",
+    "objectId": "CAB-039b16ae2f7395b14927f1440c2bd9b4__-8110681748660905344",
+    "width": 54,
+    "height": 34,
+    "border": [
+      24.0,
+      0.0,
+      24.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_icon_btn": {
+    "file": "bg_fac_blueprint_icon_btn.png",
+    "objectId": "CAB-0b1112f134926f63b5485deaec6df3ac__-5710223742177434721",
+    "width": 172,
+    "height": 172,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_audit": {
+    "file": "icon_fac_blueprint_audit.png",
+    "objectId": "CAB-76a5b590368a237519b7bc0a9a8a6dff__7441918840528165866",
+    "width": 44,
+    "height": 44,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_23": {
+    "file": "deco_fac_blueprint_23.png",
+    "objectId": "CAB-8a74bae532c86d857e67bea29a51a6b6__5093969791065336297",
+    "width": 56,
+    "height": 16,
+    "border": [
+      2.0,
+      0.0,
+      37.0,
+      0.0
+    ]
+  },
+  "btn_close_search_bg": {
+    "file": "btn_close_search_bg.png",
+    "objectId": "CAB-99d427e1bff55d255ea5b8f060b40e65__-6782124377484454393",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_circle_r11_p2": {
+    "file": "bg_common_circle_r11_p2.png",
+    "objectId": "CAB-123119dcf9108ca1ecf61600c682617d__-3453723496289305164",
+    "width": 24,
+    "height": 24,
+    "border": [
+      14.0,
+      0.0,
+      10.0,
+      0.0
+    ]
+  },
+  "bg_item_mask_common_120": {
+    "file": "bg_item_mask_common_120.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__8224571665661269695",
+    "width": 120,
+    "height": 120,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_deco_conditioner_mask": {
+    "file": "bg_deco_conditioner_mask.png",
+    "objectId": "CAB-91739a1d1c247af342ec839dfdb6fce9__-4659281009844730684",
+    "width": 39,
+    "height": 193,
+    "border": [
+      15.0,
+      0.0,
+      12.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_size": {
+    "file": "deco_fac_blueprint_size.png",
+    "objectId": "CAB-dd433bbd97cdd723a816418b674b7e1f__870291200842727513",
+    "width": 24,
+    "height": 24,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_8": {
+    "file": "deco_fac_blueprint_8.png",
+    "objectId": "CAB-ef236c5b59e6336d822e40c95cc22846__4186056072110701304",
+    "width": 228,
+    "height": 248,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "new_bg": {
+    "file": "new_bg.png",
+    "objectId": "CAB-14ad054d0b3ecb6415a9d756f0373a0d__-315661501574421994",
+    "width": 65,
+    "height": 34,
+    "border": [
+      29.0,
+      0.0,
+      29.0,
+      0.0
+    ]
+  },
+  "icon_settlement_point": {
+    "file": "icon_settlement_point.png",
+    "objectId": "CAB-59c737ad8282621e5d8c4834823f1e68__-8611292647589600922",
+    "width": 6,
+    "height": 18,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      9.0
+    ]
+  },
+  "bg_fac_blueprint_share_4": {
+    "file": "bg_fac_blueprint_share_4.png",
+    "objectId": "CAB-36f653d4a5112057c8994afe5782b1c5__-7317909787567392443",
+    "width": 332,
+    "height": 82,
+    "border": [
+      300.0,
+      0.0,
+      20.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_bg_yellow": {
+    "file": "icon_fac_blueprint_bg_yellow.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-8096999823961928484",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_change_usable_props": {
+    "file": "icon_fac_blueprint_change_usable_props.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-7408816910632267736",
+    "width": 152,
+    "height": 152,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_bg_purple": {
+    "file": "icon_fac_blueprint_bg_purple.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-6842265377003829059",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_change_industrial_products": {
+    "file": "icon_fac_blueprint_change_industrial_products.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-3105797245876461727",
+    "width": 152,
+    "height": 152,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_change_precious_materials": {
+    "file": "icon_fac_blueprint_change_precious_materials.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-2623924683905823804",
+    "width": 152,
+    "height": 152,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_bg_green": {
+    "file": "icon_fac_blueprint_bg_green.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-2507683419899835402",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_bg_cyan": {
+    "file": "icon_fac_blueprint_bg_cyan.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__-2221135365818642528",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_bg_orange": {
+    "file": "icon_fac_blueprint_bg_orange.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__48179047977253091",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_change_collected_materials": {
+    "file": "icon_fac_blueprint_change_collected_materials.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__201162909968567977",
+    "width": 152,
+    "height": 152,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_bg_gray": {
+    "file": "icon_fac_blueprint_bg_gray.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__1823454998179002163",
+    "width": 256,
+    "height": 256,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_btn_system": {
+    "file": "icon_fac_blueprint_btn_system.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__2096976114233955372",
+    "width": 60,
+    "height": 60,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_btn_shared": {
+    "file": "icon_fac_blueprint_btn_shared.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__4500166854138118708",
+    "width": 60,
+    "height": 60,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_change_natural_resources": {
+    "file": "icon_fac_blueprint_change_natural_resources.png",
+    "objectId": "CAB-a26643d9a2fe7e88a40fe98e036ef6df__9063926485556426870",
+    "width": 152,
+    "height": 152,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_item_rarity_bar_sp": {
+    "file": "bg_item_rarity_bar_sp.png",
+    "objectId": "CAB-aec25147f167be6bb128eda090ca491a__-8612962659130358846",
+    "width": 120,
+    "height": 49,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_item_addon_sp_type_icon": {
+    "file": "bg_item_addon_sp_type_icon.png",
+    "objectId": "CAB-aec25147f167be6bb128eda090ca491a__-1416064841591976685",
+    "width": 104,
+    "height": 104,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_empty_2": {
+    "file": "deco_fac_blueprint_empty_2.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__-9213262927799927068",
+    "width": 304,
+    "height": 332,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_BaseMap": {
+    "file": "bg_common_BaseMap.png",
+    "objectId": "CAB-4b5ec4694c532299b6753cca407c6019__-4694853232896180352",
+    "width": 4,
+    "height": 4,
+    "border": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "icon_common_select_03": {
+    "file": "icon_common_select_03.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__7683217049081262273",
+    "width": 40,
+    "height": 40,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_rightdrop_bg01": {
+    "file": "btn_rightdrop_bg01.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-7822761875771390107",
+    "width": 30,
+    "height": 54,
+    "border": [
+      0.0,
+      0.0,
+      28.0,
+      0.0
+    ]
+  },
+  "deco_frame_arrow01": {
+    "file": "deco_frame_arrow01.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-6068332178533166944",
+    "width": 51,
+    "height": 101,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_import_big": {
+    "file": "icon_fac_blueprint_import_big.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__-6399285720514070226",
+    "width": 148,
+    "height": 148,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_order01": {
+    "file": "icon_order01.png",
+    "objectId": "CAB-753504aaee2ffdf4abecff1b9c6f076b__3331862289719549977",
+    "width": 50,
+    "height": 50,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_005_default": {
+    "file": "btn_005_default.png",
+    "objectId": "CAB-10f564be6a51e2d478be54c3ab54a2b6__2736045567979395361",
+    "width": 64,
+    "height": 64,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_shadow_r27_p2": {
+    "file": "bg_common_shadow_r27_p2.png",
+    "objectId": "CAB-f010213a1de7640d85ae26eafd2a8a8b__6015772124187149240",
+    "width": 124,
+    "height": 102,
+    "border": [
+      52.0,
+      0.0,
+      52.0,
+      0.0
+    ]
+  },
+  "bg_common_r25_p2": {
+    "file": "bg_common_r25_p2.png",
+    "objectId": "CAB-ed8ada50039d419de2ac0e2d16600f64__-210958360747483704",
+    "width": 64,
+    "height": 64,
+    "border": [
+      27.0,
+      0.0,
+      28.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_14": {
+    "file": "deco_fac_blueprint_14.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__1870641329765339804",
+    "width": 380,
+    "height": 248,
+    "border": [
+      8.0,
+      0.0,
+      253.0,
+      0.0
+    ]
+  },
+  "btn_common_d54": {
+    "file": "btn_common_d54.png",
+    "objectId": "CAB-eb896a6c7d80ef260f3c49898573823d__-7331742705996630966",
+    "width": 78,
+    "height": 78,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "ui_main_menu_arrow": {
+    "file": "ui_main_menu_arrow.png",
+    "objectId": "CAB-465cadfd63048132c32bb7fc69243dd5__5212326347193956327",
+    "width": 45,
+    "height": 23,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_r38_p2": {
+    "file": "bg_common_r38_p2.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__-3075573371344498656",
+    "width": 84,
+    "height": 80,
+    "border": [
+      40.0,
+      0.0,
+      40.0,
+      0.0
+    ]
+  },
+  "bg_btn_valuable_depot_equip": {
+    "file": "bg_btn_valuable_depot_equip.png",
+    "objectId": "CAB-8436c93cc564a73c84dd9eb5e57d6886__4954849926759956206",
+    "width": 320,
+    "height": 54,
+    "border": [
+      122.0,
+      0.0,
+      82.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_create": {
+    "file": "icon_fac_blueprint_create.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__3913511407337090295",
+    "width": 104,
+    "height": 104,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_10_10_00_00_p2": {
+    "file": "bg_common_10_10_00_00_p2.png",
+    "objectId": "CAB-16f3fd91898637f3fd80dfe949583024__5928980412999821092",
+    "width": 54,
+    "height": 54,
+    "border": [
+      20.0,
+      20.0,
+      20.0,
+      20.0
+    ]
+  },
+  "deco_fac_blueprint_7": {
+    "file": "deco_fac_blueprint_7.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__3793621445080363582",
+    "width": 28,
+    "height": 4,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_number_back": {
+    "file": "icon_number_back.png",
+    "objectId": "CAB-f1bbdc92dc340971a6d4dfb701bba212__4081848260754326272",
+    "width": 31,
+    "height": 31,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_1": {
+    "file": "deco_fac_blueprint_1.png",
+    "objectId": "CAB-80fe681aa7cbb8c9619aa842a40b67e6__-6395633582996613424",
+    "width": 1480,
+    "height": 760,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_create_big": {
+    "file": "icon_fac_blueprint_create_big.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__2485829709318809677",
+    "width": 148,
+    "height": 148,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_icon_bg": {
+    "file": "deco_fac_blueprint_icon_bg.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__2318450551091574920",
+    "width": 196,
+    "height": 236,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_shareable_long": {
+    "file": "bg_fac_blueprint_shareable_long.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__-375417804516018966",
+    "width": 276,
+    "height": 56,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_shadow_r10_p2": {
+    "file": "bg_common_shadow_r10_p2.png",
+    "objectId": "CAB-4e487e313bb410f31f1eb92e379c8aba__-2695726130118582272",
+    "width": 98,
+    "height": 98,
+    "border": [
+      45.0,
+      45.0,
+      45.0,
+      45.0
+    ]
+  },
+  "deco_fac_blueprint_15": {
+    "file": "deco_fac_blueprint_15.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__-3141136392831626137",
+    "width": 228,
+    "height": 180,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_leftdrop_bg": {
+    "file": "btn_leftdrop_bg.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__3995932308728225983",
+    "width": 34,
+    "height": 63,
+    "border": [
+      31.0,
+      0.0,
+      1.0,
+      0.0
+    ]
+  },
+  "line_common_circle_r27_s2_p2": {
+    "file": "line_common_circle_r27_s2_p2.png",
+    "objectId": "CAB-76a992627bd36bfa531cf1034dad1aa2__-6302774157804668827",
+    "width": 60,
+    "height": 56,
+    "border": [
+      28.0,
+      0.0,
+      30.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_del": {
+    "file": "icon_fac_blueprint_del.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__1861857433380281646",
+    "width": 32,
+    "height": 8,
+    "border": [
+      13.0,
+      0.0,
+      15.0,
+      0.0
+    ]
+  },
+  "icon_common_screen": {
+    "file": "icon_common_screen.png",
+    "objectId": "CAB-3e6998eb7e93c5aab94ad1389c91f25a__8918963904509477066",
+    "width": 60,
+    "height": 60,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_audit_long": {
+    "file": "bg_fac_blueprint_audit_long.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__8940383762168768080",
+    "width": 276,
+    "height": 56,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_playstation_leftstickbtn": {
+    "file": "icon_playstation_leftstickbtn.png",
+    "objectId": "CAB-805bcc1db97374176b94c7153b6fd1f8__7648812396021225786",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_drop_bg": {
+    "file": "btn_drop_bg.png",
+    "objectId": "CAB-0d42a4d6ed149fa6829643a59f9fddf4__475095956772456772",
+    "width": 58,
+    "height": 54,
+    "border": [
+      28.0,
+      0.0,
+      28.0,
+      0.0
+    ]
+  },
+  "bg_fac_blueprint_btn": {
+    "file": "bg_fac_blueprint_btn.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__-1257619178773521689",
+    "width": 116,
+    "height": 76,
+    "border": [
+      21.0,
+      0.0,
+      15.0,
+      0.0
+    ]
+  },
+  "deco_fac_blueprint_empty_1": {
+    "file": "deco_fac_blueprint_empty_1.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__-746432432894939972",
+    "width": 80,
+    "height": 112,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_common_shadow_r2": {
+    "file": "bg_common_shadow_r2.png",
+    "objectId": "CAB-82e4e6203d822c4daceffc452da948a7__-2359257309429851562",
+    "width": 20,
+    "height": 26,
+    "border": [
+      0.0,
+      11.0,
+      0.0,
+      12.0
+    ]
+  },
+  "icon_common_filter": {
+    "file": "icon_common_filter.png",
+    "objectId": "CAB-8b250c443daa0b772b10322ce2fa6f76__4284451149769363977",
+    "width": 60,
+    "height": 60,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_valuabledepot_1": {
+    "file": "bg_valuabledepot_1.png",
+    "objectId": "CAB-31c681f8fe3834454941f427ac16741c__1339702365367976314",
+    "width": 60,
+    "height": 50,
+    "border": [
+      29.0,
+      0.0,
+      29.0,
+      0.0
+    ]
+  },
+  "btn_004_default": {
+    "file": "btn_004_default.png",
+    "objectId": "CAB-10f564be6a51e2d478be54c3ab54a2b6__2220252795395330903",
+    "width": 68,
+    "height": 68,
+    "border": [
+      31.0,
+      0.0,
+      31.0,
+      0.0
+    ]
+  },
+  "btn_rightdrop_bg": {
+    "file": "btn_rightdrop_bg.png",
+    "objectId": "CAB-f217e169ee1f06211c9412161331ea4b__-1811266948787357083",
+    "width": 34,
+    "height": 63,
+    "border": [
+      1.0,
+      0.0,
+      31.0,
+      0.0
+    ]
+  },
+  "icon_suffix_confirm": {
+    "file": "icon_suffix_confirm.png",
+    "objectId": "CAB-d42f56a20844f5a0753fd8b74ca4ae20__-857789033820651021",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_fac_blueprint_import": {
+    "file": "icon_fac_blueprint_import.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__2542009201857894924",
+    "width": 104,
+    "height": 104,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "line_common_circle_r27_p2": {
+    "file": "line_common_circle_r27_p2.png",
+    "objectId": "CAB-5d5106f28ef67d08e2e8196505d53ba5__-4936067929631970793",
+    "width": 68,
+    "height": 62,
+    "border": [
+      32.0,
+      0.0,
+      32.0,
+      0.0
+    ]
+  },
+  "btn_004_default_black": {
+    "file": "btn_004_default_black.png",
+    "objectId": "CAB-0b8a110939f83fcb0581aa34db5b25fd__5759499272222564644",
+    "width": 68,
+    "height": 68,
+    "border": [
+      31.0,
+      0.0,
+      31.0,
+      0.0
+    ]
+  },
+  "btn_common_function_bgred": {
+    "file": "btn_common_function_bgred.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__9128356621537294813",
+    "width": 80,
+    "height": 80,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "btn_sort_selected_bg": {
+    "file": "btn_sort_selected_bg.png",
+    "objectId": "CAB-778a150dfc12dc9eeaf272f996ed9064__-1086213454759654147",
+    "width": 52,
+    "height": 52,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_playstation_b": {
+    "file": "icon_playstation_b.png",
+    "objectId": "CAB-1d3300f3d281507e369c39ce1af808bb__-9047661159100050311",
+    "width": 74,
+    "height": 74,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "icon_delete_28": {
+    "file": "icon_delete_28.png",
+    "objectId": "CAB-b7e7c7ce31525b8bc37e39b2869fd5d7__-2912008576288318746",
+    "width": 28,
+    "height": 28,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "deco_sort_split_line": {
+    "file": "deco_sort_split_line.png",
+    "objectId": "CAB-818529e99890611f426ad9ba99277c2d__8140986905462431521",
+    "width": 4,
+    "height": 36,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "blueprint_default_icon": {
+    "file": "blueprint_default_icon.png",
+    "objectId": "CAB-f4c297749466b8864259039765483efd__7511783389093536040",
+    "width": 126,
+    "height": 126,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bg_item_big_line_black": {
+    "file": "bg_item_big_line_black.png",
+    "objectId": "CAB-74296198fdacaacc2f015970bab7cf8c__5830773080794003635",
+    "width": 200,
+    "height": 200,
+    "border": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

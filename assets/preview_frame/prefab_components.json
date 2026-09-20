@@ -1,0 +1,355 @@
+{
+  "FacSaveBlueprintPanel/Main/RightNode/AniamtionNode/BG/LightImage": {
+    "transform": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": -4667248906254515094
+      },
+      "m_LocalRotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "m_LocalPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "m_LocalScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "m_Children": [],
+      "m_Father": {
+        "m_FileID": 0,
+        "m_PathID": -4796220776126446486
+      },
+      "m_AnchorMin": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "m_AnchorMax": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "m_AnchoredPosition": {
+        "x": -17.5,
+        "y": 0.0
+      },
+      "m_SizeDelta": {
+        "x": -49.0,
+        "y": 0.0
+      },
+      "m_Pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "active": true,
+    "sprite": "deco_fac_blueprint_light",
+    "color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+    },
+    "type": 0
+  },
+  "FacSaveBlueprintPanel/Main/RightNode/AniamtionNode/BG/RightNode/DecoImage/DecoImage (1)": {
+    "transform": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": -6863141409638546326
+      },
+      "m_LocalRotation": {
+        "x": -0.0,
+        "y": -0.0,
+        "z": -0.0,
+        "w": 1.0
+      },
+      "m_LocalPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "m_LocalScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "m_Children": [],
+      "m_Father": {
+        "m_FileID": 0,
+        "m_PathID": 277269112214881386
+      },
+      "m_AnchorMin": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "m_AnchorMax": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "m_AnchoredPosition": {
+        "x": 0.0,
+        "y": -1185.0
+      },
+      "m_SizeDelta": {
+        "x": 24.0,
+        "y": 1185.0
+      },
+      "m_Pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "active": true,
+    "sprite": "deco_fac_blueprint_29",
+    "color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+    },
+    "type": 2
+  },
+  "FacSaveBlueprintPanel/Main/TopNode/RightNode/DecoImage": {
+    "transform": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 8029480817004545130
+      },
+      "m_LocalRotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "m_LocalPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "m_LocalScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "m_Children": [],
+      "m_Father": {
+        "m_FileID": 0,
+        "m_PathID": 7480117493696201834
+      },
+      "m_AnchorMin": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "m_AnchorMax": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "m_AnchoredPosition": {
+        "x": -427.2,
+        "y": -1.4
+      },
+      "m_SizeDelta": {
+        "x": 356.0,
+        "y": 60.0
+      },
+      "m_Pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "active": true,
+    "sprite": "deco_fac_blueprint_28",
+    "color": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0,
+      "a": 0.2
+    },
+    "type": 0
+  },
+  "FacSaveBlueprintPanel/Main/RightNode/AniamtionNode/BG/Bg1Image": {
+    "transform": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 7054863192046011498
+      },
+      "m_LocalRotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "m_LocalPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "m_LocalScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "m_Children": [],
+      "m_Father": {
+        "m_FileID": 0,
+        "m_PathID": -4796220776126446486
+      },
+      "m_AnchorMin": {
+        "x": 0.0,
+        "y": 1.0
+      },
+      "m_AnchorMax": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "m_AnchoredPosition": {
+        "x": -13.999994,
+        "y": 0.0
+      },
+      "m_SizeDelta": {
+        "x": -41.99999,
+        "y": 368.0
+      },
+      "m_Pivot": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    "active": true,
+    "sprite": "deco_fac_blueprint_30",
+    "color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+    },
+    "type": 2
+  },
+  "FacSaveBlueprintPanel/Main/RightNode/AniamtionNode/BG/Deco2Image": {
+    "transform": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 5530485496845010026
+      },
+      "m_LocalRotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "m_LocalPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "m_LocalScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "m_Children": [],
+      "m_Father": {
+        "m_FileID": 0,
+        "m_PathID": -4796220776126446486
+      },
+      "m_AnchorMin": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "m_AnchorMax": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "m_AnchoredPosition": {
+        "x": -40.0,
+        "y": 0.5
+      },
+      "m_SizeDelta": {
+        "x": 212.0,
+        "y": 212.0
+      },
+      "m_Pivot": {
+        "x": 1.0,
+        "y": 1.0
+      }
+    },
+    "active": true,
+    "sprite": "icon_fac_blueprint_save_big",
+    "color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+    },
+    "type": 0
+  },
+  "FacSaveBlueprintPanel/Main/RightNode/AniamtionNode/BG/RightNode/DecoImage": {
+    "transform": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": -2984099155127860118
+      },
+      "m_LocalRotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "m_LocalPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "m_LocalScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "m_Children": [
+        {
+          "m_FileID": 0,
+          "m_PathID": 1342594325475329130
+        }
+      ],
+      "m_Father": {
+        "m_FileID": 0,
+        "m_PathID": 3514173117696869482
+      },
+      "m_AnchorMin": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "m_AnchorMax": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "m_AnchoredPosition": {
+        "x": 1.0,
+        "y": 215.12355
+      },
+      "m_SizeDelta": {
+        "x": 24.0,
+        "y": 1185.0
+      },
+      "m_Pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "active": true,
+    "sprite": "deco_fac_blueprint_29",
+    "color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+    },
+    "type": 2
+  }
+}

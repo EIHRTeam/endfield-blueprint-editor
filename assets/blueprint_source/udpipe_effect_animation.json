@@ -1,0 +1,347 @@
+{
+  "sourceObject": "CAB-e8883568f763e689446065b4264c20d7__-8835219012236905992.json",
+  "name": "fac_bp_preview_udpipe_state_slcloop",
+  "sampleTime": 0.5,
+  "curves": [
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_AnchoredPosition.x",
+      "path": "SelectedFrame1",
+      "classID": 224,
+      "script": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 1.0,
+            "value": -40.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_SizeDelta.x",
+      "path": "SelectedFrame1",
+      "classID": 224,
+      "script": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_AnchoredPosition.y",
+      "path": "SelectedFrame1",
+      "classID": 224,
+      "script": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 1.0,
+            "value": -40.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_SizeDelta.y",
+      "path": "SelectedFrame1",
+      "classID": 224,
+      "script": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_Color.a",
+      "path": "SelectedFrame1",
+      "classID": 114,
+      "script": {
+        "m_FileID": 1,
+        "m_PathID": -4167318944366303535
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 0.8333333,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_AnchoredPosition.x",
+      "path": "SelectedFrame2",
+      "classID": 224,
+      "script": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 0.8333333,
+            "value": -60.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_SizeDelta.x",
+      "path": "SelectedFrame2",
+      "classID": 224,
+      "script": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 0.8333333,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_AnchoredPosition.y",
+      "path": "SelectedFrame2",
+      "classID": 224,
+      "script": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 0.8333333,
+            "value": -60.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_SizeDelta.y",
+      "path": "SelectedFrame2",
+      "classID": 224,
+      "script": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    },
+    {
+      "curve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          },
+          {
+            "time": 0.8333333,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.33333334,
+            "outWeight": 0.33333334
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "attribute": "m_Color.a",
+      "path": "SelectedFrame2",
+      "classID": 114,
+      "script": {
+        "m_FileID": 1,
+        "m_PathID": -4167318944366303535
+      }
+    }
+  ]
+}
