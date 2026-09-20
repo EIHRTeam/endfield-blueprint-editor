@@ -1,0 +1,60 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "import", "jsx-a11y", "unicorn", "typescript", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error"
+  },
+  "env": {
+    "browser": true,
+    "es2024": true
+  },
+  "rules": {
+    "no-control-regex": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off",
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "assert": "either"
+      }
+    ],
+    "unicorn/prefer-dom-node-text-content": "off",
+    "unicorn/no-null": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error", "info"]
+      }
+    ],
+    "unicorn/prefer-add-event-listener": "off",
+    "unicorn/require-post-message-target-origin": "off",
+    "unicorn/no-array-sort": "off",
+    "react/immutability": "warn",
+    "react/memo-dependencies": "off",
+    "react/exhaustive-effect-dependencies": "off"
+  },
+  "overrides": [
+    {
+      "files": ["scripts/**", "tests/**"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "no-console": "off",
+        "no-await-in-loop": "off",
+        "unicorn/consistent-function-scoping": "off",
+        "unicorn/no-process-exit": "off"
+      }
+    },
+    {
+      "files": ["src/app/**/*.tsx", "src/features/**/*.tsx", "src/render/**/*.ts"],
+      "rules": {
+        "react-hooks/exhaustive-deps": "error"
+      }
+    }
+  ],
+  "ignorePatterns": ["dist", "vendor", "node_modules", "reports", "release", "src/bake/python"]
+}

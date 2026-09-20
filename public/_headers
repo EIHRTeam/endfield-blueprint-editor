@@ -1,0 +1,28 @@
+# Cloudflare Pages cache policy.
+#
+# `/assets/*` is safe to cache forever: Vite content-addresses the hashed chunk names, and the
+# copied font chunks are already content-hashed by cn-font-split. Everything else is revalidated so
+# a rebuild is picked up without a purge.
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/pyodide/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+/assets-manifest.json
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# Baking inputs: their content does not change between deploys, but the names are not hashed.
+/data/*
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff
+
+/examples/*
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff

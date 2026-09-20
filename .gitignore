@@ -4,6 +4,9 @@
 /reports/
 /research/
 
+# Vendored WASM runtime and wheels, staged by scripts/vendor_pyodide.mjs (postinstall)
+/vendor/
+
 # Dependencies and interpreter caches
 node_modules/
 .pnpm-store/
