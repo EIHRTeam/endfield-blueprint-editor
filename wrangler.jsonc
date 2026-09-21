@@ -1,0 +1,10 @@
+{
+  // Cloudflare Pages configuration.
+  //
+  // The site is fully static: `pnpm build` emits a multi-chunk ES module app plus the vendored
+  // Pyodide runtime and the source artwork. Nothing runs at the edge, and no Functions are used.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "endfield-blueprint-editor",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-09-01",
+}

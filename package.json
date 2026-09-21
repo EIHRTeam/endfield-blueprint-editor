@@ -2,22 +2,46 @@
   "name": "endfield-blueprint-editor",
   "version": "0.1.0",
   "private": true,
-  "license": "UNLICENSED",
-  "packageManager": "pnpm@11.19.0",
   "description": "Offline Endfield blueprint drawing and full preview export tool",
+  "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
-    "build": "python scripts/build.py",
-    "start": "python scripts/serve.py",
-    "test": "node scripts/test.cjs",
-    "verify-inputs": "python scripts/verify_inputs.py",
-    "smoke": "python scripts/smoke.py",
-    "example": "node scripts/generate_example.cjs",
-    "release": "python scripts/package_release.py"
+    "postinstall": "node scripts/vendor_pyodide.mjs",
+    "dev": "vite",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.node.json",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check src scripts tests vite.config.ts index.html",
+    "build": "pnpm typecheck && pnpm lint && pnpm format:check && vite build && pnpm verify:dist",
+    "preview": "vite preview --host 127.0.0.1",
+    "vendor:pyodide": "node scripts/vendor_pyodide.mjs",
+    "verify:inputs": "node scripts/verify_inputs.mjs",
+    "verify:dist": "node scripts/verify_dist.mjs",
+    "test": "node scripts/test.mjs",
+    "release": "node scripts/package_release.mjs"
+  },
+  "dependencies": {
+    "pyodide": "314.0.7",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "playwright": "1.62.1"
+    "@rolldown/plugin-babel": "0.2.4",
+    "@types/node": "26.6.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "babel-plugin-react-compiler": "1.0.0",
+    "oxc-transform-react": "0.145.0",
+    "oxfmt": "0.68.0",
+    "oxlint": "1.83.0",
+    "playwright": "1.63.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "vite-plugin-static-copy": "4.1.1"
   },
   "engines": {
-    "node": ">=20"
-  }
+    "node": ">=22.12"
+  },
+  "packageManager": "pnpm@11.19.0"
 }

@@ -6,72 +6,105 @@
 
 这是非官方的静态制图工具，不模拟生产、过滤、供电或账号解锁。保存的 JSON 是本工具的布局文件，不是游戏分享码。
 
-## 直接使用
+## 运行方式
 
-取得便携包 `endfield-blueprint-editor-版本号-portable.zip` 后，解压并用 Chrome / Edge 打开其中的 `blueprint_editor.html`。图片和 HarmonyOS Sans SC 字体均已内嵌，使用时无需联网或安装依赖。
-
-**GitHub 的源码下载包需要先构建**，其中不包含生成的 `dist/`。本地构建方法见下一节；维护者可按[发布说明](docs/development.md#生成发布包)生成便携包。
-
-1. 从左侧搜索设备，点击画布摆放；拖动设备移动，按 R 旋转。
-2. 选中设备后设置物品图标、环境条、状态角标及接口显示。
-3. 点击顶部「蓝图预览」，编辑名称、封面、创作者 ID、标签和描述。尺寸、设备图卡及数量根据布局自动生成。
-4. 「导出完整预览 PNG」保存蓝图和右侧详情；「导出画布 PNG」只保存布局，可选透明背景。
-5. 使用「保存 JSON」保留可继续编辑的文件。浏览器草稿按访问地址保存，换浏览器、端口或电脑前请先导出 JSON。
-
-## 从源码构建
-
-需要 Python 3.10+；当前验证环境为 Python 3.14。建议在虚拟环境中安装依赖。
+这是一个纯前端应用，部署到 Cloudflare Pages，也可以完全在本机运行。**它必须通过 HTTP 打开，不能双击 `index.html`**：应用以多 chunk 的 ES module 分发，并在浏览器内加载 WebAssembly 运行时，`file://` 协议下模块加载与数据请求都会被浏览器拒绝。
 
 ```sh
-python -m pip install -r requirements.txt
-python scripts/verify_inputs.py
-python scripts/build.py
-python scripts/serve.py
+pnpm install     # 同时会下载并校验 Pyodide 运行时与 Pillow wheel
+pnpm dev         # 开发服务器
+pnpm build       # 类型检查 + 构建 + 部署形态检查
+pnpm preview     # 预览构建产物
 ```
 
-最后一条命令会打开 `http://127.0.0.1:8769/blueprint_editor.html`。关闭服务后仍可直接用浏览器打开 `dist/blueprint_editor.html`。Windows 也可在安装依赖后双击 `build.cmd`，构建完成再双击 `start.cmd`。
+### 首次打开需要合成素材
 
-构建只读取本项目的 PNG、字体与配置，无需游戏安装、原逆向工具包、Unity、Blender 或解包工具。离线成品约 74 MiB；`dist/baked/` 中的中间图片可以重新生成。
+游戏原始素材是 PNG 与配置表，编辑器需要的设备贴图、物品徽标和界面精灵由 **Pyodide 中的 Pillow（WebAssembly）在浏览器里实时合成**。因此：
+
+- 首次打开需要几十秒到几分钟（取决于机器），页面会显示进度；
+- 合成结果会写入 IndexedDB 缓存，之后再次打开会很快；
+- 素材或合成逻辑变化时缓存键会改变，会自动重新合成；
+- 不再需要 Python、构建期图片脚本或游戏安装。
+
+## 部署到 Cloudflare Pages
+
+仓库已包含 `wrangler.jsonc` 与 `public/_headers`：
+
+| 配置项    | 值           |
+| --------- | ------------ |
+| 构建命令  | `pnpm build` |
+| 输出目录  | `dist`       |
+| Node 版本 | 22.12 或更高 |
+
+产物约 1,570 个文件、最大单文件 9.15 MiB（`pyodide.asm.wasm`），满足 Cloudflare Pages 每站点 20,000 文件与单文件 25 MiB 的上限。`pnpm build` 末尾的 `pnpm verify:dist` 会强制校验这些限制，以及「多 chunk」与「无任何内联资产」两条硬性约束。
+
+发布包也可以用 `node scripts/package_release.mjs` 生成到 `release/`。
+
+## 命令
+
+| 命令                  | 用途                                                     |
+| --------------------- | -------------------------------------------------------- |
+| `pnpm dev`            | 开发服务器，静态素材由中间件直接从仓库提供               |
+| `pnpm build`          | 类型检查、构建，并校验 chunk 形态、内联情况与 Pages 限额 |
+| `pnpm test`           | 逻辑回归与浏览器验收套件                                 |
+| `pnpm typecheck`      | 只做类型检查                                             |
+| `pnpm verify:inputs`  | 校验 `assets/` 与 `data/` 的 1531 项输入哈希             |
+| `pnpm verify:dist`    | 只跑部署形态检查                                         |
+| `pnpm vendor:pyodide` | 重新下载并校验 Pyodide 运行时与 Pillow wheel             |
+| `pnpm release`        | 构建并打包发布包                                         |
+
+## 项目结构
+
+```text
+index.html          Vite 入口
+src/
+  core/             纯布局逻辑，无 DOM、无 React；可由 Node 直接测试
+  render/           Canvas 绘制：编辑器与 PNG 导出共用同一套绘制代码
+  bake/             Pyodide worker、JS↔Python 桥接、协议类型
+    python/         运行时加载的 .py 合成逻辑（不参与打包）
+  ui/               原版前端的逐行转写：标记、状态、事件、两个对话框
+  app/              引导流程、字体、IndexedDB 缓存
+assets/ data/       游戏原始素材与配置表（构建时按原路径复制）
+examples/           可导入的示例 JSON
+scripts/            构建插件、Pyodide 供应商脚本、部署校验、测试运行器与打包
+tests/              逻辑回归、浏览器验收、构建形态三套测试
+vendor/             下载并校验后的 Pyodide 与 Pillow（不入库）
+dist/               构建产物（不入库）
+```
+
+设计要点：
+
+- **界面是原版的逐行转写，不是重写**：`src/ui/shell.tsx` 与 `src/ui/presentationDialog.tsx` 一一对应
+  原版的两份 HTML 模板，`src/ui/editor.ts`、`dom.ts`、`wiring.ts`、`presentation.ts` 对应原版的
+  两个脚本；`src/styles.css` 是两份原版 `<style>` 的逐字拼接。`pnpm test` 的 `dom-parity` 套件会把
+  构建产物的 DOM 与原版模板推导出的基准逐节点比对，任何新增的界面元素或属性都会失败。
+- **编辑器与导出共用 `paintScene`**，所以画布所见即 PNG 所得。
+- **`src/core/` 与 `src/render/` 不依赖 React**，因此可以在 Node 里直接做回归测试。
+- **图片、JSON、`.wasm`、`.py` 一律外置为独立文件**，禁止 base64 内联或把数据打进 JavaScript；`pnpm verify:dist` 会扫描全部脚本与样式来拦截回归。
+- **React Compiler 已开启**，UI 组件自动记忆化；命令式的 Canvas 代码不在其编译范围内。
+- **静态检查是构建门禁**：oxlint 与 oxfmt 必须无报错才能通过 `pnpm build`。
 
 ## 功能与操作
 
 - 112 个建筑表条目、8 类物流节点；四向建筑图片按原始部件合成。
-- 864 条可搜索的物品 / 环境记录，835 张徽标；支持设备、仓库口、物品准入口和管道准入口的手动标注。
+- 864 条可搜索的物品 / 环境记录；支持设备、仓库口、物品准入口和管道准入口的手动标注。
 - 传送带、管道、逐口显示、地下管道配对及静态连接效果。
 - 5 种环境生效条，以及锁定、限时有效、过期等手动状态标记。
 - 自动生成右侧四列设备清单，支持编辑详情、缩放取景、PNG 导出及 JSON 往返保存。
-- 原始 UI 图片及内嵌 HarmonyOS Sans SC；导出前等待字体加载完成。
+- 原始 UI 图片与 HarmonyOS Sans SC 字体分片；导出前会等待字体加载完成。
 
-| 操作 | 用法 |
-| --- | --- |
-| 选择、移动 | V；点击或拖动已有设备 |
-| 旋转 | R；拖动期间也可旋转 |
-| 传送带、管道 | B / L；拖动铺设，Shift 切换转弯顺序 |
-| 物品标记 | 选中设备，在物品库搜索名称或 ID |
-| 环境条、状态与接口 | 选中设备，在右侧属性中设置 |
-| 完整预览 | 顶部「蓝图预览」；滚轮缩放、拖动取景 |
-| 撤销、重做 | Ctrl+Z / Ctrl+Y |
-| 保存布局 | Ctrl+S 或「保存 JSON」 |
-| 编辑画布平移、缩放 | 空格拖动 / 中键；滚轮 |
+| 操作               | 用法                                    |
+| ------------------ | --------------------------------------- |
+| 选择、移动         | V；点击或拖动已有设备                   |
+| 旋转               | R；拖动期间也可旋转                     |
+| 传送带、管道       | B / L；拖动铺设，Shift 切换转弯顺序     |
+| 物品标记           | 选中设备，在物品库搜索名称或 ID；或按 I |
+| 环境条、状态与接口 | 选中设备，在右侧属性中设置              |
+| 完整预览           | 顶部「蓝图预览」；滚轮缩放、拖动取景    |
+| 撤销、重做         | Ctrl+Z / Ctrl+Y                         |
+| 保存布局           | Ctrl+S 或「保存 JSON」                  |
+| 编辑画布平移、缩放 | 空格拖动 / 中键；滚轮                   |
 
 可导入的示例：基础布局 [demo_blueprint.json](examples/demo_blueprint.json)、环境条与接口 [environment_ports.json](examples/environment_ports.json)、暗管效果 [native_effects.json](examples/native_effects.json)。
 
 仍有 29 条物品缺图、20 个特殊设备缺少大号底纹；部分装饰由 Canvas 近似绘制，动态 shader 效果没有完整复刻。详细边界见[显示层复核](docs/display-audit.md)与[缺图记录](docs/missing-icons.md)。
-
-## 开发和验证
-
-测试需要 Node.js 20+、pnpm 11.19.0 和 Google Chrome；当前验证环境使用 Node.js 24。构建完成后执行：
-
-```sh
-pnpm install --frozen-lockfile --ignore-scripts
-pnpm test
-pnpm smoke
-```
-
-`pnpm test` 运行 10 组、共 80 项回归检查；`pnpm smoke` 自动启动临时本地服务，从空白画布通过鼠标和按钮完成编辑、JSON 保存 / 导入及 PNG 下载。测试使用独立浏览器上下文，不修改日常草稿。输出位于忽略提交的 `reports/`。
-
-GitHub Actions 会从源码构建，运行回归与完整 UI 流程，并验证发布包生成。目录结构、依赖安装、素材更新和上传步骤见[开发与发布说明](docs/development.md)。
-
-## 素材和许可
-
-游戏资源、字体与项目自身代码分别处理。字体保持原始文件和[随附许可](assets/fonts/LICENSE-update.txt)；来源见[项目说明](docs/project-notes.md)。项目自身代码暂未指定开源许可证，完整归属说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
