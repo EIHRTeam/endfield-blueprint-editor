@@ -168,14 +168,14 @@ entries.set(
       '首次打开需要在本机合成素材，请保持页面打开；之后会走本机缓存，再次打开很快。\n' +
       '布局请使用「保存 JSON」备份；浏览器草稿不会随文件迁移。\n' +
       '本工具不模拟生产规则，JSON 不是游戏分享码。\n\n' +
-      '素材与字体说明见 THIRD_PARTY_NOTICES.md，字体许可见 assets/fonts/LICENSE-update.txt。\n',
+      '素材与字体说明见 THIRD_PARTY_NOTICES.md，字体许可见 assets/fonts/HarmonyOS_Sans_SC/LICENSE.txt。\n',
     'utf8',
   ),
 );
 
 for (const extra of [
   'THIRD_PARTY_NOTICES.md',
-  'assets/fonts/LICENSE-update.txt',
+  'assets/fonts/HarmonyOS_Sans_SC/LICENSE.txt',
   'docs/display-audit.md',
   'docs/missing-icons.md',
 ]) {

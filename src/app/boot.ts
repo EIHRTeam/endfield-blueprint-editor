@@ -114,7 +114,7 @@ export async function boot(onProgress: ProgressReporter): Promise<BootResult> {
     manifestBytes: manifest.bytes,
   });
 
-  const licence = await fetch(`${BASE}assets/fonts/LICENSE-update.txt`, { cache: 'force-cache' })
+  const licence = await fetch(`${BASE}assets/fonts/HarmonyOS_Sans_SC/LICENSE.txt`, { cache: 'force-cache' })
     .then(response => (response.ok ? response.text() : ''))
     .catch(() => '');
 

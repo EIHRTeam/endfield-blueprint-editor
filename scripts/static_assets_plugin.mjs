@@ -26,7 +26,7 @@ const FILES = [
   ['examples/demo_blueprint.json', 'examples'],
   ['examples/environment_ports.json', 'examples'],
   ['examples/native_effects.json', 'examples'],
-  ['assets/fonts/LICENSE-update.txt', 'assets/fonts'],
+  ['assets/fonts/HarmonyOS_Sans_SC/LICENSE.txt', 'assets/fonts/HarmonyOS_Sans_SC'],
 ];
 
 /**

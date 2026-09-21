@@ -204,7 +204,7 @@ try {
   await checks.checkAsync('a reload is served from the persistent cache', async () => {
     const reloadStart = Date.now();
     await page.reload({ waitUntil: 'domcontentloaded' });
-    await page.waitForSelector('#cv', { timeout: 300_000 });
+    await page.waitForSelector('#bpName', { timeout: 300_000 });
     const reloadMs = Date.now() - reloadStart;
     checks.passed.push(`cached reload in ${(reloadMs / 1000).toFixed(1)}s`);
     assert.ok(reloadMs < bakeMs, `reload ${reloadMs}ms was not faster than the cold bake ${bakeMs}ms`);

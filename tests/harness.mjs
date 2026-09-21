@@ -91,7 +91,7 @@ export async function startBrowser(base) {
   });
   page.on('requestfailed', request => failedRequests.push(request.url()));
   await page.goto(base, { waitUntil: 'domcontentloaded' });
-  await page.waitForSelector('#cv', { timeout: 600_000 });
+  await page.waitForSelector('#bpName', { timeout: 600_000 });
   return {
     browser,
     context,
