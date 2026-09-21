@@ -7,6 +7,9 @@
 # Vendored WASM runtime and wheels, staged by scripts/vendor_pyodide.mjs (postinstall)
 /vendor/
 
+# Worktree of the original project, used only to derive the DOM fidelity baseline
+/tmp/
+
 # Dependencies and interpreter caches
 node_modules/
 .pnpm-store/
@@ -33,3 +36,4 @@ Desktop.ini
 *.log
 *.tmp
 *.bak
+*.un~

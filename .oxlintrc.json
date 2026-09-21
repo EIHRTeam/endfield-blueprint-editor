@@ -15,12 +15,7 @@
     "react/react-in-jsx-scope": "off",
     "react/no-unknown-property": "off",
     "jsx-a11y/prefer-tag-over-role": "off",
-    "jsx-a11y/label-has-associated-control": [
-      "error",
-      {
-        "assert": "either"
-      }
-    ],
+    "jsx-a11y/label-has-associated-control": "off",
     "unicorn/prefer-dom-node-text-content": "off",
     "unicorn/no-null": "off",
     "no-console": [
@@ -34,7 +29,8 @@
     "unicorn/no-array-sort": "off",
     "react/immutability": "warn",
     "react/memo-dependencies": "off",
-    "react/exhaustive-effect-dependencies": "off"
+    "react/exhaustive-effect-dependencies": "off",
+    "jsx-a11y/control-has-associated-label": "off"
   },
   "overrides": [
     {
@@ -56,5 +52,5 @@
       }
     }
   ],
-  "ignorePatterns": ["dist", "vendor", "node_modules", "reports", "release", "src/bake/python"]
+  "ignorePatterns": ["dist", "node_modules", "release", "reports", "src/bake/python", "tmp", "vendor"]
 }

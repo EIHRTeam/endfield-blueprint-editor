@@ -3,14 +3,15 @@
   "printWidth": 120,
   "arrowParens": "avoid",
   "ignorePatterns": [
-    "dist",
-    "vendor",
-    "node_modules",
-    "reports",
-    "release",
-    "src/bake/python",
     "assets",
     "data",
-    "examples"
+    "dist",
+    "examples",
+    "node_modules",
+    "release",
+    "reports",
+    "src/bake/python",
+    "tmp",
+    "vendor"
   ]
 }

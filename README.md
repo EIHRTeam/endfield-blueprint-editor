@@ -62,8 +62,8 @@ src/
   render/           Canvas 绘制：编辑器与 PNG 导出共用同一套绘制代码
   bake/             Pyodide worker、JS↔Python 桥接、协议类型
     python/         运行时加载的 .py 合成逻辑（不参与打包）
-  features/         编辑器、物品图标库、蓝图预览（后两者是懒加载 chunk）
-  app/              状态、引导流程、字体、缓存、公共 API
+  ui/               原版前端的逐行转写：标记、状态、事件、两个对话框
+  app/              引导流程、字体、IndexedDB 缓存
 assets/ data/       游戏原始素材与配置表（构建时按原路径复制）
 examples/           可导入的示例 JSON
 scripts/            构建插件、Pyodide 供应商脚本、部署校验、测试运行器与打包
@@ -74,6 +74,10 @@ dist/               构建产物（不入库）
 
 设计要点：
 
+- **界面是原版的逐行转写，不是重写**：`src/ui/shell.tsx` 与 `src/ui/presentationDialog.tsx` 一一对应
+  原版的两份 HTML 模板，`src/ui/editor.ts`、`dom.ts`、`wiring.ts`、`presentation.ts` 对应原版的
+  两个脚本；`src/styles.css` 是两份原版 `<style>` 的逐字拼接。`pnpm test` 的 `dom-parity` 套件会把
+  构建产物的 DOM 与原版模板推导出的基准逐节点比对，任何新增的界面元素或属性都会失败。
 - **编辑器与导出共用 `paintScene`**，所以画布所见即 PNG 所得。
 - **`src/core/` 与 `src/render/` 不依赖 React**，因此可以在 Node 里直接做回归测试。
 - **图片、JSON、`.wasm`、`.py` 一律外置为独立文件**，禁止 base64 内联或把数据打进 JavaScript；`pnpm verify:dist` 会扫描全部脚本与样式来拦截回归。

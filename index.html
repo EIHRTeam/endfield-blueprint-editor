@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>终末地 · 蓝图编辑器</title>
     <!--
-      The font stylesheet is loaded at runtime from assets/fonts/HarmonyOS_Sans_SC/result.css so its
-      `src:local(...)` fallback can be stripped and the shipped cn-font-split chunks stay authoritative.
+      The font stylesheet is linked at runtime by src/app/fonts.ts from
+      assets/fonts/HarmonyOS_Sans_SC/result.css, so its `src:local(...)` fallback can be stripped and the
+      shipped cn-font-split chunks stay authoritative. The original embedded the same font as a base64
+      @font-face rule in this file's style block; linking it keeps the font off the JS bundle.
+
+      There is no mount element: React renders onto document.body, because the original document's
+      children (header, main, dialogs, footer) are the body's own children.
     -->
   </head>
   <body>
-    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

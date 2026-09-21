@@ -1,13 +1,16 @@
 /*
  * Editor styles.
  *
- * The body of this file is ported verbatim from the previous single-file shell and presentation
- * templates, so the visual result is unchanged. The additions at the end cover the React-only
- * surfaces: the bootstrap progress screen, the font-licence overlay, the summary column and the
- * inspector preview canvas.
+ * This file is the verbatim concatenation of the two style blocks shipped by the original
+ * single-file build, in their original cascade order:
+ *
+ *   1. src/editor_shell.html          (page chrome, sidebar, canvas, inspector, library)
+ *   2. src/editor_presentation.html    (the presentation dialog)
+ *
+ * The only edit is the removal of the shell style block's leading `__FONT_CSS__` line, which the
+ * build substituted with the embedded font CSS. The font is now linked from index.html instead, so
+ * that placeholder has nothing left to expand to. No rule has been added, removed or rewritten.
  */
-
-/* ---- shell (ported from src/editor_shell.html) ---- */
 
 #btnFontLicense {
   font-size: 10px;
@@ -613,8 +616,6 @@ dialog[open] {
   outline: 2px solid #90d7ec;
 }
 
-/* ---- presentation dialog (ported from src/editor_presentation.html) ---- */
-
 #presentationCanvas {
   touch-action: none;
   cursor: grab;
@@ -864,136 +865,4 @@ dialog[open] {
   .cover-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
-}
-
-/* ---- React-only surfaces ---- */
-#loading-screen {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  background: #20252b;
-  z-index: 20;
-}
-.loading-card {
-  display: grid;
-  gap: 14px;
-  justify-items: center;
-  max-width: min(560px, calc(100vw - 40px));
-  text-align: center;
-}
-.loading-card h1 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #a2d9e9;
-}
-.loading-card p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.7;
-}
-.loading-card .muted {
-  color: #94a1ad;
-  font-size: 12px;
-}
-.loading-bar {
-  width: min(420px, 80vw);
-  height: 6px;
-  border-radius: 3px;
-  background: #1a1f25;
-  overflow: hidden;
-  border: 1px solid #3a444e;
-}
-.loading-bar span {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, #38708b, #75c7df);
-  transition: width 0.2s;
-}
-.error {
-  color: #ffc2b4;
-}
-.license-overlay {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  background: #08111cb3;
-  z-index: 30;
-}
-.license-card {
-  width: min(880px, calc(100vw - 30px));
-  max-height: calc(100vh - 40px);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 20px;
-  background: #252c34;
-  border: 1px solid #526577;
-  border-radius: 12px;
-  box-shadow: 0 24px 100px #0008;
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* The canvas column keeps the toolbar and hint inside the grid cell that used to hold only #wrap. */
-main > .canvas-column {
-  position: relative;
-  display: flex;
-  min-width: 0;
-  min-height: 0;
-}
-main > .canvas-column > #wrap {
-  flex: 1;
-}
-
-/* Summary column sits under the canvas, matching the original footer-driven layout. */
-#summary {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 8px 12px;
-  border-top: 1px solid #39434c;
-  background: #252c34;
-  max-height: 320px;
-}
-.summary-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  color: #a7b4bf;
-}
-#summaryList {
-  display: grid;
-  overflow: auto;
-}
-#btnPresentationDetails {
-  align-self: flex-start;
-}
-#properties .preview canvas {
-  display: block;
-  background: #161c22;
-  border-radius: 4px;
-  margin: 0 auto;
-}
-#nodeWarning:empty {
-  display: none;
-}
-
-/* Non-control section headings inside the presentation settings column. */
-.field-label {
-  display: block;
-  font-size: 12px;
 }

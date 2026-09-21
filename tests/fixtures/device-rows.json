@@ -1,0 +1,722 @@
+[
+  {
+    "id": "battle_trap_1",
+    "name": "AF1“熔甲者”",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "display_stand_1",
+    "name": "“偶像的身姿”立牌",
+    "w": 2,
+    "d": 1
+  },
+  {
+    "id": "battle_turret_3",
+    "name": "“暴雨”铳械塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "battle_fog_1",
+    "name": "“毒沼”MK-Ⅰ",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "microphone_1",
+    "name": "“缎带之声”麦克风",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "battle_debuff_1",
+    "name": "“酸洗”MK-Ⅰ",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "power_pole_2",
+    "name": "中继器",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "miner_3",
+    "name": "二型电驱矿机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "pump_2",
+    "name": "二型耐酸水泵",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "liquid_recycle_gate_1",
+    "name": "产物排出口",
+    "w": 10,
+    "d": 3
+  },
+  {
+    "id": "unloader_1",
+    "name": "仓库取货口",
+    "w": 3,
+    "d": 1
+  },
+  {
+    "id": "log_hongs_bus",
+    "name": "仓库存取线基段",
+    "w": 4,
+    "d": 8
+  },
+  {
+    "id": "log_hongs_bus_source",
+    "name": "仓库存取线源桩",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "loader_1",
+    "name": "仓库存货口",
+    "w": 3,
+    "d": 1
+  },
+  {
+    "id": "power_diffuser_1",
+    "name": "供电桩",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "power_port_1",
+    "name": "供电终端",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "carrier_1",
+    "name": "便捷存取站",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "miner_1",
+    "name": "便携源石矿机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "gas_storager_1",
+    "name": "储气罐",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "liquid_storager_1",
+    "name": "储液罐",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "liquid_storager_nop_1",
+    "name": "储液罐",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "air_dancer_1",
+    "name": "充气教授",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "battle_shockwave_1",
+    "name": "全向声波塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "log_splitter",
+    "name": "分流器",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "battle_medic_1",
+    "name": "医疗塔",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "storager_1",
+    "name": "协议储存箱",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "storager_nop_1",
+    "name": "协议储存箱",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "sp_hub_1",
+    "name": "协议核心",
+    "w": 9,
+    "d": 9
+  },
+  {
+    "id": "mix_pool_1",
+    "name": "反应池",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "battle_sniper_1",
+    "name": "哨戒塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "transmuter_2",
+    "name": "固气转化机",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "shaper_1",
+    "name": "塑形机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "udpipe_loader_2",
+    "name": "多口暗管入口",
+    "w": 3,
+    "d": 5
+  },
+  {
+    "id": "udpipe_unloader_2",
+    "name": "多口暗管出口",
+    "w": 3,
+    "d": 5
+  },
+  {
+    "id": "xiranite_oven_1",
+    "name": "天有洪炉",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "crystal_ball_1",
+    "name": "安玛的关切",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "tools_assebling_mc_1",
+    "name": "封装机",
+    "w": 6,
+    "d": 4
+  },
+  {
+    "id": "battle_laser_1",
+    "name": "射线塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "cat_tree_1",
+    "name": "小咆兽活动架",
+    "w": 2,
+    "d": 1
+  },
+  {
+    "id": "pear_blossom_bonsai_1",
+    "name": "山樆小景",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "liquid_cleaner_1",
+    "name": "废水处理机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "rainbow_1",
+    "name": "彩虹",
+    "w": 2,
+    "d": 1
+  },
+  {
+    "id": "power_pole_3",
+    "name": "息壤中继器",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "power_diffuser_2",
+    "name": "息壤供电桩",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "mix_pool_2",
+    "name": "扩容反应池",
+    "w": 6,
+    "d": 5
+  },
+  {
+    "id": "battle_turret_2",
+    "name": "扩装铳械塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "dismantler_1",
+    "name": "拆解机",
+    "w": 6,
+    "d": 4
+  },
+  {
+    "id": "liquid_purifier_1",
+    "name": "提纯机",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "dream_bubble_1",
+    "name": "显梦",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "udpipe_loader_1",
+    "name": "暗管入口",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "udpipe_unloader_1",
+    "name": "暗管出口",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "soil_moss_2",
+    "name": "柑实田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "battle_cannon_1",
+    "name": "榴弹塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "soil_sp_fast_3",
+    "name": "模拟琼叶参田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "soil_grass_fast_2",
+    "name": "模拟芽针田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "soil_sp_fast_4",
+    "name": "模拟金石稻田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "soil_grass_fast_1",
+    "name": "模拟锦草田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "sp_sub_hub_1",
+    "name": "次级核心",
+    "w": 9,
+    "d": 9
+  },
+  {
+    "id": "gas_reactor_1",
+    "name": "气体反应炉",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "gas_pump_1",
+    "name": "气体收集泵",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "vaporizer_1",
+    "name": "气体散布机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "pump_1",
+    "name": "水泵",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "miner_4",
+    "name": "水驱矿机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "log_converger",
+    "name": "汇流器",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "liquid_clean_gate_1",
+    "name": "污水接入口",
+    "w": 10,
+    "d": 3
+  },
+  {
+    "id": "squirter_1",
+    "name": "洒水机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "squirter_nop_1",
+    "name": "洒水机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "transmuter_1",
+    "name": "液气转化机",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "battle_frost_1",
+    "name": "液氮塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "travel_pole_1",
+    "name": "滑索架",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "travel_pole_nop_1",
+    "name": "滑索架",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "battle_jet_1",
+    "name": "激流塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "filling_powder_mc_1",
+    "name": "灌装机",
+    "w": 6,
+    "d": 4
+  },
+  {
+    "id": "soil_sp_1",
+    "name": "灰芦麦田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "barbecue_1",
+    "name": "炽热宴会",
+    "w": 2,
+    "d": 1
+  },
+  {
+    "id": "power_station_1",
+    "name": "热能池",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "log_conditioner",
+    "name": "物品准入口",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "log_connector",
+    "name": "物流桥",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "photo_frame_1",
+    "name": "猩红记忆",
+    "w": 2,
+    "d": 1
+  },
+  {
+    "id": "soil_sp_3",
+    "name": "琼叶参田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "battle_lightning_2",
+    "name": "甲二型“电荷”",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "battle_lightning_1",
+    "name": "电涌塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "miner_2",
+    "name": "电驱矿机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "marker_1",
+    "name": "留言信标",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "soil_moss_3",
+    "name": "砂叶田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "thickener_1",
+    "name": "研磨机",
+    "w": 6,
+    "d": 4
+  },
+  {
+    "id": "planter_1",
+    "name": "种植机",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "log_pipe_conditioner",
+    "name": "管道准入口",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "log_pipe_splitter",
+    "name": "管道分流器",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "log_pipe_connector",
+    "name": "管道桥",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "log_pipe_converger",
+    "name": "管道汇流器",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "grinder_1",
+    "name": "粉碎机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "furnance_1",
+    "name": "精炼炉",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "furnance_nop_1",
+    "name": "精炼炉",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "dumper_1",
+    "name": "给水器",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "dumper_nop_1",
+    "name": "给水器",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "soil_grass_2",
+    "name": "芽针田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "soil_sp_2",
+    "name": "苦叶椒田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "soil_moss_1",
+    "name": "荞花田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "jail_1",
+    "name": "虎·牢·关",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "winder_1",
+    "name": "装备原件机",
+    "w": 6,
+    "d": 4
+  },
+  {
+    "id": "component_mc_1",
+    "name": "配件机",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "soil_bbflower_1",
+    "name": "酮化灌木田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "seedcollector_1",
+    "name": "采种机",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "battle_rocket_1",
+    "name": "重锤迫击炮",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "soil_sp_4",
+    "name": "金石稻田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "battle_turret_1",
+    "name": "铳械塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "soil_grass_1",
+    "name": "锦草田块",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "travel_pole_2",
+    "name": "长距滑索架",
+    "w": 3,
+    "d": 3
+  },
+  {
+    "id": "doll_1",
+    "name": "陪伴款“晨星”玩偶",
+    "w": 1,
+    "d": 1
+  },
+  {
+    "id": "signboard_1",
+    "name": "震撼美味！",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "battle_cannon_2",
+    "name": "高爆榴弹塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "battle_laser_2",
+    "name": "高能射线塔",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "chubby_lung_balloon_1",
+    "name": "龙泡泡气球",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "chubby_lung_stone_1",
+    "name": "龙泡泡石墩",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "battle_cannon_1_dg002",
+    "name": "battle_cannon_1_dg002",
+    "w": 5,
+    "d": 5
+  },
+  {
+    "id": "power_terminal_1",
+    "name": "power_terminal_1",
+    "w": 2,
+    "d": 2
+  },
+  {
+    "id": "soil_1",
+    "name": "soil_1",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "soil_2",
+    "name": "soil_2",
+    "w": 4,
+    "d": 4
+  },
+  {
+    "id": "v_fluid_container_1",
+    "name": "v_fluid_container_1",
+    "w": 1,
+    "d": 1
+  }
+]

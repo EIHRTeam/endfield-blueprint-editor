@@ -3,14 +3,21 @@
 ## 目录与构建过程
 
 ```text
-index.html           Vite 入口
+index.html           Vite 入口（无挂载节点：React 直接渲染到 body，与原版一致）
 src/                 前端源码
   core/              纯布局逻辑：校验、几何、寻路、暗管配对、历史（无 DOM、无 React）
-  render/            Canvas 绘制、资源缓存、设备预览
+  render/            Canvas 绘制与资源缓存
   bake/              Pyodide worker、JS↔Python 桥接、消息协议
     python/          运行时由 Pyodide 加载的 .py 合成逻辑（不参与打包）
-  features/          编辑器画布、物品图标库、蓝图预览（后两者为懒加载 chunk）
-  app/               状态、引导、字体、IndexedDB 缓存、公共 API、快捷键
+  ui/                原版前端的逐行转写
+    shell.tsx          editor_shell.html 的标记转写
+    presentationDialog.tsx  editor_presentation.html 的标记转写
+    editor.ts          editor_app.js 的状态与方法
+    dom.ts             editor_app.js 各 refresh*/build* 函数的 DOM 写回
+    wiring.ts          editor_app.js 底部的事件注册
+    presentation.ts / presentationPaint.ts  editor_presentation.js 的逻辑与绘制
+    api.ts             window.BlueprintEditor / BlueprintPresentation
+  app/               引导、字体、IndexedDB 缓存
 assets/              原始图片、字体分片及 UI 元数据
 data/                配置、精简名称表、回退映射及输入哈希
 examples/            三份可导入的示例 JSON
@@ -85,12 +92,48 @@ pnpm dev              # 开发服务器；静态素材由中间件直接从仓�
 `oxfmt` 配置见 `.oxfmtrc.json`，与既有代码风格对齐（单引号、120 列、`arrowParens: "avoid"`）。
 两个工具自身的配置文件不参与格式化，避免 `pnpm format` 反复改写它们。
 
-### 三套测试的分工
+### DOM 保真门禁（`dom-parity`）
+
+本次迁移的目标是「把原版前端转写到 React」，不是重新设计界面。为让这条要求可机检，
+`tests/dom-parity.test.mjs` 会把构建产物运行后的 DOM 与基准**逐节点比对**。
+
+基准由 `scripts/build_dom_baseline.mjs` 从原版仓库的模板生成，分两层：
+
+1. **标记层** —— `editor_shell.html` 经 `build_editor.py` 的四处替换（去掉 `__FONT_CSS__`、
+   替换 `__FONT_LICENSE__`、拆分导出按钮、在 `<footer>` 前注入呈现对话框），并把注入块自带的
+   `<style>` 提到 `<head>`；
+2. **稳定态层** —— 原版脚本在加载时对 DOM 做的改动，逐条注明所对应的 `editor_app.js` /
+   `editor_presentation.js` 行号（`buildList`、`refreshInspector`、`refreshSummary`、
+   `refreshHistory`、`resize`、`#btnPresentationDetails` 前置、色块与标签按钮、启动尾部）。
+
+两侧都通过 `scripts/render_dom_snapshot.mjs` 的同一个提取器归一化——基准若由另一套代码生成，
+就恰好会掩盖它本该发现的偏差。归一化只剔除确实会变的运行期值（`src`、`alt`，以及
+`#status`/`#zoom`/`#canvasHint`/`#presentationAuto`/`#fontLicenseText` 的文本）。
+
+设备名与物品标签由烘焙层从游戏表推导，无法在 JavaScript 中重新推导而不产生「第二套实现」，
+因此这两份数据由 `scripts/capture_device_rows.mjs` 从运行中的应用捕获到
+`tests/fixtures/`，测试每次运行都会重新捕获并比对——fixture 锁定期望值，测试负责发现漂移。
+
+需要重建基准时（只应在有意识地改动界面时）：
+
+```sh
+pnpm build
+node scripts/capture_device_rows.mjs     # 更新设备名与标签快照
+node scripts/build_dom_baseline.mjs      # 从 tmp/main 模板重建基准
+```
+
+`tmp/main` 是原版分支的 worktree（`git worktree add ./tmp/main main`），已加入 `.gitignore`
+与 oxlint/oxfmt 的忽略列表，仅用于生成基准。
+
+### 四套测试的分工
 
 - `tests/core.test.mjs` 用 `scripts/build_core_bundle.mjs` 把 `src/core/index.ts` 单独打包后
   在 Node 中直接断言，因此毫秒级完成，覆盖校验、几何、寻路、配对与历史。
 - `tests/bundle.test.mjs` 调用 `scripts/verify_dist.mjs`，把部署约束变成测试：多 chunk、
   无内联资产、单文件与文件数上限、Pyodide/wheel/`.py` 必须独立分发。
+- `tests/dom-parity.test.mjs` 校验迁移保真度：标记结构、属性集合与关键布局关系（`#summary` 必须
+  在 `#properties` 内且由 `#btnPresentationDetails` 打头、三个对话框必须是原生 `<dialog>`、
+  `#selectedPreview` 必须是 `<img>`、`#loading` 必须是单行文本）。
 - `tests/editor.test.mjs` 是唯一耗时的套件：通过 `tests/harness.mjs` 启动一次 Pyodide 合成，
   然后在该会话内跑完整工作流，最后重载验证 IndexedDB 缓存生效。
 
@@ -121,6 +164,8 @@ pnpm dev              # 开发服务器；静态素材由中间件直接从仓�
   内存文件系统。
 - **oxlint 与 oxfmt 必须无报错**：两者都是 `pnpm build` 的一部分。新增规则抑制时请在配置注释里写明
   理由，不要在源码里堆散落的 disable。
+- **不得新增界面**：`src/styles.css` 是两份原版 `<style>` 的逐字拼接，标记转写不得引入原版没有的
+  `id`、`class`、属性或文案。`dom-parity` 会拦截，属性白名单见 `scripts/render_dom_snapshot.mjs`。
 
 ## 部署到 Cloudflare Pages
 
