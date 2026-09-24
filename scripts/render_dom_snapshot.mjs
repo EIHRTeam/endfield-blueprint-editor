@@ -73,7 +73,7 @@ export const EXTRACT_IN_PAGE = `(() => {
   };
 })()`;
 
-/** Attribute names the original project is allowed to use, plus the ones its own JS creates. */
+/** Reviewed static attributes plus attributes created by editor DOM synchronization. */
 export const ALLOWED_ATTRIBUTES = new Set([
   // Present in the original templates.
   'accept',

@@ -1,13 +1,7 @@
 /**
- * DOM fidelity suite.
- *
- * This is the gate for "migrated to React, not redesigned": the built app's DOM must match the DOM
- * derived from the original project's own templates, node for node.
- *
- * The baseline in `tests/fixtures/dom-baseline.json` is produced by `scripts/build_dom_baseline.mjs` from
- * `editor_shell.html` and `editor_presentation.html`, and both it and the app snapshot are normalised by
- * the shared extractor in `scripts/render_dom_snapshot.mjs` — a baseline normalised by different code
- * could hide exactly the drift this test exists to catch.
+ * Reviewed interface regression suite. The baseline began with the original HTML templates and is
+ * intentionally updated when features extend the shell. Both sides use the same DOM extractor;
+ * behavior tests separately verify that the new controls perform their advertised operations.
  */
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -29,7 +23,7 @@ try {
   const actual = normaliseSnapshot(snapshot);
 
   // ---- the whole tree, compared as readable lines so a failure names the exact node ----
-  await checks.checkAsync('DOM matches the baseline derived from the original templates', async () => {
+  await checks.checkAsync('DOM matches the reviewed interface baseline', async () => {
     const expectedLines = describe(baseline);
     const actualLines = describe(actual);
     const expected = new Set(expectedLines);
@@ -42,13 +36,13 @@ try {
       missing.length ? `\nmissing (${missing.length}):\n  ${missing.slice(0, 12).join('\n  ')}` : '',
       extra.length ? `\nunexpected (${extra.length}):\n  ${extra.slice(0, 12).join('\n  ')}` : '',
     ].join('');
-    assert.equal(missing.length + extra.length, 0, `DOM differs from the original${detail}`);
+    assert.equal(missing.length + extra.length, 0, `DOM differs from the reviewed baseline${detail}`);
   });
 
   // ---- attribute whitelist -------------------------------------------------------------
   // Neither side may use an attribute outside the originals' vocabulary, so this fails on a *new*
   // attribute added by the port rather than silently tolerating it.
-  await checks.checkAsync('neither side uses an attribute outside the original vocabulary', async () => {
+  await checks.checkAsync('neither side uses an attribute outside the reviewed vocabulary', async () => {
     assert.deepEqual(
       actual.unexpectedAttributes,
       [],
@@ -75,13 +69,13 @@ try {
     assert.equal(shape.firstChildId, 'btnPresentationDetails', '#btnPresentationDetails must be prepended');
   });
 
-  await checks.checkAsync('the three dialogs are native <dialog> elements', async () => {
+  await checks.checkAsync('editor dialogs use native <dialog> elements', async () => {
     const tags = await session.page.evaluate(() =>
-      ['itemLibrary', 'fontLicenseDialog', 'presentationDialog'].map(
+      ['itemLibrary', 'fontLicenseDialog', 'presentationDialog', 'canvasExportDialog'].map(
         id => document.getElementById(id)?.tagName ?? null,
       ),
     );
-    assert.deepEqual(tags, ['DIALOG', 'DIALOG', 'DIALOG']);
+    assert.deepEqual(tags, ['DIALOG', 'DIALOG', 'DIALOG', 'DIALOG']);
   });
 
   await checks.checkAsync('#selectedPreview is an <img>, as in the original', async () => {

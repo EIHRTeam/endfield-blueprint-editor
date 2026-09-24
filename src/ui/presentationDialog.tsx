@@ -63,8 +63,27 @@ export function PresentationDialog() {
           <label>封面图纸底色</label>
           <div id="presentationColors" className="presentation-colors" aria-label="封面图纸底色" />
           <div className="presentation-auto">
-            <b>画面取景</b>
-            <p className="muted">在左侧预览内滚轮缩放、拖动平移。导出保留当前取景。</p>
+            <b>图片尺寸</b>
+            <p className="muted">按内容导出会完整显示布局，图片宽高随格数调整。</p>
+          </div>
+          <label>
+            导出比例
+            <select id="presentationSizing" defaultValue="content">
+              <option value="content">按内容尺寸</option>
+              <option value="fixed">固定画幅与取景</option>
+            </select>
+          </label>
+          <label>
+            每格像素
+            <input id="presentationCell" type="number" min={8} max={256} step={1} defaultValue={64} />
+          </label>
+          <label>
+            内容边距（格）
+            <input id="presentationMargin" type="number" min={0} max={20} step={1} defaultValue={1} />
+          </label>
+          <div className="presentation-auto">
+            <b>固定画幅取景</b>
+            <p className="muted">选择固定画幅后，可在预览内滚轮缩放、拖动平移。</p>
           </div>
           <label>
             缩放 <span id="presentationZoomLabel">100%</span>

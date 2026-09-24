@@ -71,7 +71,11 @@ export async function startServer() {
 
 /** Boots one warmed browser context that every test in a suite can reuse. */
 export async function startBrowser(base) {
-  const browser = await chromium.launch({ channel: 'chrome', headless: true });
+  const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
+  const browser = await chromium.launch({
+    ...(executablePath ? { executablePath } : { channel: 'chrome' }),
+    headless: true,
+  });
   const context = await browser.newContext({
     viewport: { width: 1480, height: 1000 },
     deviceScaleFactor: 1,

@@ -6,7 +6,9 @@
  * the same names and shapes means the original's browser tests and any embedder keep working, which is
  * part of migrating the app rather than replacing it.
  */
-import type { Layout } from '../core/types';
+import type { Bounds, Layout, Point } from '../core/types';
+import type { CanvasExportOptions } from './canvasExport';
+import type { PreviewExportOptions } from './presentationPaint';
 import type { Editor } from './editor';
 import type { PresentationState } from './presentation';
 import { open as openPresentation, scheduleRender } from './presentation';
@@ -16,9 +18,21 @@ import { exportCanvas } from './wiring';
 export interface PublicEditor {
   getData: () => Layout;
   importLayout: (input: unknown) => void;
-  exportCanvas: (layout?: Layout, cell?: number, transparent?: boolean, hints?: boolean) => Promise<HTMLCanvasElement>;
+  mergeLayout: (input: unknown) => void;
+  selectRegion: (bounds: Bounds) => void;
+  copySelection: () => boolean;
+  beginPaste: () => boolean;
+  pasteAt: (point: Point) => boolean;
+  cancelPaste: () => void;
+  exportCanvas: (
+    layout?: Layout,
+    cell?: number,
+    transparent?: boolean,
+    hints?: boolean,
+    options?: CanvasExportOptions,
+  ) => Promise<HTMLCanvasElement>;
   /** Attached by the original's presentation script (`editor_presentation.js:686`). */
-  exportPreview: (layout?: Layout, width?: number) => Promise<HTMLCanvasElement>;
+  exportPreview: (layout?: Layout, width?: number, options?: PreviewExportOptions) => Promise<HTMLCanvasElement>;
   /** The live canvas viewport, so embedders and tests can convert cells to screen coordinates. */
   getViewport: () => { s: number; ox: number; oy: number };
   /** The editor canvas element. */
@@ -28,7 +42,7 @@ export interface PublicEditor {
 
 export interface PublicPresentation {
   open: () => void;
-  exportPreview: (layout?: Layout, width?: number) => Promise<HTMLCanvasElement>;
+  exportPreview: (layout?: Layout, width?: number, options?: PreviewExportOptions) => Promise<HTMLCanvasElement>;
   refresh: () => void;
 }
 
@@ -47,16 +61,22 @@ declare global {
  * Returns a teardown so a remount cannot leave a stale API bound to a destroyed editor.
  */
 export function publishApi(editor: Editor, state: PresentationState, base: string): () => void {
-  const exportPreview = (layout?: Layout, width = 2560) =>
-    exportPreviewSheet(editor, layout ?? editor.data, width, base);
+  const exportPreview = (layout?: Layout, width = 2560, options?: PreviewExportOptions) =>
+    exportPreviewSheet(editor, layout ?? editor.data, width, base, options);
 
   const api: PublicEditor = {
     getData: () => structuredClone(editor.data),
     importLayout: input => {
       editor.importLayout(input);
     },
-    exportCanvas: (layout, cell, transparent, hints) =>
-      exportCanvas(editor, base, layout ?? editor.data, cell, transparent, hints),
+    mergeLayout: input => editor.mergeLayout(input),
+    selectRegion: bounds => editor.selectRegion(bounds),
+    copySelection: () => editor.copySelection(),
+    beginPaste: () => editor.beginPaste(),
+    pasteAt: point => editor.pasteAt(point),
+    cancelPaste: () => editor.cancelPaste(),
+    exportCanvas: (layout, cell, transparent, hints, options) =>
+      exportCanvas(editor, base, layout ?? editor.data, cell, transparent, hints, options),
     exportPreview,
     getViewport: () => ({ ...editor.view }),
     canvas: () => editor.canvas,

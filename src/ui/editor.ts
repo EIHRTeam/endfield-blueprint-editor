@@ -36,7 +36,16 @@ import type {
 import { loadFonts } from '../app/fonts';
 import type { AssetStore } from '../render/assets';
 import { drawNode, drawSlicedSprite, paintScene } from '../render/paintScene';
-import type { BakePayload } from '../core/types';
+import type { BakePayload, Bounds, Point } from '../core/types';
+import {
+  copyFragment,
+  fragmentAt,
+  mergeFragment,
+  rotateFragment,
+  selectionBounds,
+  selectRegion,
+} from '../core/selection';
+import type { BlueprintFragment, Selection } from '../core/selection';
 
 /** The empty document the original starts from. */
 export const EMPTY_LAYOUT: Layout = {
@@ -50,7 +59,7 @@ export const EMPTY_LAYOUT: Layout = {
 /** `localStorage` key, unchanged from the original. */
 export const STORAGE_KEY = 'endfield.blueprint.editor.v2';
 
-export type Tool = 'select' | 'place' | 'item' | 'fluid' | 'erase' | 'icon';
+export type Tool = 'select' | 'region' | 'place' | 'item' | 'fluid' | 'erase' | 'icon';
 
 interface GesturePan {
   type: 'pan';
@@ -76,7 +85,12 @@ interface GestureRoute {
   endPort: WorldPort | null;
   error: string;
 }
-export type Gesture = GesturePan | GestureMove | GestureRoute;
+interface GestureRegion {
+  type: 'region';
+  start: CellPoint;
+  end: CellPoint;
+}
+export type Gesture = GesturePan | GestureMove | GestureRoute | GestureRegion;
 
 export interface View {
   s: number;
@@ -121,6 +135,9 @@ export class Editor {
   /** `data` of the original. */
   data: Layout = clone(EMPTY_LAYOUT);
   selected = -1;
+  selection: Selection | null = null;
+  clipboard: BlueprintFragment | null = null;
+  pasting = false;
   chosen: string | null = null;
   tool: Tool = 'select';
   rotation: Direction = 0;
@@ -253,6 +270,7 @@ export class Editor {
       const valid = validate(next, this.buildings);
       if (this.history.commit(this.data, valid)) {
         this.data = valid;
+        this.selection = null;
         this.changed(text);
         return true;
       }
@@ -266,6 +284,7 @@ export class Editor {
     if (!this.history.past.length) return;
     this.data = this.history.undo(this.data);
     this.selected = -1;
+    this.selection = null;
     this.gesture = null;
     this.changed('已撤销');
   }
@@ -274,6 +293,7 @@ export class Editor {
     if (!this.history.future.length) return;
     this.data = this.history.redo(this.data);
     this.selected = -1;
+    this.selection = null;
     this.gesture = null;
     this.changed('已重做');
   }
@@ -281,8 +301,79 @@ export class Editor {
   selectTool(value: Tool): void {
     this.tool = value;
     this.gesture = null;
+    this.pasting = false;
+    this.selection = null;
     if (value !== 'select') this.selected = -1;
     this.onRevision();
+    this.requestDraw();
+  }
+
+  selectRegion(area: Bounds): void {
+    this.pasting = false;
+    this.selected = -1;
+    this.selection = selectRegion(this.data, this.buildings, area);
+    this.message(
+      `已框选 ${this.selection.nodeIndices.length} 个设备 / ${this.selection.conveyorIndices.length} 格线路 · Ctrl+C 复制`,
+    );
+    this.onRevision();
+    this.requestDraw();
+  }
+
+  copySelection(): boolean {
+    const selection =
+      this.selection ?? (this.selected >= 0 ? { nodeIndices: [this.selected], conveyorIndices: [] } : null);
+    if (!selection) {
+      this.message('请先框选区域或选择一个设备', true);
+      return false;
+    }
+    try {
+      this.clipboard = copyFragment(this.data, this.buildings, selection);
+      this.message(
+        `已复制 ${this.clipboard.nodes.length} 个设备 / ${this.clipboard.conveyors.length} 格线路 · Ctrl+V 粘贴`,
+      );
+      this.onRevision();
+      return true;
+    } catch (error) {
+      this.message((error as Error).message, true);
+      return false;
+    }
+  }
+
+  beginPaste(): boolean {
+    if (!this.clipboard) {
+      this.message('请先复制选区，或导入要拼接的蓝图', true);
+      return false;
+    }
+    this.selectTool('select');
+    this.selected = -1;
+    this.pasting = true;
+    this.message('移动鼠标预览，点击连续粘贴 · R 旋转 · Esc 退出');
+    this.onRevision();
+    this.requestDraw();
+    return true;
+  }
+
+  cancelPaste(): void {
+    this.pasting = false;
+    this.gesture = null;
+    this.onRevision();
+    this.requestDraw();
+  }
+
+  pasteAt(point: Point): boolean {
+    if (!this.pasting || !this.clipboard) return false;
+    const clipboard = this.clipboard;
+    return this.transact(draft => {
+      const merged = mergeFragment(draft, clipboard, point, this.buildings);
+      draft.nodes = merged.nodes;
+      draft.conveyors = merged.conveyors;
+    }, `已粘贴 ${clipboard.nodes.length} 个设备 / ${clipboard.conveyors.length} 格线路 · 可继续点击粘贴，Esc 退出`);
+  }
+
+  mergeLayout(input: unknown): void {
+    const source = validate(input, this.buildings);
+    this.clipboard = copyFragment(source, this.buildings);
+    this.beginPaste();
   }
 
   updateSelected(operation: (node: BlueprintNode) => void): void {
@@ -290,6 +381,15 @@ export class Editor {
   }
 
   deleteSelected(): void {
+    if (this.selection) {
+      const selection = this.selection;
+      this.transact(draft => {
+        for (const index of [...selection.nodeIndices].sort((a, b) => b - a)) removeNode(draft.nodes, index);
+        const removed = new Set(selection.conveyorIndices);
+        draft.conveyors = draft.conveyors.filter((_, index) => !removed.has(index));
+      }, '已删除选区，可撤销');
+      return;
+    }
     if (this.selected < 0) return;
     const index = this.selected;
     this.selected = -1;
@@ -309,6 +409,13 @@ export class Editor {
   }
 
   rotate(): void {
+    if (this.pasting && this.clipboard) {
+      this.clipboard = rotateFragment(this.clipboard, this.buildings);
+      this.message('粘贴内容已旋转 90°，点击放置 · Esc 退出');
+      this.onRevision();
+      this.requestDraw();
+      return;
+    }
     if (this.gesture?.type === 'move') {
       // The drag preview owns all pending edits. Commit position and direction together on pointerup;
       // Escape/cancel leaves the original document and history untouched.
@@ -436,7 +543,19 @@ export class Editor {
     ctx.fillStyle = '#e6e6e6';
     ctx.fillRect(0, 0, canvas.width / ratio, canvas.height / ratio);
 
-    paintScene(ctx, this.data, this.paintContext(), this.view, {
+    let pastePreview: Layout | null = null;
+    let pasteError = '';
+    if (this.pasting && this.clipboard && this.hover && !this.gesture) {
+      try {
+        pastePreview = mergeFragment(this.data, this.clipboard, this.hover, this.buildings);
+      } catch (failure) {
+        pasteError = (failure as Error).message;
+      }
+    }
+
+    // Paint a valid paste once as the complete resulting scene: destination devices hide covered
+    // routes, and existing routes choose their sprites with the new neighbours already present.
+    paintScene(ctx, pastePreview ?? this.data, this.paintContext(), this.view, {
       grid: this.showGrid,
       ports: this.showPorts,
       hints: this.showHints,
@@ -449,7 +568,7 @@ export class Editor {
     ctx.lineWidth = 1;
     ctx.strokeRect(this.view.ox, this.view.oy, this.data.size.x * this.view.s, this.data.size.z * this.view.s);
 
-    if (this.hover && !this.gesture && this.tool === 'select') {
+    if (this.hover && !this.gesture && this.tool === 'select' && !this.pasting) {
       const index = hit(this.data.nodes, this.buildings, this.hover.x, this.hover.z);
       const f =
         index >= 0
@@ -484,6 +603,69 @@ export class Editor {
         f.d * this.view.s,
         this.view.s / 128,
       );
+    }
+
+    if (this.selection) {
+      ctx.save();
+      for (const index of this.selection.nodeIndices) {
+        const node = this.data.nodes[index];
+        if (node) this.rectOutline(ctx, node, '#1887a6', true);
+      }
+      ctx.fillStyle = '#1887a644';
+      ctx.strokeStyle = '#1887a6';
+      ctx.lineWidth = 2;
+      for (const index of this.selection.conveyorIndices) {
+        const belt = this.data.conveyors[index];
+        if (!belt) continue;
+        const x = this.view.ox + belt.x * this.view.s;
+        const y = this.view.oy + belt.z * this.view.s;
+        ctx.fillRect(x, y, this.view.s, this.view.s);
+        ctx.strokeRect(x, y, this.view.s, this.view.s);
+      }
+      ctx.restore();
+    }
+    if (this.gesture?.type === 'region') {
+      const area = selectionBounds(this.gesture.start, this.gesture.end);
+      ctx.save();
+      ctx.fillStyle = '#1887a622';
+      ctx.strokeStyle = '#1887a6';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([6, 4]);
+      const x = this.view.ox + area.x0 * this.view.s;
+      const y = this.view.oy + area.z0 * this.view.s;
+      const w = (area.x1 - area.x0) * this.view.s;
+      const h = (area.z1 - area.z0) * this.view.s;
+      ctx.fillRect(x, y, w, h);
+      ctx.strokeRect(x, y, w, h);
+      ctx.restore();
+    }
+    if (this.pasting && this.clipboard && this.hover && !this.gesture) {
+      ctx.save();
+      if (!pastePreview) {
+        const placed = fragmentAt(this.clipboard, this.hover, this.data.nodes);
+        ctx.globalAlpha = 0.65;
+        paintScene(
+          ctx,
+          { ...this.data, nodes: placed.nodes, conveyors: placed.conveyors },
+          this.paintContext(),
+          this.view,
+          {
+            hints: this.showHints,
+            hintScale: 0.5,
+          },
+        );
+        ctx.globalAlpha = 1;
+      }
+      ctx.strokeStyle = pasteError ? '#c94848' : '#1887a6';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([6, 4]);
+      ctx.strokeRect(
+        this.view.ox + this.hover.x * this.view.s,
+        this.view.oy + this.hover.z * this.view.s,
+        this.clipboard.size.x * this.view.s,
+        this.clipboard.size.z * this.view.s,
+      );
+      ctx.restore();
     }
 
     let ghost: BlueprintNode | null = null;
@@ -565,6 +747,7 @@ export class Editor {
   importLayout(input: unknown): void {
     const next = validate(input, this.buildings);
     this.selected = -1;
+    this.selection = null;
     this.gesture = null;
     this.activePair = null;
     if (this.history.commit(this.data, next)) {
@@ -617,6 +800,9 @@ export class Editor {
     for (const node of layout.nodes) {
       const building = this.buildings[node.templateId]!;
       keys.add(this.bodyKey(node));
+      if (node.productIcon) {
+        for (const layer of this.payload.statusLayers[node.itemStatus ?? 'normal'] ?? []) keys.add(layer.asset);
+      }
       keys.add(node.productIcon ? (this.productInfo(node.productIcon)?.badge ?? '') : (building.symbol ?? ''));
       keys.add(building.connectionFrames?.[node.direction ?? 0] ?? '');
       keys.add(building.activeConnectionFrames?.[node.direction ?? 0] ?? '');

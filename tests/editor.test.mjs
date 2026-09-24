@@ -6,7 +6,7 @@
  * check reloads to prove the persistent cache makes the second visit fast.
  */
 import assert from 'node:assert/strict';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { startServer, startBrowser, createChecks, report } from './harness.mjs';
 
@@ -194,8 +194,209 @@ try {
       { timeout: 120_000 },
     );
     const width = await page.evaluate(() => document.getElementById('presentationCanvas').width);
-    assert.equal(width, 1920);
+    assert.ok(width > 0);
+    assert.equal(await page.locator('#presentationSizing').inputValue(), 'content');
+    await page.locator('#presentationSizing').selectOption('fixed');
+    await page.waitForFunction(() => document.getElementById('presentationCanvas').width === 1920);
     await page.locator('#btnCancelPresentation').click();
+  });
+
+  await checks.checkAsync('rectangle selection copies devices and lines for repeated undoable placement', async () => {
+    await page.evaluate(() =>
+      window.BlueprintEditor.importLayout({
+        schemaVersion: 2,
+        name: '批量编辑验收',
+        size: { x: 30, z: 24 },
+        nodes: [
+          { templateId: 'battle_trap_1', position: { x: 4, z: 4 }, direction: 0, productIcon: 'item_iron_nugget' },
+        ],
+        conveyors: [
+          { x: 6, z: 5, kind: 'item', dir: 0 },
+          { x: 7, z: 5, kind: 'item', dir: 0 },
+          { x: 25, z: 20, kind: 'fluid', dir: 1 },
+        ],
+      }),
+    );
+    await page.click('[data-tool="region"]');
+    const start = await gridPoint(3, 3);
+    const end = await gridPoint(8, 7);
+    await page.mouse.move(start.x, start.y);
+    await page.mouse.down();
+    await page.mouse.move(end.x, end.y, { steps: 8 });
+    await page.mouse.up();
+    assert.equal(await page.locator('#btnCopy').isEnabled(), true);
+    await page.keyboard.press('Control+c');
+    await page.keyboard.press('Control+v');
+    await clickCell(12, 5);
+    await clickCell(18, 5);
+    let data = await page.evaluate(() => window.BlueprintEditor.getData());
+    assert.equal(data.nodes.length, 3);
+    assert.equal(data.conveyors.length, 7);
+    assert.deepEqual(data.nodes[1].position, { x: 12, z: 5 });
+    assert.equal(data.nodes[1].productIcon, 'item_iron_nugget');
+    await clickCell(12, 5);
+    assert.equal(
+      (await page.evaluate(() => window.BlueprintEditor.getData())).nodes.length,
+      3,
+      'overlap must not add a copy',
+    );
+    assert.match(await page.locator('#status').textContent(), /重叠/);
+    await page.keyboard.press('Escape');
+    await clickCell(22, 15);
+    assert.equal(
+      (await page.evaluate(() => window.BlueprintEditor.getData())).nodes.length,
+      3,
+      'Escape ends placement',
+    );
+    await page.click('#btnUndo');
+    data = await page.evaluate(() => window.BlueprintEditor.getData());
+    assert.equal(data.nodes.length, 2);
+    assert.equal(data.conveyors.length, 5);
+    await page.click('#btnRedo');
+    assert.equal((await page.evaluate(() => window.BlueprintEditor.getData())).nodes.length, 3);
+  });
+
+  await checks.checkAsync(
+    'merge file previews without replacing the current document and can be cancelled',
+    async () => {
+      const before = await page.evaluate(() => window.BlueprintEditor.getData());
+      const incoming = {
+        schemaVersion: 2,
+        name: '另一半蓝图',
+        size: { x: 50, z: 50 },
+        nodes: [{ templateId: 'battle_trap_1', position: { x: 30, z: 30 }, direction: 1 }],
+        conveyors: [],
+      };
+      const file = { name: 'half.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(incoming)) };
+      const chooser = page.waitForEvent('filechooser');
+      await page.click('#btnMerge');
+      await (await chooser).setFiles(file);
+      await page.waitForFunction(() => document.getElementById('canvasHint').textContent.includes('粘贴'));
+      assert.deepEqual(await page.evaluate(() => window.BlueprintEditor.getData()), before);
+      await page.keyboard.press('Escape');
+      assert.deepEqual(await page.evaluate(() => window.BlueprintEditor.getData()), before);
+      await page.setInputFiles('#mergeFileIn', file);
+      await page.waitForFunction(() => document.getElementById('canvasHint').textContent.includes('粘贴'));
+      await clickCell(20, 15);
+      await page.keyboard.press('Escape');
+      const merged = await page.evaluate(() => window.BlueprintEditor.getData());
+      assert.equal(merged.name, before.name);
+      assert.deepEqual(merged.size, before.size);
+      assert.equal(merged.nodes.length, before.nodes.length + 1);
+      assert.deepEqual(merged.nodes.at(-1).position, { x: 20, z: 15 });
+      await page.click('#btnUndo');
+      assert.deepEqual(await page.evaluate(() => window.BlueprintEditor.getData()), before);
+    },
+  );
+
+  await checks.checkAsync('material totals follow edits and disclose missing line recipes', async () => {
+    const before = await page.locator('#materialsList').innerText();
+    assert.match(before, /\d/);
+    assert.match(await page.locator('#materialsWarning').textContent(), /传送带|管道/);
+    await page.click('#btnClear');
+    const empty = await page.locator('#materialsList').innerText();
+    assert.notEqual(empty, before);
+    await page.click('#btnUndo');
+    assert.equal(await page.locator('#materialsList').innerText(), before);
+    await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
+    await page.click('#btnCopyMaterials');
+    assert.match(await page.evaluate(() => navigator.clipboard.readText()), /建造材料/);
+  });
+
+  await checks.checkAsync('PNG dialog exports exact custom cell sizes and zero content margin', async () => {
+    await page.evaluate(() =>
+      window.BlueprintEditor.importLayout({
+        schemaVersion: 2,
+        name: '尺寸验收',
+        size: { x: 30, z: 24 },
+        nodes: [{ templateId: 'battle_trap_1', position: { x: 4, z: 4 }, direction: 0 }],
+        conveyors: [{ x: 8, z: 4, kind: 'item', dir: 0 }],
+      }),
+    );
+    await page.waitForFunction(() => document.getElementById('bpName').value === '尺寸验收');
+    await page.click('#btnPng');
+    await page.locator('#exportScale').fill('0');
+    await page.click('#btnConfirmCanvasExport');
+    await page.waitForFunction(() => document.getElementById('canvasExportError').textContent.includes('8–256'));
+    assert.equal(await page.locator('#canvasExportDialog').isVisible(), true);
+    await page.locator('#exportScale').fill('72');
+    await page.locator('#exportMargin').fill('0');
+    await page.locator('#transparent').check();
+    const ready = page.waitForEvent('download');
+    await page.click('#btnConfirmCanvasExport');
+    const download = await ready;
+    await download.saveAs(path.join(OUT, 'content-canvas.png'));
+    const png = await readFile(await download.path());
+    assert.equal(png.readUInt32BE(16), 5 * 72);
+    assert.equal(png.readUInt32BE(20), 2 * 72);
+    assert.equal(await page.locator('#canvasExportDialog').isVisible(), false);
+    assert.equal(download.suggestedFilename(), '尺寸验收.png');
+    assert.equal(await page.locator('#bpName').inputValue(), '尺寸验收');
+    const full = await page.evaluate(async () => {
+      const canvas = await window.BlueprintEditor.exportCanvas(undefined, 72, true, false, {
+        range: 'canvas',
+        margin: 0,
+      });
+      return [canvas.width, canvas.height];
+    });
+    assert.deepEqual(full, [30 * 72, 24 * 72]);
+  });
+
+  await checks.checkAsync('content presentation scales with cells and keeps narrow layouts compact', async () => {
+    const sizes = await page.evaluate(async () => {
+      const api = window.BlueprintEditor;
+      const a = await api.exportPreview(api.getData(), 1920, { fitToContent: true, cell: 64, margin: 0 });
+      const b = await api.exportPreview(api.getData(), 1920, { fitToContent: true, cell: 128, margin: 0 });
+      return [
+        [a.width, a.height],
+        [b.width, b.height],
+      ];
+    });
+    assert.ok(sizes[0][0] < 1000, 'narrow content should not retain the fixed 1920 px width');
+    assert.ok(Math.abs(sizes[1][0] - sizes[0][0] * 2) <= 1);
+    assert.ok(Math.abs(sizes[1][1] - sizes[0][1] * 2) <= 1);
+    await page.click('#btnGamePreview');
+    await page.locator('#presentationSizing').selectOption('content');
+    await page.locator('#presentationCell').fill('64');
+    await page.locator('#presentationMargin').fill('0');
+    await page.waitForFunction(width => document.getElementById('presentationCanvas').width === width, sizes[0][0]);
+    await page.screenshot({ path: path.join(OUT, 'content-preview.png') });
+    await page.locator('#btnCancelPresentation').click();
+  });
+
+  await checks.checkAsync('zero-margin PNG retains every painted pixel of environment annotations', async () => {
+    const result = await page.evaluate(async () => {
+      const source = {
+        schemaVersion: 2,
+        name: '环境条裁切回归',
+        size: { x: 10, z: 10 },
+        nodes: [
+          { templateId: 'log_pipe_conditioner', position: { x: 4, z: 4 }, direction: 0, environmentEffect: 'acid' },
+        ],
+        conveyors: [],
+      };
+      const pixels = canvas => {
+        const data = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data;
+        let alpha = 0;
+        for (let i = 3; i < data.length; i += 4) alpha += data[i];
+        return alpha;
+      };
+      const api = window.BlueprintEditor;
+      const tight = await api.exportCanvas(source, 64, true, false, { margin: 0 });
+      const padded = await api.exportCanvas(source, 64, true, false, { margin: 2 });
+      const edge = { ...source, nodes: [{ ...source.nodes[0], environmentEffect: '', position: { x: 0, z: 0 } }] };
+      const withMargin = await api.exportCanvas(edge, 64, true, false, { margin: 3 });
+      return {
+        tight: [tight.width, tight.height],
+        tightAlpha: pixels(tight),
+        paddedAlpha: pixels(padded),
+        edge: [withMargin.width, withMargin.height],
+      };
+    });
+    assert.deepEqual(result.tight, [146, 88]);
+    assert.ok(result.tightAlpha > 0);
+    assert.equal(result.tightAlpha, result.paddedAlpha, 'cropping must preserve every visible pixel');
+    assert.deepEqual(result.edge, [448, 448]);
   });
 
   await page.screenshot({ path: path.join(OUT, 'editor.png') });

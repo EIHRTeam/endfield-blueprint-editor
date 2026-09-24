@@ -101,6 +101,18 @@ export interface LineItem {
   rarityColor: string;
 }
 
+/** One direct device-manufacturing recipe, preserving its output batch size. */
+export interface ConstructionRecipe {
+  id: string;
+  outputCount: number;
+  ingredients: { id: string; count: number }[];
+}
+
+export interface MaterialItem {
+  name: string;
+  badge: string | null;
+}
+
 /** One composited overlay layer of an item-status corner badge. */
 export interface StatusLayer {
   asset: string;
@@ -180,6 +192,9 @@ export interface BakePayload {
   sprites: Record<string, string>;
   spriteBorders: SpriteBorders;
   lineItems: Record<string, LineItem>;
+  /** Null means competing recipes; an absent key means the source has no recipe. */
+  constructionRecipes?: Record<string, ConstructionRecipe | null>;
+  materialItems?: Record<string, MaterialItem>;
   statusLayers: Record<string, StatusLayer[]>;
   demo: Layout;
   presentation: PresentationPayload;

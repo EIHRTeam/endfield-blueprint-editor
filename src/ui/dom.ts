@@ -10,9 +10,10 @@
  * derived value — instead of spreading it across dozens of controlled props, which is where a migration
  * like this normally starts inventing UI.
  */
-import { buildingCells, undergroundPeer, undergroundRole } from '../core';
+import { undergroundPeer, undergroundRole } from '../core';
 import type { BlueprintNode, Product } from '../core/types';
 import type { Editor } from './editor';
+import { constructionMaterials, countLineCells } from './materials';
 
 /** `$` of the original. */
 const el = <T extends HTMLElement>(id: string): T | null => document.getElementById(id) as T | null;
@@ -37,6 +38,8 @@ function setDisabled(id: string, disabled: boolean): void {
   if (node) node.disabled = disabled;
 }
 
+const displayedNames = new WeakMap<Editor, string>();
+
 const PORT_DIRECTION_LABELS = ['右', '下', '左', '上'];
 
 /** `refreshHistory()` of the original. */
@@ -47,6 +50,7 @@ export function refreshHistory(editor: Editor): void {
 
 /** `refreshSummary()` of the original, which builds `#summaryList` and writes `#nodeCount`. */
 export function refreshSummary(editor: Editor): void {
+  refreshMaterials(editor);
   const list = el('summaryList');
   if (!list) return;
   setText('nodeCount', `${editor.data.nodes.length} / 160`);
@@ -106,15 +110,49 @@ export function refreshSummary(editor: Editor): void {
     };
   }
 
-  const occupied = buildingCells(editor.data, editor.buildings);
+  const lineCells = countLineCells(editor.data, editor.buildings);
   for (const [kind, item] of Object.entries(editor.payload.lineItems)) {
-    const count = editor.data.conveyors.filter(
-      belt => belt.kind === kind && !occupied.has(`${belt.x},${belt.z}`),
-    ).length;
+    const count = lineCells[kind as keyof typeof lineCells];
     if (!count) continue;
     const row = card(item.id, item.palette, item.rarityColor, count, `${item.name} · ${count} 格 · 点击继续铺设`);
     row.onclick = () => editor.selectTool(kind as never);
   }
+}
+
+/** Material totals are separate from the placed-device inventory above. */
+export function refreshMaterials(editor: Editor): void {
+  const list = el('materialsList');
+  if (!list) return;
+  const summary = constructionMaterials(editor.data, editor.buildings, editor.payload);
+  list.replaceChildren();
+  for (const item of summary.materials) {
+    const row = document.createElement('div');
+    row.className = 'material-row';
+    row.dataset.item = item.id;
+    if (item.badge) {
+      const image = document.createElement('img');
+      image.src = editor.assets.urlsFor(item.badge);
+      image.alt = '';
+      row.append(image);
+    }
+    const name = document.createElement('span');
+    name.textContent = item.name;
+    const quantity = document.createElement('b');
+    quantity.textContent = `× ${item.count}`;
+    row.append(name, quantity);
+    list.append(row);
+  }
+  if (!summary.materials.length) list.textContent = '暂无可汇总的材料。';
+  setDisabled('btnCopyMaterials', !editor.data.nodes.length && !editor.data.conveyors.length);
+  setText(
+    'materialsWarning',
+    summary.missing.length
+      ? `以下项目未计入材料合计：${summary.missing
+          .map(item => `${item.name} × ${item.count} ${item.unit}（${item.reason}）`)
+          .join('；')}。`
+      : '',
+  );
+  setHidden('materialsWarning', !summary.missing.length);
 }
 
 /**
@@ -234,6 +272,9 @@ export function refreshInspector(editor: Editor): void {
 
 /** `selectTool()`'s class toggle over `[data-tool]`. */
 export function refreshToolButtons(editor: Editor): void {
+  const hasRegion = Boolean(editor.selection?.nodeIndices.length || editor.selection?.conveyorIndices.length);
+  setDisabled('btnCopy', !hasRegion && editor.selected < 0);
+  setDisabled('btnPaste', !editor.clipboard);
   for (const button of document.querySelectorAll<HTMLButtonElement>('[data-tool]')) {
     button.classList.toggle('active', button.dataset.tool === editor.tool);
   }
@@ -245,8 +286,10 @@ export function refreshToolButtons(editor: Editor): void {
 
 /** The `canvasHint` strings of the original, verbatim. */
 function TOOL_HINTS(editor: Editor): string {
+  if (editor.pasting) return '移动鼠标预览粘贴位置 · 点击放置 · Esc 取消';
   const hints: Record<string, string> = {
     select: '点击选中 · 拖动移动 · R 旋转 · Delete 删除',
+    region: '拖动框选设备和线路 · Ctrl/Cmd+C 复制 · Ctrl/Cmd+V 粘贴 · Esc 取消',
     place: '点击放置 · R 旋转 · Esc 返回选择',
     item: '沿拖动方向铺设传送带 · 端点吸附接口 · Shift 切换转弯顺序',
     fluid: '拖动铺设流体管 · 端点吸附流体口 · 可与传送带分层交叉',
@@ -420,6 +463,12 @@ export function chooseProduct(editor: Editor, id: string): void {
  * derived values through props.
  */
 export function syncAll(editor: Editor, term: string): void {
+  // Only document name changes replace the input, so unrelated refreshes preserve an in-progress edit.
+  if (displayedNames.get(editor) !== editor.data.name) {
+    setValue('bpName', editor.data.name);
+    displayedNames.set(editor, editor.data.name);
+  }
+  setText('zoom', `${Math.round((editor.view.s / 40) * 100)}% · ${editor.data.size.x}×${editor.data.size.z}`);
   buildList(editor, term);
   refreshInspector(editor);
   refreshSummary(editor);

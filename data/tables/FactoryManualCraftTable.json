@@ -1,0 +1,302 @@
+{
+  "handwork_port_soil_bbflower_1": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_1",
+    "id": "handwork_port_soil_bbflower_1",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_bbflower_seed_1"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_bbflower_1",
+    "name": {
+      "id": -1300014815077458358,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_bbflower_1"
+      }
+    ],
+    "rarity": 2,
+    "showingType": 20,
+    "sortId": 103
+  },
+  "handwork_port_soil_grass_1": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_2",
+    "id": "handwork_port_soil_grass_1",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_grass_seed_1"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_grass_1",
+    "name": {
+      "id": -8794248719194671157,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_grass_1"
+      }
+    ],
+    "rarity": 2,
+    "showingType": 20,
+    "sortId": 104
+  },
+  "handwork_port_soil_grass_2": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_2",
+    "id": "handwork_port_soil_grass_2",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_grass_seed_2"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_grass_2",
+    "name": {
+      "id": 3913296556200745932,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_grass_2"
+      }
+    ],
+    "rarity": 2,
+    "showingType": 20,
+    "sortId": 105
+  },
+  "handwork_port_soil_moss_1": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_1",
+    "id": "handwork_port_soil_moss_1",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_moss_seed_1"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_moss_1",
+    "name": {
+      "id": -6167447155651938454,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_moss_1"
+      }
+    ],
+    "rarity": 2,
+    "showingType": 20,
+    "sortId": 100
+  },
+  "handwork_port_soil_moss_2": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_1",
+    "id": "handwork_port_soil_moss_2",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_moss_seed_2"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_moss_2",
+    "name": {
+      "id": 1681936871432642495,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_moss_2"
+      }
+    ],
+    "rarity": 2,
+    "showingType": 20,
+    "sortId": 101
+  },
+  "handwork_port_soil_moss_3": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_1",
+    "id": "handwork_port_soil_moss_3",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_moss_seed_3"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_moss_3",
+    "name": {
+      "id": 846092700828750975,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_moss_3"
+      }
+    ],
+    "rarity": 2,
+    "showingType": 20,
+    "sortId": 102
+  },
+  "handwork_port_soil_sp_1": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_1",
+    "id": "handwork_port_soil_sp_1",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_sp_seed_1"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_sp_1",
+    "name": {
+      "id": 5356952473752447620,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_sp_1"
+      }
+    ],
+    "rarity": 3,
+    "showingType": 20,
+    "sortId": 106
+  },
+  "handwork_port_soil_sp_2": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_1",
+    "id": "handwork_port_soil_sp_2",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_sp_seed_2"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_sp_2",
+    "name": {
+      "id": -6595669362161670622,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_sp_2"
+      }
+    ],
+    "rarity": 3,
+    "showingType": 20,
+    "sortId": 107
+  },
+  "handwork_port_soil_sp_3": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_2",
+    "id": "handwork_port_soil_sp_3",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_sp_seed_3"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_sp_3",
+    "name": {
+      "id": -4043235270188861493,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_sp_3"
+      }
+    ],
+    "rarity": 3,
+    "showingType": 20,
+    "sortId": 108
+  },
+  "handwork_port_soil_sp_4": {
+    "craftFilterType": 0,
+    "defaultUnlock": false,
+    "domainId": "domain_2",
+    "id": "handwork_port_soil_sp_4",
+    "ingredients": [
+      {
+        "count": 1,
+        "id": "item_plant_sp_seed_4"
+      },
+      {
+        "count": 1,
+        "id": "item_carbon_mtl"
+      }
+    ],
+    "itemId": "item_plant_sp_4",
+    "name": {
+      "id": 7996605854075333053,
+      "text": ""
+    },
+    "outcomes": [
+      {
+        "count": 1,
+        "id": "item_port_soil_sp_4"
+      }
+    ],
+    "rarity": 3,
+    "showingType": 20,
+    "sortId": 109
+  }
+}

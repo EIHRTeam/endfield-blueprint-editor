@@ -24,3 +24,4 @@ export {
 export { undergroundRole, undergroundPeer, pairUnderground, unpair, removeNode } from './underground';
 export { validate, MAX_NODES, MAX_SIZE } from './validate';
 export { worldPorts, routeEndpoint, connectedRoute, mergeRoutes } from './routing';
+export * from './selection';

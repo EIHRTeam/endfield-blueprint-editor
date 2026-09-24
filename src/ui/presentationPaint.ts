@@ -6,13 +6,21 @@
  * inventory. The same painter is used for the live preview and the exported PNG, so the two always
  * agree.
  *
- * Ported from the previous `editor_presentation.js` with identical geometry and colours.
+ * The fixed-width mode preserves the original geometry; content mode resizes the drawing area.
  */
 import { bounds, buildingCells, clone, key as cellKey, undergroundPeer, undergroundRole, validate } from '../core';
-import type { Layout, PresentationDetails, PresentationPayload, Product } from '../core/types';
+import type { Bounds, Layout, PresentationDetails, PresentationPayload, Product } from '../core/types';
 import { paintScene } from '../render/paintScene';
+import { sceneBounds } from '../render/sceneBounds';
 import type { Editor } from './editor';
 import { detailsOf } from './presentation';
+import { validateCellAndMargin, validateExportSize } from './canvasExport';
+
+export interface PreviewExportOptions {
+  fitToContent?: boolean;
+  cell?: number;
+  margin?: number;
+}
 
 export interface PresentationMetrics {
   details: PresentationDetails;
@@ -24,6 +32,10 @@ export interface PresentationMetrics {
   descY: number;
   listY: number;
   height: number;
+  width: number;
+  panelX: number;
+  contentMargin?: number;
+  contentBounds?: Bounds;
 }
 
 export interface InventoryItem {
@@ -119,7 +131,7 @@ function textLines(context: CanvasRenderingContext2D, value: string, width: numb
   return lines;
 }
 
-export function metrics(editor: Editor, layout: Layout): PresentationMetrics {
+export function metrics(editor: Editor, layout: Layout, options: PreviewExportOptions = {}): PresentationMetrics {
   const context = document.createElement('canvas').getContext('2d')!;
   const details = detailsOf(layout);
   const nameLines = textLines(context, layout.name, 336, `500 34px "${'HarmonyOS Sans SC'}",sans-serif`);
@@ -144,8 +156,41 @@ export function metrics(editor: Editor, layout: Layout): PresentationMetrics {
   const descY = y + 50;
   const listY = Math.max(506, description.length ? descY + description.length * 34 + 55 : y + 97);
   const items = inventory(editor, layout);
-  const height = Math.max(1440, listY + Math.ceil(items.length / 4) * 143 + 100);
-  return { details, items, nameLines, description, tags, creatorY, descY, listY, height };
+  const detailsHeight = listY + Math.ceil(items.length / 4) * 143 + 100;
+  let height = Math.max(1440, detailsHeight);
+  let width = 2560;
+  let panelX = PANEL_X;
+  let contentMargin: number | undefined;
+  let contentBounds: Bounds | undefined;
+  if (options.fitToContent) {
+    const cell = options.cell ?? 64;
+    contentMargin = options.margin ?? 1;
+    validateCellAndMargin(cell, contentMargin);
+    contentBounds = sceneBounds(layout, paintContext(editor, buildingIndex(editor)), {
+      hints: true,
+      changeHints: details.showChangeHints,
+      activePair: details.connectionPair || null,
+    });
+    const b = contentBounds;
+    panelX = (b.x1 - b.x0 + contentMargin * 2) * 116 + 108;
+    width = panelX + 652;
+    height = Math.max(detailsHeight, (b.z1 - b.z0 + contentMargin * 2) * 116 + 312);
+  }
+  return {
+    details,
+    items,
+    nameLines,
+    description,
+    tags,
+    creatorY,
+    descY,
+    listY,
+    height,
+    width,
+    panelX,
+    contentMargin,
+    contentBounds,
+  };
 }
 
 /**
@@ -158,7 +203,22 @@ export function viewportTransform(editor: Editor, layout: Layout, m: Presentatio
   const b = bounds(layout, buildingIndex(editor), 0);
   const gridW = b.x1 - b.x0;
   const gridH = b.z1 - b.z0;
-  const area = { x: 48, y: 194, w: 1800, h: m.height - 312 };
+  const area = { x: 48, y: 194, w: m.panelX - 108, h: m.height - 312 };
+  if (m.contentMargin !== undefined) {
+    const s = 116;
+    const visible = m.contentBounds ?? b;
+    return {
+      bounds: b,
+      area,
+      s,
+      gridW,
+      gridH,
+      overflowX: 0,
+      overflowY: 0,
+      ox: area.x + m.contentMargin * s - visible.x0 * s,
+      oy: area.y + m.contentMargin * s - visible.z0 * s,
+    };
+  }
   const v = m.details.viewport;
   const s = Math.min(116, 1744 / gridW, area.h / gridH) * v.zoom;
   const overflowX = Math.max(0, gridW * s - area.w);
@@ -275,7 +335,7 @@ function drawCard(
   c.restore();
 }
 
-/** Paints the whole preview sheet at its native 2560-pixel width. */
+/** Paints the preview sheet using native detail-panel units and a variable drawing area. */
 export function paintPresentation(
   c: CanvasRenderingContext2D,
   editor: Editor,
@@ -283,26 +343,27 @@ export function paintPresentation(
   m: PresentationMetrics,
 ): void {
   const native = editor.payload.presentation;
-  const { details: p, height: H } = m;
+  const { details: p, height: H, width: W } = m;
+  const viewportWidth = m.panelX - 24;
   const buildings = buildingIndex(editor);
   c.fillStyle = '#e6e6e6';
-  c.fillRect(0, 0, 2560, H);
+  c.fillRect(0, 0, W, H);
 
   // Top navigation, original topographic strips and original close icon.
   c.fillStyle = '#ededed';
-  c.fillRect(0, 0, 2560, 116);
+  c.fillRect(0, 0, W, 116);
   stamp(c, editor, native.sprites.deco_fac_blueprint_6!, 0, 0, 970, 145, 0.6);
-  stamp(c, editor, native.sprites.deco_fac_blueprint_5!, 1350, 0, 1120, 124, 0.6);
+  stamp(c, editor, native.sprites.deco_fac_blueprint_5!, W - 1210, 0, 1120, 124, 0.6);
   stamp(c, editor, native.sprites.deco_fac_blueprint_24!, 65, 2, 216, 108, 0.22);
   stamp(c, editor, native.sprites.deco_assembly07_new!, 67, 28, 82, 15);
-  stamp(c, editor, native.sprites.deco_fac_blueprint_28!, 1914, 34, 356, 60);
+  stamp(c, editor, native.sprites.deco_fac_blueprint_28!, W - 646, 34, 356, 60);
   label(c, '// 蓝图预览', 67, 48, 28, '#161616', '600');
-  stamp(c, editor, native.sprites.close_btn_bg_shadeless!, 2430, 26, 64, 64);
+  stamp(c, editor, native.sprites.close_btn_bg_shadeless!, W - 130, 26, 64, 64);
 
   const t = viewportTransform(editor, layout, m);
   c.save();
   c.beginPath();
-  c.rect(0, 117, 1884, H - 175);
+  c.rect(0, 117, viewportWidth, H - 175);
   c.clip();
   paintScene(
     c,
@@ -311,7 +372,7 @@ export function paintPresentation(
     { s: t.s, ox: t.ox, oy: t.oy },
     {
       grid: true,
-      gridRect: { x: 0, y: 117, w: 1884, h: H - 175 },
+      gridRect: { x: 0, y: 117, w: viewportWidth, h: H - 175 },
       hints: true,
       changeHints: p.showChangeHints,
       activePair: p.connectionPair || null,
@@ -326,13 +387,13 @@ export function paintPresentation(
   if (t.overflowY) {
     const track = H - 250;
     const thumb = Math.max(70, (track * t.area.h) / (t.area.h + t.overflowY));
-    c.fillRect(1885, 149 + (track - thumb) * p.viewport.y, 8, thumb);
+    c.fillRect(viewportWidth + 1, 149 + (track - thumb) * p.viewport.y, 8, thumb);
   }
 
   // Soft masks inside the drawing viewport, never over the detail panel.
   for (const [x0, x1] of [
     [0, 44],
-    [1884, 1840],
+    [viewportWidth, viewportWidth - 44],
   ]) {
     const edge = c.createLinearGradient(x0, 0, x1, 0);
     edge.addColorStop(0, '#e6e6e6');
@@ -344,21 +405,23 @@ export function paintPresentation(
   fade.addColorStop(0, '#e6e6e600');
   fade.addColorStop(1, '#d4d4d4');
   c.fillStyle = fade;
-  c.fillRect(0, H - 150, 1908, 150);
+  c.fillRect(0, H - 150, m.panelX, 150);
   if (t.overflowX) {
-    const track = 1770;
+    const track = viewportWidth - 114;
     const thumb = Math.max(90, (track * t.area.w) / (t.area.w + t.overflowX));
     c.fillStyle = '#444';
     c.fillRect(65 + (track - thumb) * p.viewport.x, H - 85, thumb, 8);
   }
-  for (const x of [49, 1870]) {
+  for (const x of [49, viewportWidth - 14]) {
     for (const y of [176, H - 81]) {
       c.fillStyle = '#999';
       c.fillRect(x, y, 8, 8);
     }
   }
 
-  // Fixed detail panel: neutral vertical wash, grid texture and the lens watermark.
+  // Keep the detail panel proportions while allowing the drawing area to follow the content.
+  c.save();
+  c.translate(m.panelX - PANEL_X, 0);
   stamp(c, editor, native.sprites.deco_fac_blueprint_light!, PANEL_X, 116, PANEL_W, H - 116);
   c.save();
   c.beginPath();
@@ -452,7 +515,8 @@ export function paintPresentation(
   c.fillStyle = '#27282a';
   c.fillRect(2516, 116, 44, H - 116);
   for (let y = 195; y < H; y += 425) stamp(c, editor, native.sprites.deco_fac_blueprint_29!, 2527, y, 24, 425);
-  stamp(c, editor, native.sprites.deco_fac_blueprint_25!, 0, 0, 2560, H, 0.5);
+  c.restore();
+  stamp(c, editor, native.sprites.deco_fac_blueprint_25!, 0, 0, W, H, 0.5);
 }
 
 /**
@@ -465,12 +529,19 @@ export async function exportPreviewSheet(
   layout: Layout,
   width: number,
   base: string,
+  options: PreviewExportOptions = {},
 ): Promise<HTMLCanvasElement> {
-  void base;
   const source = validate(clone(layout), buildingIndex(editor));
-  if (!PREVIEW_WIDTHS.has(width)) throw Error('请选择有效的完整预览分辨率');
+  if (!options.fitToContent && !PREVIEW_WIDTHS.has(width)) throw Error('请选择有效的完整预览分辨率');
 
-  const m = metrics(editor, source);
+  let m = metrics(editor, source, options);
+  const scale = options.fitToContent ? (options.cell ?? 64) / 116 : width / 2560;
+  validateExportSize(Math.ceil(m.width * scale), Math.ceil(m.height * scale));
+  await editor.prepareScene(source, base);
+  m = metrics(editor, source, options);
+  const outputWidth = Math.ceil(m.width * scale);
+  const outputHeight = options.fitToContent ? Math.ceil(m.height * scale) : Math.round(m.height * scale);
+  validateExportSize(outputWidth, outputHeight);
   const buildings = buildingIndex(editor);
   // Preload every asset the sheet can touch, including covers and rarity bars.
   const keys = new Set<string>(Object.values(editor.payload.presentation.sprites));
@@ -499,10 +570,11 @@ export async function exportPreviewSheet(
   );
 
   const out = document.createElement('canvas');
-  out.width = width;
-  out.height = Math.round((m.height * width) / 2560);
-  const c = out.getContext('2d')!;
-  c.scale(width / 2560, width / 2560);
+  out.width = outputWidth;
+  out.height = outputHeight;
+  const c = out.getContext('2d');
+  if (!c) throw Error('无法创建导出画布，请减小每格像素');
+  c.scale(scale, scale);
   paintPresentation(c, editor, source, m);
   return out;
 }

@@ -1,5 +1,5 @@
 {
-  "nodes": 835,
+  "nodes": 874,
   "unexpectedAttributes": [],
   "body": [
     {
@@ -18,8 +18,8 @@
           "attributes": {
             "id": "bpName",
             "aria-label": "蓝图名称",
-            "value": "未命名蓝图",
-            "maxlength": "120"
+            "maxlength": "120",
+            "value": "未命名蓝图"
           },
           "text": "",
           "children": []
@@ -63,9 +63,19 @@
         {
           "tag": "button",
           "attributes": {
-            "id": "btnImport"
+            "id": "btnImport",
+            "title": "打开 JSON，替换当前布局；可撤销"
           },
           "text": "导入 JSON",
+          "children": []
+        },
+        {
+          "tag": "button",
+          "attributes": {
+            "id": "btnMerge",
+            "title": "将另一张蓝图放入当前布局"
+          },
+          "text": "拼接蓝图",
           "children": []
         },
         {
@@ -75,68 +85,6 @@
           },
           "text": "保存 JSON",
           "children": []
-        },
-        {
-          "tag": "div",
-          "attributes": {
-            "id": "exportOptions"
-          },
-          "text": "",
-          "children": [
-            {
-              "tag": "select",
-              "attributes": {
-                "id": "exportScale",
-                "aria-label": "PNG 每格像素"
-              },
-              "text": "",
-              "children": [
-                {
-                  "tag": "option",
-                  "attributes": {
-                    "value": "40"
-                  },
-                  "text": "40 px/格",
-                  "children": []
-                },
-                {
-                  "tag": "option",
-                  "attributes": {
-                    "value": "64",
-                    "selected": ""
-                  },
-                  "text": "64 px/格",
-                  "children": []
-                },
-                {
-                  "tag": "option",
-                  "attributes": {
-                    "value": "128"
-                  },
-                  "text": "128 px/格",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "tag": "label",
-              "attributes": {
-                "class": "check"
-              },
-              "text": "透明背景",
-              "children": [
-                {
-                  "tag": "input",
-                  "attributes": {
-                    "id": "transparent",
-                    "type": "checkbox"
-                  },
-                  "text": "",
-                  "children": []
-                }
-              ]
-            }
-          ]
         },
         {
           "tag": "button",
@@ -4670,6 +4618,34 @@
                 {
                   "tag": "button",
                   "attributes": {
+                    "data-tool": "region"
+                  },
+                  "text": "框选区域 M",
+                  "children": []
+                },
+                {
+                  "tag": "button",
+                  "attributes": {
+                    "id": "btnCopy",
+                    "title": "Ctrl+C / ⌘C",
+                    "disabled": ""
+                  },
+                  "text": "复制选区",
+                  "children": []
+                },
+                {
+                  "tag": "button",
+                  "attributes": {
+                    "id": "btnPaste",
+                    "title": "Ctrl+V / ⌘V",
+                    "disabled": ""
+                  },
+                  "text": "粘贴选区",
+                  "children": []
+                },
+                {
+                  "tag": "button",
+                  "attributes": {
                     "data-tool": "place"
                   },
                   "text": "放置设备 P",
@@ -4715,7 +4691,7 @@
               "attributes": {
                 "class": "help"
               },
-              "text": "旋转 · 删除选中 拖动铺线 · 切换转弯顺序 滚轮缩放 · 空格拖动 / 中键平移",
+              "text": "旋转 · 删除选中 拖动铺线 · 切换转弯顺序 滚轮缩放 · 空格拖动 / 中键平移 框选后 / 连续点击粘贴 · 结束",
               "children": [
                 {
                   "tag": "kbd",
@@ -4745,6 +4721,36 @@
                   "tag": "br",
                   "attributes": {},
                   "text": "",
+                  "children": []
+                },
+                {
+                  "tag": "br",
+                  "attributes": {},
+                  "text": "",
+                  "children": []
+                },
+                {
+                  "tag": "kbd",
+                  "attributes": {},
+                  "text": "Ctrl+C",
+                  "children": []
+                },
+                {
+                  "tag": "kbd",
+                  "attributes": {},
+                  "text": "Ctrl+V",
+                  "children": []
+                },
+                {
+                  "tag": "br",
+                  "attributes": {},
+                  "text": "",
+                  "children": []
+                },
+                {
+                  "tag": "kbd",
+                  "attributes": {},
+                  "text": "Esc",
                   "children": []
                 }
               ]
@@ -4944,9 +4950,9 @@
                           "tag": "input",
                           "attributes": {
                             "id": "nodeX",
-                            "type": "number",
                             "min": "0",
-                            "step": "1"
+                            "step": "1",
+                            "type": "number"
                           },
                           "text": "",
                           "children": []
@@ -4962,9 +4968,9 @@
                           "tag": "input",
                           "attributes": {
                             "id": "nodeZ",
-                            "type": "number",
                             "min": "0",
-                            "step": "1"
+                            "step": "1",
+                            "type": "number"
                           },
                           "text": "",
                           "children": []
@@ -5398,6 +5404,56 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "tag": "section",
+              "attributes": {
+                "id": "materials"
+              },
+              "text": "",
+              "children": [
+                {
+                  "tag": "h2",
+                  "attributes": {},
+                  "text": "建造材料",
+                  "children": []
+                },
+                {
+                  "tag": "p",
+                  "attributes": {
+                    "class": "muted"
+                  },
+                  "text": "按设备直接制造配方汇总，未扣除已有库存。",
+                  "children": []
+                },
+                {
+                  "tag": "div",
+                  "attributes": {
+                    "id": "materialsList"
+                  },
+                  "text": "暂无可汇总的材料。",
+                  "children": []
+                },
+                {
+                  "tag": "p",
+                  "attributes": {
+                    "id": "materialsWarning",
+                    "class": "muted",
+                    "hidden": ""
+                  },
+                  "text": "",
+                  "children": []
+                },
+                {
+                  "tag": "button",
+                  "attributes": {
+                    "id": "btnCopyMaterials",
+                    "disabled": ""
+                  },
+                  "text": "复制材料清单",
+                  "children": []
+                }
+              ]
             }
           ]
         }
@@ -5464,9 +5520,9 @@
               "tag": "input",
               "attributes": {
                 "id": "productSearch",
-                "type": "search",
                 "aria-label": "搜索物品图标",
-                "placeholder": "搜索名称或 ID，例如：铁、铜、清水"
+                "placeholder": "搜索名称或 ID，例如：铁、铜、清水",
+                "type": "search"
               },
               "text": "",
               "children": []
@@ -5982,9 +6038,9 @@
                       "tag": "input",
                       "attributes": {
                         "id": "coverSearch",
-                        "type": "search",
                         "aria-label": "搜索封面图标",
-                        "placeholder": "搜索物品或设备名称 / ID"
+                        "placeholder": "搜索物品或设备名称 / ID",
+                        "type": "search"
                       },
                       "text": "",
                       "children": []
@@ -6147,7 +6203,7 @@
                     {
                       "tag": "b",
                       "attributes": {},
-                      "text": "画面取景",
+                      "text": "图片尺寸",
                       "children": []
                     },
                     {
@@ -6155,7 +6211,103 @@
                       "attributes": {
                         "class": "muted"
                       },
-                      "text": "在左侧预览内滚轮缩放、拖动平移。导出保留当前取景。",
+                      "text": "按内容导出会完整显示布局，图片宽高随格数调整。",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "tag": "label",
+                  "attributes": {},
+                  "text": "导出比例",
+                  "children": [
+                    {
+                      "tag": "select",
+                      "attributes": {
+                        "id": "presentationSizing"
+                      },
+                      "text": "",
+                      "children": [
+                        {
+                          "tag": "option",
+                          "attributes": {
+                            "value": "content",
+                            "selected": ""
+                          },
+                          "text": "按内容尺寸",
+                          "children": []
+                        },
+                        {
+                          "tag": "option",
+                          "attributes": {
+                            "value": "fixed"
+                          },
+                          "text": "固定画幅与取景",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "label",
+                  "attributes": {},
+                  "text": "每格像素",
+                  "children": [
+                    {
+                      "tag": "input",
+                      "attributes": {
+                        "id": "presentationCell",
+                        "min": "8",
+                        "max": "256",
+                        "step": "1",
+                        "type": "number",
+                        "value": "64"
+                      },
+                      "text": "",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "tag": "label",
+                  "attributes": {},
+                  "text": "内容边距（格）",
+                  "children": [
+                    {
+                      "tag": "input",
+                      "attributes": {
+                        "id": "presentationMargin",
+                        "min": "0",
+                        "max": "20",
+                        "step": "1",
+                        "type": "number",
+                        "value": "1"
+                      },
+                      "text": "",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "attributes": {
+                    "class": "presentation-auto"
+                  },
+                  "text": "",
+                  "children": [
+                    {
+                      "tag": "b",
+                      "attributes": {},
+                      "text": "固定画幅取景",
+                      "children": []
+                    },
+                    {
+                      "tag": "p",
+                      "attributes": {
+                        "class": "muted"
+                      },
+                      "text": "选择固定画幅后，可在预览内滚轮缩放、拖动平移。",
                       "children": []
                     }
                   ]
@@ -6177,10 +6329,10 @@
                       "tag": "input",
                       "attributes": {
                         "id": "presentationZoom",
-                        "type": "range",
                         "min": "100",
                         "max": "400",
                         "step": "1",
+                        "type": "range",
                         "value": "100"
                       },
                       "text": "",
@@ -6197,10 +6349,10 @@
                       "tag": "input",
                       "attributes": {
                         "id": "presentationPanX",
-                        "type": "range",
                         "min": "0",
                         "max": "100",
                         "step": "0.1",
+                        "type": "range",
                         "value": "50"
                       },
                       "text": "",
@@ -6217,10 +6369,10 @@
                       "tag": "input",
                       "attributes": {
                         "id": "presentationPanY",
-                        "type": "range",
                         "min": "0",
                         "max": "100",
                         "step": "0.1",
+                        "type": "range",
                         "value": "50"
                       },
                       "text": "",
@@ -6377,6 +6529,177 @@
       ]
     },
     {
+      "tag": "dialog",
+      "attributes": {
+        "id": "canvasExportDialog",
+        "aria-labelledby": "canvasExportTitle"
+      },
+      "text": "",
+      "children": [
+        {
+          "tag": "div",
+          "attributes": {
+            "class": "library-head"
+          },
+          "text": "",
+          "children": [
+            {
+              "tag": "h2",
+              "attributes": {
+                "id": "canvasExportTitle"
+              },
+              "text": "导出画布 PNG",
+              "children": []
+            },
+            {
+              "tag": "button",
+              "attributes": {
+                "id": "btnCloseCanvasExport"
+              },
+              "text": "关闭",
+              "children": []
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attributes": {
+            "class": "fields",
+            "id": "exportOptions"
+          },
+          "text": "",
+          "children": [
+            {
+              "tag": "label",
+              "attributes": {},
+              "text": "导出范围",
+              "children": [
+                {
+                  "tag": "select",
+                  "attributes": {
+                    "id": "exportRange"
+                  },
+                  "text": "",
+                  "children": [
+                    {
+                      "tag": "option",
+                      "attributes": {
+                        "value": "content",
+                        "selected": ""
+                      },
+                      "text": "内容范围",
+                      "children": []
+                    },
+                    {
+                      "tag": "option",
+                      "attributes": {
+                        "value": "canvas"
+                      },
+                      "text": "整个蓝图画布",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attributes": {
+                "class": "row"
+              },
+              "text": "",
+              "children": [
+                {
+                  "tag": "label",
+                  "attributes": {},
+                  "text": "每格像素",
+                  "children": [
+                    {
+                      "tag": "input",
+                      "attributes": {
+                        "id": "exportScale",
+                        "min": "8",
+                        "max": "256",
+                        "step": "1",
+                        "type": "number",
+                        "value": "64"
+                      },
+                      "text": "",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "tag": "label",
+                  "attributes": {},
+                  "text": "内容边距（格）",
+                  "children": [
+                    {
+                      "tag": "input",
+                      "attributes": {
+                        "id": "exportMargin",
+                        "min": "0",
+                        "max": "20",
+                        "step": "1",
+                        "type": "number",
+                        "value": "1"
+                      },
+                      "text": "",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "label",
+              "attributes": {
+                "class": "check"
+              },
+              "text": "透明背景（不含标题）",
+              "children": [
+                {
+                  "tag": "input",
+                  "attributes": {
+                    "id": "transparent",
+                    "type": "checkbox"
+                  },
+                  "text": "",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "tag": "p",
+              "attributes": {
+                "class": "muted"
+              },
+              "text": "图片比例随内容格数变化；边距设为 0 可紧贴设备与线路范围。",
+              "children": []
+            },
+            {
+              "tag": "p",
+              "attributes": {
+                "class": "error",
+                "id": "canvasExportError",
+                "role": "status"
+              },
+              "text": "",
+              "children": []
+            },
+            {
+              "tag": "button",
+              "attributes": {
+                "id": "btnConfirmCanvasExport"
+              },
+              "text": "下载 PNG",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "tag": "footer",
       "attributes": {},
       "text": "",
@@ -6421,25 +6744,26 @@
       "tag": "input",
       "attributes": {
         "id": "fileIn",
-        "type": "file",
-        "accept": ".json,application/json"
+        "accept": ".json,application/json",
+        "type": "file"
+      },
+      "text": "",
+      "children": []
+    },
+    {
+      "tag": "input",
+      "attributes": {
+        "id": "mergeFileIn",
+        "accept": ".json,application/json",
+        "hidden": "",
+        "type": "file"
       },
       "text": "",
       "children": []
     }
   ],
   "meta": {
-    "derivedFrom": [
-      "tmp/main/src/editor_shell.html",
-      "tmp/main/src/editor_presentation.html",
-      "tmp/main/assets/fonts/LICENSE-update.txt"
-    ],
-    "transforms": [
-      "__FONT_CSS__ placeholder dropped (font is linked, produces no DOM)",
-      "__FONT_LICENSE__ replaced with the escaped licence text",
-      "export button split into #btnGamePreview and #btnPng",
-      "presentation dialog injected before <footer>"
-    ],
-    "readyText": "正在准备蓝图素材…"
+    "derivedFrom": "Reviewed current UI: selection, merge, content export and material totals",
+    "reviewedAddition": "Inline error status before the canvas PNG download button"
   }
 }

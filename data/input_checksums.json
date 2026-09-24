@@ -1529,5 +1529,6 @@
   "data/tables/I18nTextTable_CN.json": "4792534f2188d8ee29e6e663dc090edd179eb1a085b9cea616765e895d679129",
   "data/tables/ItemTable.json": "fed97c346da9b22f5306ab9a7b7ccb02896a4154bcd0c6ef925a41e0a898d61d",
   "data/tables/RarityColorTable.json": "882a2f6f6ccb9bb75ad921dcb6f8b205495eda5d65ccfccc5f74e57756dcfa83",
-  "assets/fonts/HarmonyOS_Sans_SC/LICENSE.txt": "7d7acf8e3ac928ae7f34aaa9f8e348dd0476dbb52caaa058e402894d4f6efe73"
+  "assets/fonts/HarmonyOS_Sans_SC/LICENSE.txt": "7d7acf8e3ac928ae7f34aaa9f8e348dd0476dbb52caaa058e402894d4f6efe73",
+  "data/tables/FactoryManualCraftTable.json": "674a1006d4a88e20a7b57732403169af743680761d97acd8bfffefaa6d7954f4"
 }

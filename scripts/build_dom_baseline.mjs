@@ -215,6 +215,24 @@ function settledStateScript(devices, tagNames) {
 }
 
 async function main() {
+  // Feature work intentionally extends the migrated UI. Explicitly capture a reviewed current
+  // interface, retaining the original-template path below for auditing the historical migration.
+  if (process.argv.includes('--current')) {
+    const { startBrowser, startServer } = await import('../tests/harness.mjs');
+    const server = await startServer();
+    let session;
+    try {
+      session = await startBrowser(server.base);
+      const snapshot = normaliseSnapshot(await session.page.evaluate(EXTRACT_IN_PAGE));
+      snapshot.meta = { derivedFrom: 'Reviewed current UI: selection, merge, content export and material totals' };
+      await writeFile(OUT, `${JSON.stringify(snapshot, null, 2)}\n`);
+      console.log(`[dom-baseline] ${snapshot.nodes} nodes captured from dist/`);
+    } finally {
+      if (session) await session.close();
+      await server.close();
+    }
+    return;
+  }
   const templateDir = path.resolve(process.argv[2] ?? path.join(ROOT, 'tmp/main/src'));
   const shellPath = path.join(templateDir, 'editor_shell.html');
   const presentationPath = path.join(templateDir, 'editor_presentation.html');

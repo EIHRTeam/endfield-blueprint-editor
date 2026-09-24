@@ -10,8 +10,11 @@
  * Returns a teardown that removes every listener, so a remount cannot double-bind.
  */
 import { mergeRoutes, pairUnderground } from '../core';
+import { selectionBounds } from '../core/selection';
 import type { Direction, Layout } from '../core/types';
-import { paintScene } from '../render/paintScene';
+import { exportCanvas as renderCanvas } from './canvasExport';
+import type { CanvasExportOptions } from './canvasExport';
+import { materialsText } from './materials';
 import type { Editor, Tool } from './editor';
 import { chooseProduct, openProductLibrary, refreshInspector, refreshProductOptions, refreshToolButtons } from './dom';
 
@@ -55,6 +58,10 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
     const point = editor.pointer(event);
     canvas.focus();
     if (event.button === 2) {
+      if (editor.pasting) {
+        editor.cancelPaste();
+        return;
+      }
       if (editor.inside(point)) editor.eraseAt(point);
       return;
     }
@@ -64,7 +71,22 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
       editor.gesture = { type: 'pan', x: event.clientX, y: event.clientY, ox: editor.view.ox, oy: editor.view.oy };
       return;
     }
+    if (editor.pasting) {
+      editor.hover = point;
+      editor.pasteAt(point);
+      editor.requestDraw();
+      return;
+    }
     if (!editor.inside(point)) return;
+    if (editor.tool === 'region' || (editor.tool === 'select' && event.shiftKey)) {
+      editor.selected = -1;
+      editor.selection = null;
+      editor.gesture = { type: 'region', start: point, end: point };
+      refreshInspector(editor);
+      refreshToolButtons(editor);
+      editor.requestDraw();
+      return;
+    }
     const index = editor.indexAt(point.x, point.z);
     if (editor.tool === 'icon') {
       if (index >= 0) {
@@ -109,6 +131,7 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
         moved: false,
       };
       refreshInspector(editor);
+      refreshToolButtons(editor);
       editor.requestDraw();
       return;
     }
@@ -125,7 +148,9 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
       return;
     }
     editor.selected = -1;
+    editor.selection = null;
     refreshInspector(editor);
+    refreshToolButtons(editor);
     editor.requestDraw();
   }) as EventListener);
 
@@ -142,6 +167,12 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
         z: gesture.original.position.z + point.z - gesture.start.z,
       };
       gesture.moved = gesture.moved || point.x !== gesture.start.x || point.z !== gesture.start.z;
+    } else if (gesture?.type === 'region') {
+      gesture.end = {
+        ...point,
+        x: Math.max(0, Math.min(editor.data.size.x - 1, point.x)),
+        z: Math.max(0, Math.min(editor.data.size.z - 1, point.z)),
+      };
     } else if (gesture?.type === 'route') {
       editor.updateRoute(
         {
@@ -166,6 +197,11 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
     }
     if (current?.type === 'move' && !current.moved && editor.showHints) {
       hintClick(editor, event, current.index);
+    }
+    if (current?.type === 'region') {
+      editor.selectRegion(selectionBounds(current.start, current.end));
+      refreshInspector(editor);
+      refreshToolButtons(editor);
     }
     if (current?.type === 'route') {
       if (current.error) editor.message(current.error, true);
@@ -210,14 +246,19 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
   );
   on(canvas, 'dblclick', () => {
     const node = editor.data.nodes[editor.selected];
-    if (!node) return;
+    if (!node || editor.pasting) return;
     if (editor.buildings[node.templateId]!.underground) editor.toggleConnection();
     else openProductLibrary(editor);
   });
 
   // ---- window and document (editor_app.js:567-590) ------------------------------------
   on(window, 'keydown', ((event: KeyboardEvent) => {
-    if (el<HTMLDialogElement>('presentationDialog')?.open || el<HTMLDialogElement>('fontLicenseDialog')?.open) return;
+    if (
+      el<HTMLDialogElement>('presentationDialog')?.open ||
+      el<HTMLDialogElement>('fontLicenseDialog')?.open ||
+      el<HTMLDialogElement>('canvasExportDialog')?.open
+    )
+      return;
     if ((event.ctrlKey || event.metaKey) && event.code === 'KeyS') {
       event.preventDefault();
       downloadJson(editor);
@@ -233,6 +274,14 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
     const target = event.target as HTMLElement | null;
     if (target?.closest('input,select,textarea,[contenteditable="true"]')) return;
     if (event.ctrlKey || event.metaKey) {
+      if (event.code === 'KeyC') {
+        event.preventDefault();
+        editor.copySelection();
+      }
+      if (event.code === 'KeyV') {
+        event.preventDefault();
+        editor.beginPaste();
+      }
       if (event.code === 'KeyZ') {
         event.preventDefault();
         if (event.shiftKey) editor.redo();
@@ -262,8 +311,15 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
     else if (event.code === 'Delete' || event.code === 'Backspace') {
       event.preventDefault();
       editor.deleteSelected();
-    } else if (['KeyV', 'KeyP', 'KeyB', 'KeyL', 'KeyE'].includes(event.code)) {
-      const tools: Record<string, Tool> = { KeyV: 'select', KeyP: 'place', KeyB: 'item', KeyL: 'fluid', KeyE: 'erase' };
+    } else if (['KeyV', 'KeyM', 'KeyP', 'KeyB', 'KeyL', 'KeyE'].includes(event.code)) {
+      const tools: Record<string, Tool> = {
+        KeyV: 'select',
+        KeyM: 'region',
+        KeyP: 'place',
+        KeyB: 'item',
+        KeyL: 'fluid',
+        KeyE: 'erase',
+      };
       editor.selectTool(tools[event.code]!);
     }
   }) as EventListener);
@@ -370,6 +426,7 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
     editor.showHints = !editor.showHints;
     el('btnHints')!.textContent = `原版提示：${editor.showHints ? '开' : '关'}`;
     refreshInspector(editor);
+    refreshToolButtons(editor);
     editor.requestDraw();
   });
   bind('btnClear', 'click', () => {
@@ -380,10 +437,30 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
     }, '布局已清空，可撤销');
   });
   bind('btnDemo', 'click', () => editor.importLayout(editor.payload.demo));
+  bind('btnCopy', 'click', () => editor.copySelection());
+  bind('btnPaste', 'click', () => editor.beginPaste());
+  bind('btnMerge', 'click', () => el<HTMLInputElement>('mergeFileIn')?.click());
+  bind('mergeFileIn', 'change', () => void importFile(editor, true));
   bind('btnImport', 'click', () => el<HTMLInputElement>('fileIn')?.click());
   bind('fileIn', 'change', () => void importFile(editor));
   bind('btnJson', 'click', () => downloadJson(editor));
-  bind('btnPng', 'click', () => void exportPng(editor, base));
+  bind('btnCopyMaterials', 'click', async () => {
+    const text = materialsText(editor.data, editor.buildings, editor.payload);
+    try {
+      await navigator.clipboard.writeText(text);
+      editor.message('材料清单已复制');
+    } catch {
+      download(new Blob([text], { type: 'text/plain;charset=utf-8' }), filename(editor, '_材料清单.txt'));
+      editor.message('剪贴板不可用，已下载材料清单');
+    }
+  });
+  bind('btnPng', 'click', () => {
+    const error = el('canvasExportError');
+    if (error) error.textContent = '';
+    el<HTMLDialogElement>('canvasExportDialog')?.showModal();
+  });
+  bind('btnCloseCanvasExport', 'click', () => el<HTMLDialogElement>('canvasExportDialog')?.close());
+  bind('btnConfirmCanvasExport', 'click', () => void exportPng(editor, base));
   bind('btnFontLicense', 'click', () => el<HTMLDialogElement>('fontLicenseDialog')?.showModal());
   bind('btnCloseFontLicense', 'click', () => el<HTMLDialogElement>('fontLicenseDialog')?.close());
   bind('btnItemLibrary', 'click', () => openProductLibrary(editor));
@@ -437,16 +514,20 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
 /** `#btnPng` handler of the original (`editor_app.js:648-653`). */
 async function exportPng(editor: Editor, base: string): Promise<void> {
   commitName(editor);
-  const button = el<HTMLButtonElement>('btnPng');
+  const button = el<HTMLButtonElement>('btnConfirmCanvasExport');
   if (button) button.disabled = true;
   editor.message('正在生成 PNG…');
+  const errorText = el('canvasExportError');
+  if (errorText) errorText.textContent = '';
   try {
     const out = await exportCanvas(editor, base);
     const blob = await new Promise<Blob | null>(resolve => out.toBlob(resolve, 'image/png'));
     if (!blob) throw Error('PNG 编码失败');
     download(blob, filename(editor, '.png'));
     editor.message(`PNG 已导出：${out.width}×${out.height}`);
+    el<HTMLDialogElement>('canvasExportDialog')?.close();
   } catch (error) {
+    if (errorText) errorText.textContent = (error as Error).message;
     editor.message((error as Error).message, true);
   } finally {
     if (button) button.disabled = false;
@@ -511,14 +592,16 @@ function downloadJson(editor: Editor): void {
 }
 
 /** `#fileIn` handler of the original. */
-async function importFile(editor: Editor): Promise<void> {
-  const input = el<HTMLInputElement>('fileIn');
+async function importFile(editor: Editor, merge = false): Promise<void> {
+  const input = el<HTMLInputElement>(merge ? 'mergeFileIn' : 'fileIn');
   const file = input?.files?.[0];
   if (input) input.value = '';
   if (!file) return;
   try {
     if (file.size > 10 * 1024 * 1024) throw Error('JSON 文件过大');
-    editor.importLayout(JSON.parse(await file.text()));
+    const parsed = JSON.parse(await file.text());
+    if (merge) editor.mergeLayout(parsed);
+    else editor.importLayout(parsed);
   } catch (error) {
     editor.message(`导入失败：${(error as Error).message}`, true);
   }
@@ -537,39 +620,18 @@ export async function exportCanvas(
   cell?: number,
   transparent?: boolean,
   hints?: boolean,
+  options?: CanvasExportOptions,
 ): Promise<HTMLCanvasElement> {
-  const source = structuredClone(layout);
-  const scale = cell ?? Number(el<HTMLSelectElement>('exportScale')?.value ?? 64);
-  const clear = transparent ?? el<HTMLInputElement>('transparent')?.checked ?? false;
-  const showHints = hints ?? editor.showHints;
-  if (![40, 64, 128].includes(scale)) throw Error('无效的导出分辨率');
-  await editor.prepareScene(source, base);
-  const b = editor.boundsOf(source, 1);
-  const top = clear ? 0 : 48;
-  const out = document.createElement('canvas');
-  out.width = (b.x1 - b.x0) * scale;
-  out.height = (b.z1 - b.z0) * scale + top;
-  const ctx = out.getContext('2d')!;
-  if (!clear) {
-    ctx.fillStyle = '#e6e6e6';
-    ctx.fillRect(0, 0, out.width, out.height);
-    ctx.fillStyle = '#454545';
-    ctx.font = '20px "HarmonyOS Sans SC",sans-serif';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(source.name, 18, 24, out.width - 36);
-  }
-  // Coordinates are shifted exactly once; rotated dimensions come from Core.bounds.
-  paintScene(
-    ctx,
-    source,
-    editor.paintContextPublic(),
-    { s: scale, ox: -b.x0 * scale, oy: top - b.z0 * scale },
-    {
-      grid: !clear && editor.showGrid,
-      bounds: b,
-      hints: showHints,
-      activePair: source.presentation?.connectionPair || null,
+  return renderCanvas(
+    editor,
+    base,
+    layout,
+    cell ?? Number(el<HTMLInputElement>('exportScale')?.value ?? 64),
+    transparent ?? el<HTMLInputElement>('transparent')?.checked ?? false,
+    hints ?? editor.showHints,
+    options ?? {
+      range: (el<HTMLSelectElement>('exportRange')?.value ?? 'content') as 'content' | 'canvas',
+      margin: Number(el<HTMLInputElement>('exportMargin')?.value ?? 1),
     },
   );
-  return out;
 }

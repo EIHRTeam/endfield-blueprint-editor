@@ -17,6 +17,7 @@ import {
   metrics as presentationMetrics,
   viewportTransform as presentationTransform,
 } from './presentationPaint';
+import type { PreviewExportOptions } from './presentationPaint';
 
 /** `colors` of the original, in insertion order (editor_presentation.js:5-6). */
 export const COVER_COLORS: Array<{ id: string; name: string; color: string }> = [
@@ -174,6 +175,9 @@ export function initPresentation(editor: Editor, state: PresentationState, base:
     'presentationPanY',
     'presentationChangeHints',
     'presentationConnectionPair',
+    'presentationSizing',
+    'presentationCell',
+    'presentationMargin',
   ]) {
     bind(id, 'change', () => scheduleRender(editor, state, base));
     bind(id, 'input', () => scheduleRender(editor, state, base));
@@ -237,7 +241,7 @@ export function initPresentation(editor: Editor, state: PresentationState, base:
   const canvas = el<HTMLCanvasElement>('presentationCanvas');
   if (canvas) {
     on(canvas, 'pointerdown', ((event: PointerEvent) => {
-      if (event.button !== 0 || !state.draft) return;
+      if (event.button !== 0 || !state.draft || exportOptions().fitToContent) return;
       const box = canvas.getBoundingClientRect();
       const scale = 2560 / box.width;
       const q = { x: (event.clientX - box.left) * scale, y: (event.clientY - box.top) * scale };
@@ -291,7 +295,7 @@ export function initPresentation(editor: Editor, state: PresentationState, base:
       canvas,
       'wheel',
       ((event: WheelEvent) => {
-        if (!state.draft) return;
+        if (!state.draft || exportOptions().fitToContent) return;
         const box = canvas.getBoundingClientRect();
         const scale = 2560 / box.width;
         const q = { x: (event.clientX - box.left) * scale, y: (event.clientY - box.top) * scale };
@@ -384,6 +388,32 @@ export async function open(editor: Editor, state: PresentationState, base: strin
   await render(editor, state, base);
 }
 
+/** Export settings stay local to the dialog instead of changing the saved blueprint. */
+function exportOptions(): PreviewExportOptions {
+  return {
+    fitToContent: el<HTMLSelectElement>('presentationSizing')?.value === 'content',
+    cell: Number(el<HTMLInputElement>('presentationCell')?.value ?? 64),
+    margin: Number(el<HTMLInputElement>('presentationMargin')?.value ?? 1),
+  };
+}
+
+function refreshExportControls(content: boolean): void {
+  for (const id of [
+    'presentationResolution',
+    'presentationZoom',
+    'presentationPanX',
+    'presentationPanY',
+    'btnResetViewport',
+  ]) {
+    const control = el<HTMLInputElement | HTMLSelectElement | HTMLButtonElement>(id);
+    if (control) control.disabled = content;
+  }
+  for (const id of ['presentationCell', 'presentationMargin']) {
+    const control = el<HTMLInputElement>(id);
+    if (control) control.disabled = !content;
+  }
+}
+
 /** `render()` of the original (editor_presentation.js:195-212). */
 export async function render(editor: Editor, state: PresentationState, base: string): Promise<void> {
   const dialog = el<HTMLDialogElement>('presentationDialog');
@@ -392,7 +422,9 @@ export async function render(editor: Editor, state: PresentationState, base: str
     const layout = readForm(editor, state);
     const error = el('presentationError');
     if (error) error.textContent = '';
-    const out = await exportPreviewSheet(editor, layout, 1920, base);
+    const options = exportOptions();
+    refreshExportControls(Boolean(options.fitToContent));
+    const out = await exportPreviewSheet(editor, layout, 1920, base, options);
     if (revision !== state.revision || !dialog?.open) return;
     const canvas = el<HTMLCanvasElement>('presentationCanvas');
     if (canvas) {
@@ -418,8 +450,9 @@ export async function render(editor: Editor, state: PresentationState, base: str
     }
     const message = el('presentationMessage');
     if (message) {
-      message.textContent =
-        out.height > 1080
+      message.textContent = options.fitToContent
+        ? `按内容导出：${out.width}×${out.height} px，每格 ${options.cell} px。应用后保存蓝图详情。`
+        : out.height > 1080
           ? '设备或文字较多，预览已自动加高，完整保留全部内容。'
           : '修改会实时预览；应用后随蓝图 JSON 和本机草稿保存。';
     }
@@ -507,7 +540,7 @@ async function exportSheet(editor: Editor, state: PresentationState, base: strin
   try {
     const layout = readForm(editor, state);
     const resolution = Number(el<HTMLSelectElement>('presentationResolution')!.value);
-    const out = await exportPreviewSheet(editor, layout, resolution, base);
+    const out = await exportPreviewSheet(editor, layout, resolution, base, exportOptions());
     const blob = await new Promise<Blob | null>(resolve => out.toBlob(resolve, 'image/png'));
     if (!blob) throw Error('PNG 编码失败');
     const url = URL.createObjectURL(blob);
@@ -517,7 +550,7 @@ async function exportSheet(editor: Editor, state: PresentationState, base: strin
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     const message = el('presentationMessage');
-    if (message) message.textContent = `完整预览已导出：${out.width}×${out.height}，详情也已保存。`;
+    if (message) message.textContent = `完整预览已导出：${out.width}×${out.height} px。点击“应用并返回画布”保存详情。`;
   } catch (error) {
     const target = el('presentationError');
     if (target) target.textContent = (error as Error).message;

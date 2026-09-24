@@ -66,7 +66,7 @@ pnpm dev              # 开发服务器；静态素材由中间件直接从仓�
 | `pnpm build`          | 类型检查、构建，并校验 chunk 形态、内联情况与 Pages 限额     |
 | `pnpm test`           | 运行三套测试：`core-logic`、`bundle-shape`、`editor-browser` |
 | `pnpm typecheck`      | 只做类型检查（应用与 Vite 配置两个 project）                 |
-| `pnpm verify:inputs`  | 校验 1531 项素材与配置文件的 SHA-256                         |
+| `pnpm verify:inputs`  | 校验 1532 项素材与配置文件的 SHA-256                         |
 | `pnpm verify:dist`    | 只跑部署形态检查                                             |
 | `pnpm vendor:pyodide` | 重新下载并校验 Pyodide 运行时与 Pillow wheel                 |
 | `pnpm release`        | 构建并打包站点包（可选源码包）                               |
@@ -94,51 +94,21 @@ pnpm dev              # 开发服务器；静态素材由中间件直接从仓�
 
 ### DOM 保真门禁（`dom-parity`）
 
-本次迁移的目标是「把原版前端转写到 React」，不是重新设计界面。为让这条要求可机检，
-`tests/dom-parity.test.mjs` 会把构建产物运行后的 DOM 与基准**逐节点比对**。
+界面基于原版迁移，后续功能已加入框选、拼接、材料统计与内容范围导出。
+`tests/dom-parity.test.mjs` 比较构建后稳定 DOM 与已审阅的 `tests/fixtures/dom-baseline.json`，
+同时检查关键布局、原生对话框与静态属性。原始模板推导逻辑仍保留用于历史迁移审计。
 
-基准由 `scripts/build_dom_baseline.mjs` 从原版仓库的模板生成，分两层：
-
-1. **标记层** —— `editor_shell.html` 经 `build_editor.py` 的四处替换（去掉 `__FONT_CSS__`、
-   替换 `__FONT_LICENSE__`、拆分导出按钮、在 `<footer>` 前注入呈现对话框），并把注入块自带的
-   `<style>` 提到 `<head>`；
-2. **稳定态层** —— 原版脚本在加载时对 DOM 做的改动，逐条注明所对应的 `editor_app.js` /
-   `editor_presentation.js` 行号（`buildList`、`refreshInspector`、`refreshSummary`、
-   `refreshHistory`、`resize`、`#btnPresentationDetails` 前置、色块与标签按钮、启动尾部）。
-
-两侧都通过 `scripts/render_dom_snapshot.mjs` 的同一个提取器归一化——基准若由另一套代码生成，
-就恰好会掩盖它本该发现的偏差。归一化只剔除确实会变的运行期值（`src`、`alt`，以及
-`#status`/`#zoom`/`#canvasHint`/`#presentationAuto`/`#fontLicenseText` 的文本）。
-
-设备名与物品标签由烘焙层从游戏表推导，无法在 JavaScript 中重新推导而不产生「第二套实现」，
-因此这两份数据由 `scripts/capture_device_rows.mjs` 从运行中的应用捕获到
-`tests/fixtures/`，测试每次运行都会重新捕获并比对——fixture 锁定期望值，测试负责发现漂移。
-
-需要重建基准时（只应在有意识地改动界面时）：
+主动修改界面后先检查布局及交互，再更新当前基准：
 
 ```sh
 pnpm build
-node scripts/capture_device_rows.mjs     # 更新设备名与标签快照
-node scripts/build_dom_baseline.mjs      # 从 tmp/main 模板重建基准
+node scripts/build_dom_baseline.mjs --current
+pnpm test
 ```
 
-`tmp/main` 是原版分支的 worktree（`git worktree add ./tmp/main main`），已加入 `.gitignore`
-与 oxlint/oxfmt 的忽略列表，仅用于生成基准。
-
-### 四套测试的分工
-
-- `tests/core.test.mjs` 用 `scripts/build_core_bundle.mjs` 把 `src/core/index.ts` 单独打包后
-  在 Node 中直接断言，因此毫秒级完成，覆盖校验、几何、寻路、配对与历史。
-- `tests/bundle.test.mjs` 调用 `scripts/verify_dist.mjs`，把部署约束变成测试：多 chunk、
-  无内联资产、单文件与文件数上限、Pyodide/wheel/`.py` 必须独立分发。
-- `tests/dom-parity.test.mjs` 校验迁移保真度：标记结构、属性集合与关键布局关系（`#summary` 必须
-  在 `#properties` 内且由 `#btnPresentationDetails` 打头、三个对话框必须是原生 `<dialog>`、
-  `#selectedPreview` 必须是 `<img>`、`#loading` 必须是单行文本）。
-- `tests/editor.test.mjs` 是唯一耗时的套件：通过 `tests/harness.mjs` 启动一次 Pyodide 合成，
-  然后在该会话内跑完整工作流，最后重载验证 IndexedDB 缓存生效。
-
-因此修改 `src/core/` 后只需跑 `pnpm test` 的第一套即可获得快速反馈；改动绘制或烘焙逻辑时才会
-触发耗时的浏览器套件。
+测试默认使用 Chrome。也可设置 `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` 指向已有 Chromium。
+纯逻辑测试覆盖几何、寻路、配对、历史、选区复制、拼接、导出尺寸和材料汇总；浏览器测试覆盖实际
+画布操作、PNG 生成、保存往返与 IndexedDB 缓存。新增功能必须有行为断言，不能仅依赖 DOM 快照。
 
 ## 素材与格式维护
 
@@ -164,8 +134,7 @@ node scripts/build_dom_baseline.mjs      # 从 tmp/main 模板重建基准
   内存文件系统。
 - **oxlint 与 oxfmt 必须无报错**：两者都是 `pnpm build` 的一部分。新增规则抑制时请在配置注释里写明
   理由，不要在源码里堆散落的 disable。
-- **不得新增界面**：`src/styles.css` 是两份原版 `<style>` 的逐字拼接，标记转写不得引入原版没有的
-  `id`、`class`、属性或文案。`dom-parity` 会拦截，属性白名单见 `scripts/render_dom_snapshot.mjs`。
+- **界面变更需明确更新快照**：保留既有操作和布局一致性，审阅新增界面后更新 DOM 基准并验证行为。
 
 ## 部署到 Cloudflare Pages
 

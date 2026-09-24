@@ -1,7 +1,7 @@
 /*
  * Editor styles.
  *
- * This file is the verbatim concatenation of the two style blocks shipped by the original
+ * This file starts with the two style blocks shipped by the original
  * single-file build, in their original cascade order:
  *
  *   1. src/editor_shell.html          (page chrome, sidebar, canvas, inspector, library)
@@ -9,7 +9,7 @@
  *
  * The only edit is the removal of the shell style block's leading `__FONT_CSS__` line, which the
  * build substituted with the embedded font CSS. The font is now linked from index.html instead, so
- * that placeholder has nothing left to expand to. No rule has been added, removed or rewritten.
+ * that placeholder has nothing left to expand to. Feature-specific rules follow the original styles.
  */
 
 #btnFontLicense {
@@ -359,12 +359,35 @@ footer {
   display: none !important;
 }
 @media (max-width: 1150px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
   main {
+    flex: 1;
+    height: auto;
+    min-height: 0;
     grid-template-columns: 212px minmax(150px, 1fr) 214px;
   }
   header {
+    height: auto;
+    min-height: 58px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
     gap: 6px;
-    padding: 0 9px;
+    padding: 9px;
+  }
+  header > button,
+  header > input {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  header .grow {
+    display: none;
+  }
+  footer {
+    flex-shrink: 0;
   }
   header strong {
     font-size: 13px;
@@ -378,6 +401,7 @@ footer {
 }
 @media (max-width: 860px) {
   main {
+    position: relative;
     grid-template-columns: 180px minmax(200px, 1fr);
   }
   #properties {
@@ -400,11 +424,11 @@ footer {
   }
   body.inspect-open #properties {
     display: flex;
-    position: fixed;
+    position: absolute;
     z-index: 6;
     right: 0;
-    top: 58px;
-    bottom: 30px;
+    top: 0;
+    bottom: 0;
     width: 250px;
     box-shadow: -8px 0 24px #0004;
   }
@@ -865,4 +889,58 @@ dialog[open] {
   .cover-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
+}
+
+/* Selection, material totals and configurable canvas exports. */
+#canvasExportDialog {
+  width: min(440px, calc(100vw - 32px));
+  padding: 18px;
+  color: #e2e6e9;
+  background: #252c34;
+  border: 1px solid #4a5662;
+  border-radius: 8px;
+}
+#canvasExportDialog::backdrop {
+  background: #0009;
+}
+#canvasExportDialog #exportOptions {
+  display: grid;
+  gap: 14px;
+}
+#canvasExportDialog #exportOptions label {
+  display: grid;
+  gap: 6px;
+}
+#canvasExportDialog #exportOptions .check {
+  display: flex;
+}
+#materials {
+  padding-top: 12px;
+  margin-top: 12px;
+  border-top: 1px solid #3c454f;
+}
+#materialsList > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 0;
+}
+#materialsWarning {
+  line-height: 1.6;
+}
+#btnCopyMaterials {
+  width: 100%;
+}
+
+.material-row img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.material-row span {
+  flex: 1;
+}
+.material-row b {
+  white-space: nowrap;
 }

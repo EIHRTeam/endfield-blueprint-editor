@@ -151,6 +151,27 @@ def bake():
                             'palette': _encode(Image.open(ROOT / 'assets/item' / (item['iconId'] + '.png')), palette=True),
                             'rarityColor': '#' + baker.rarity_colors.get(str(item['rarity']), {}).get('color', '9B9B9B')}
 
+    # Direct equipment-manufacturing costs. The manual table is the equipment-only
+    # subset of the same 1.5 game snapshot as the other packaged tables.
+    construction_recipes = {}
+    material_ids = set()
+    for table_name in ('FactoryHubCraftTable', 'FactoryManualCraftTable'):
+        for recipe_id, recipe in baker.table(table_name).items():
+            outcomes = recipe.get('outcomes', [])
+            if len(outcomes) != 1:
+                continue
+            outcome = outcomes[0]
+            iid = outcome['id']
+            if not iid.startswith(('item_port_', 'item_log_')):
+                continue
+            ingredients = recipe.get('ingredients')
+            cost = {'id': recipe_id, 'outputCount': outcome.get('count', 0),
+                    'ingredients': ingredients}
+            # Do not arbitrarily choose a variant if future tables add alternatives.
+            construction_recipes[iid] = None if iid in construction_recipes else cost
+            if ingredients:
+                material_ids.update(ingredient['id'] for ingredient in ingredients)
+
     stage('product-badges')
     products = {}
     audit_path = ROOT / 'data/icon_audit.json'
@@ -181,6 +202,12 @@ def bake():
         iid = '[gas]' + env
         products[iid.lower()] = {'name': name, 'badge': _encode(baker.product_badge(iid)), 'gas': True}
     recipes.setdefault('vaporizer_1', set()).update('[gas]' + name for name in gases if name != 'Stable')
+
+    material_items = {}
+    for iid in sorted(material_ids):
+        product = products.get(iid)
+        material_items[iid] = {'name': label(items.get(iid, {}).get('name'), iid),
+                               'badge': product.get('badge') if product else None}
 
     stage('building-faces')
     fallbacks = json.loads((ROOT / 'data/building_item_fallbacks.json').read_text('utf-8'))
@@ -369,6 +396,8 @@ def bake():
 
     demo = json.loads((ROOT / 'examples/demo_blueprint.json').read_text('utf-8'))
     payload = {'buildings': output, 'products': products, 'sprites': sprites, 'spriteBorders': sprite_borders,
-               'lineItems': line_items, 'statusLayers': status_layers, 'presentation': presentation, 'demo': demo}
+               'lineItems': line_items, 'constructionRecipes': construction_recipes,
+               'materialItems': material_items,
+               'statusLayers': status_layers, 'presentation': presentation, 'demo': demo}
     stage('done')
     return json.dumps(payload, ensure_ascii=False)

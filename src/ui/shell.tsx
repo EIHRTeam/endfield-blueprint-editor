@@ -3,7 +3,7 @@
  *
  * This is a transcription of the original project's `src/editor_shell.html`, one element at a time and
  * in the original order. The markup is the specification: element names, `id`s, `class`es, attributes,
- * child order and text all match the template, and nothing has been added.
+ * child order follow the template; editing and export controls extend that original shell.
  *
  * The only differences from the template are the ones a framework migration forces, and none of them
  * change what is rendered:
@@ -66,19 +66,13 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
         </button>
         <span className="grow" />
         <button id="btnDemo">示例</button>
-        <button id="btnImport">导入 JSON</button>
+        <button id="btnImport" title="打开 JSON，替换当前布局；可撤销">
+          导入 JSON
+        </button>
+        <button id="btnMerge" title="将另一张蓝图放入当前布局">
+          拼接蓝图
+        </button>
         <button id="btnJson">保存 JSON</button>
-        <div id="exportOptions">
-          <Select id="exportScale" ariaLabel="PNG 每格像素" defaultValue="64">
-            <option value="40">40 px/格</option>
-            <option value="64">64 px/格</option>
-            <option value="128">128 px/格</option>
-          </Select>
-          <label className="check">
-            <input id="transparent" type="checkbox" />
-            透明背景
-          </label>
-        </div>
         <button id="btnGamePreview">蓝图预览</button>
         <button id="btnPng">导出画布 PNG</button>
       </header>
@@ -95,6 +89,13 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
             <button data-tool="select" className="active">
               选择 / 移动 V
             </button>
+            <button data-tool="region">框选区域 M</button>
+            <button id="btnCopy" title="Ctrl+C / ⌘C">
+              复制选区
+            </button>
+            <button id="btnPaste" title="Ctrl+V / ⌘V">
+              粘贴选区
+            </button>
             <button data-tool="place">放置设备 P</button>
             <button data-tool="item">传送带 B</button>
             <button data-tool="fluid">流体管 L</button>
@@ -109,6 +110,10 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
             拖动铺线 · <kbd>Shift</kbd> 切换转弯顺序
             <br />
             滚轮缩放 · 空格拖动 / 中键平移
+            <br />
+            框选后 <kbd>Ctrl+C</kbd> / <kbd>Ctrl+V</kbd>
+            <br />
+            连续点击粘贴 · <kbd>Esc</kbd> 结束
           </div>
         </aside>
 
@@ -232,6 +237,13 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
             </h2>
             <div id="summaryList" />
           </section>
+          <section id="materials">
+            <h2>建造材料</h2>
+            <p className="muted">按设备直接制造配方汇总，未扣除已有库存。</p>
+            <div id="materialsList" />
+            <p id="materialsWarning" className="muted" />
+            <button id="btnCopyMaterials">复制材料清单</button>
+          </section>
         </aside>
       </main>
 
@@ -292,6 +304,39 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
 
       <PresentationDialog />
 
+      <dialog id="canvasExportDialog" aria-labelledby="canvasExportTitle">
+        <div className="library-head">
+          <h2 id="canvasExportTitle">导出画布 PNG</h2>
+          <button id="btnCloseCanvasExport">关闭</button>
+        </div>
+        <div className="fields" id="exportOptions">
+          <label>
+            导出范围
+            <Select id="exportRange" defaultValue="content">
+              <option value="content">内容范围</option>
+              <option value="canvas">整个蓝图画布</option>
+            </Select>
+          </label>
+          <div className="row">
+            <label>
+              每格像素
+              <input id="exportScale" type="number" min={8} max={256} step={1} defaultValue="64" />
+            </label>
+            <label>
+              内容边距（格）
+              <input id="exportMargin" type="number" min={0} max={20} step={1} defaultValue="1" />
+            </label>
+          </div>
+          <label className="check">
+            <input id="transparent" type="checkbox" />
+            透明背景（不含标题）
+          </label>
+          <p className="muted">图片比例随内容格数变化；边距设为 0 可紧贴设备与线路范围。</p>
+          <p id="canvasExportError" className="error" role="status" />
+          <button id="btnConfirmCanvasExport">下载 PNG</button>
+        </div>
+      </dialog>
+
       <footer>
         <span id="status" role="status" aria-live="polite">
           就绪
@@ -302,6 +347,7 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
       </footer>
 
       <input id="fileIn" type="file" accept=".json,application/json" />
+      <input id="mergeFileIn" type="file" accept=".json,application/json" hidden />
     </>
   );
 }
