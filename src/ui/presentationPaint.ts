@@ -460,14 +460,14 @@ export function paintPresentation(
     c.fillRect(PANEL_X, stripY, 7, height);
     stripY += height;
   }
-  label(c, '蓝图详情', 1930, 142, 28, '#b8b8bc');
+  label(c, '蓝图详情', 1930, 142, 28, '#a0a0a4');
   stamp(c, editor, native.sprites[`icon_fac_blueprint_bg_${p.coverColor}`]!, 1908, 125, 240, 240, 1, true);
 
   const cover = native.covers[p.coverId] ?? native.covers['']!;
   // BlueprintIcon prefab: 256-square paper, centered 156-square item with an x offset of 5.
   const iconSize = ((240 * 156) / 256) * (p.coverId.startsWith('[gas]') ? 0.7 : 1);
   stamp(c, editor, cover.asset, 2033 - iconSize / 2, 245 - iconSize / 2, iconSize, iconSize, 1, true);
-  m.nameLines.forEach((line, i) => label(c, line, 2122, 224 + i * 43, 34, '#f5f5f3', '500'));
+  m.nameLines.forEach((line, i) => label(c, line, 2122, 224 + i * 43, 34, '#ffffff', '500'));
   c.font = `500 34px "${'HarmonyOS Sans SC'}",sans-serif`;
   const lastLine = m.nameLines.at(-1) ?? '';
   for (const [bx, by, direction] of [
@@ -485,7 +485,7 @@ export function paintPresentation(
   }
   const sizeY = 235 + m.nameLines.length * 43;
   stamp(c, editor, native.sprites.deco_fac_blueprint_size!, 2110, sizeY + 1, 25, 25, 0.5);
-  label(c, '蓝图尺寸', 2142, sizeY, 24, '#b8b8bc');
+  label(c, '蓝图尺寸', 2142, sizeY, 24, '#a0a0a4');
   label(c, `${t.gridW}×${t.gridH}`, 2110, sizeY + 28, 34, '#f3f3f3');
   label(c, `创作者ID.${p.creatorId || '—'}`, 1940, m.creatorY, 24, '#444448');
   stamp(c, editor, native.sprites.bg_fac_blueprint_more!, 2446, m.creatorY - 10, 45, 45);
@@ -509,7 +509,7 @@ export function paintPresentation(
     c.stroke();
   }
   m.description.forEach((line, i) => label(c, line, 1940, m.descY + i * 34, 24, '#d9d9d9'));
-  label(c, '设备一览', 1940, m.listY - 38, 29, '#515154');
+  label(c, '设备一览', 1940, m.listY - 38, 29, '#444448');
   m.items.forEach((item, i) =>
     drawCard(c, editor, native, item, 1940 + (i % 4) * 142, m.listY + Math.floor(i / 4) * 143),
   );
