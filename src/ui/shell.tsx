@@ -18,6 +18,7 @@
  */
 import type { ReactNode } from 'react';
 import { PresentationDialog } from './presentationDialog';
+import { RecognitionDialog, RecognitionReviewPanel } from './recognitionDialog';
 
 /** Wraps a list of `<option>` elements in a select, keeping the template's option order. */
 function Select(props: {
@@ -65,10 +66,14 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
           重做
         </button>
         <span className="grow" />
+        <button id="btnNew" title="新建空白蓝图：清空设备、线路和识别对照，名称和尺寸恢复默认；可撤销">
+          新建
+        </button>
         <button id="btnDemo">示例</button>
         <button id="btnImport" title="打开 JSON，替换当前布局；可撤销">
           导入 JSON
         </button>
+        {DESKTOP_EDITION && <button id="btnRecognition">截图 / 录屏识别</button>}
         <button id="btnMerge" title="将另一张蓝图放入当前布局">
           拼接蓝图
         </button>
@@ -136,6 +141,7 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
 
         <aside id="properties">
           <button id="btnCloseInspector">收起属性</button>
+          {DESKTOP_EDITION && <RecognitionReviewPanel />}
           <h2>设备属性</h2>
           <div id="emptySelection" className="muted">
             点击设备查看属性，拖动可以移动位置。
@@ -303,6 +309,7 @@ export function Shell({ licence, loadingHidden, loadingText }: ShellProps) {
       </dialog>
 
       <PresentationDialog />
+      {DESKTOP_EDITION && <RecognitionDialog />}
 
       <dialog id="canvasExportDialog" aria-labelledby="canvasExportTitle">
         <div className="library-head">

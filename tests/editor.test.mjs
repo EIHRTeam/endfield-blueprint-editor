@@ -303,6 +303,75 @@ try {
     assert.match(await page.evaluate(() => navigator.clipboard.readText()), /建造材料/);
   });
 
+  await checks.checkAsync(
+    'the web edition has no recognition UI and imports only the layout of a recognition result',
+    async () => {
+      for (const id of ['btnRecognition', 'recognitionDialog', 'recognitionReviewPanel']) {
+        assert.equal(await page.locator(`#${id}`).count(), 0, id);
+      }
+      const before = await page.evaluate(() => window.BlueprintEditor.getData());
+      const layout = {
+        schemaVersion: 2,
+        name: '识别结果里的布局',
+        size: { x: 20, z: 20 },
+        nodes: [{ templateId: 'battle_trap_1', position: { x: 3, z: 3 }, direction: 0 }],
+        conveyors: [],
+      };
+      const envelope = { layout, report: { summary: {} }, preview: null };
+      const chooser = page.waitForEvent('filechooser');
+      await page.click('#btnImport');
+      await (
+        await chooser
+      ).setFiles({
+        name: 'recognized.json',
+        mimeType: 'application/json',
+        buffer: Buffer.from(JSON.stringify(envelope)),
+      });
+      await page.waitForFunction(() => window.BlueprintEditor.getData().name === '识别结果里的布局');
+      const data = await page.evaluate(() => window.BlueprintEditor.getData());
+      assert.equal(data.nodes.length, 1);
+      assert.equal(data.ocrReview, undefined);
+      await page.click('#btnUndo');
+      assert.deepEqual(await page.evaluate(() => window.BlueprintEditor.getData()), before);
+    },
+  );
+
+  await checks.checkAsync('clear removes recognition data too and New starts a blank default blueprint', async () => {
+    const layout = {
+      schemaVersion: 2,
+      name: '识别出来的蓝图',
+      size: { x: 20, z: 30 },
+      nodes: [{ templateId: 'battle_trap_1', position: { x: 3, z: 3 }, direction: 0 }],
+      conveyors: [{ x: 8, z: 8, kind: 'item', dir: 0 }],
+    };
+    const ocrReview = {
+      version: 1,
+      sourceId: '12345678-4',
+      originalLayout: structuredClone(layout),
+      report: {},
+      issues: [],
+      confirmed: {},
+    };
+    await page.evaluate(input => window.BlueprintEditor.importLayout(input), { ...layout, ocrReview });
+    const imported = await page.evaluate(() => window.BlueprintEditor.getData());
+    assert.ok(imported.ocrReview);
+    await page.click('#btnClear');
+    const cleared = await page.evaluate(() => window.BlueprintEditor.getData());
+    assert.deepEqual([cleared.nodes, cleared.conveyors, cleared.ocrReview], [[], [], undefined]);
+    assert.deepEqual([cleared.name, cleared.size], [layout.name, layout.size], 'clear keeps name and size');
+    await page.click('#btnUndo');
+    assert.deepEqual(await page.evaluate(() => window.BlueprintEditor.getData()), imported);
+    await page.click('#btnNew');
+    const blank = await page.evaluate(() => window.BlueprintEditor.getData());
+    assert.deepEqual(
+      [blank.name, blank.size, blank.nodes, blank.conveyors, blank.ocrReview],
+      ['未命名蓝图', { x: 50, z: 50 }, [], [], undefined],
+    );
+    assert.equal(await page.inputValue('#bpName'), '未命名蓝图');
+    await page.click('#btnUndo');
+    assert.deepEqual(await page.evaluate(() => window.BlueprintEditor.getData()), imported);
+  });
+
   await checks.checkAsync('PNG dialog exports exact custom cell sizes and zero content margin', async () => {
     await page.evaluate(() =>
       window.BlueprintEditor.importLayout({

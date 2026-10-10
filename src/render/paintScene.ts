@@ -265,7 +265,10 @@ export function paintScene(
   }
 
   const occupied = buildingCells(layout, buildings);
-  const lines = conveyorSprites(layout.conveyors.filter(belt => !occupied.has(cellKey(belt.x, belt.z))));
+  // Pipes run above devices, including their centre icons; item belts remain below the footprint.
+  const lines = conveyorSprites(
+    layout.conveyors.filter(belt => belt.kind === 'fluid' || !occupied.has(cellKey(belt.x, belt.z))),
+  );
 
   const layer = (kind: 'item' | 'fluid') => {
     for (const belt of lines) {

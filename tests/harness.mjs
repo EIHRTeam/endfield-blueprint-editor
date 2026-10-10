@@ -11,7 +11,9 @@ import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const DIST = path.join(ROOT, 'dist');
+const WEB_DIST = path.join(ROOT, 'dist');
+/** `vite build --mode desktop`: the Windows app's page, the only edition with recognition. */
+const DESKTOP_DIST = path.join(ROOT, 'dist-desktop');
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -31,10 +33,11 @@ const TYPES = {
 };
 
 /**
- * Serves `dist/` over loopback, which is mandatory: the app is a multi-chunk ES module app that
- * fetches its data, and browsers refuse those over `file://`.
+ * Serves `dist/` (or `dist-desktop/` with `{ desktop: true }`) over loopback, which is mandatory: the
+ * app is a multi-chunk ES module app that fetches its data, and browsers refuse those over `file://`.
  */
-export async function startServer() {
+export async function startServer({ desktop = false } = {}) {
+  const DIST = desktop ? DESKTOP_DIST : WEB_DIST;
   const requests = new Map();
   const server = createServer(async (request, response) => {
     try {

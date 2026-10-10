@@ -175,7 +175,28 @@ export interface Layout {
   nodes: BlueprintNode[];
   conveyors: Conveyor[];
   presentation?: Partial<PresentationDetails>;
+  /** Manual screenshot review follows the document through saves, edits and undo/redo. */
+  ocrReview?: OcrReview;
   [extra: string]: unknown;
+}
+
+export interface OcrReviewIssue {
+  id: string;
+  title: string;
+  reason: string;
+  bounds: Bounds;
+  kind: 'item' | 'fluid' | 'device' | 'coverage' | 'general';
+  inferred?: boolean;
+}
+
+export interface OcrReview {
+  version: 1;
+  sourceId: string;
+  originalLayout: Layout;
+  report: Record<string, unknown>;
+  issues: OcrReviewIssue[];
+  /** A confirmation applies only while the contents under its evidence bounds remain unchanged. */
+  confirmed: Record<string, string>;
 }
 
 /** Device lookup by template id, as built from the baking payload. */

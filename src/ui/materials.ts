@@ -24,13 +24,13 @@ export interface ConstructionMaterials {
   lineCells: Record<PortKind, number>;
 }
 
-/** Count unique exposed line cells, matching the devices-and-lines inventory. */
+/** Count visible line cells: pipes cross above devices, while belts under a footprint are hidden. */
 export function countLineCells(layout: Layout, buildings: BuildingIndex): Record<PortKind, number> {
   const occupied = buildingCells(layout, buildings);
   const cells = { item: new Set<string>(), fluid: new Set<string>() };
   for (const line of layout.conveyors) {
     const key = `${line.x},${line.z}`;
-    if (!occupied.has(key)) cells[line.kind].add(key);
+    if (line.kind === 'fluid' || !occupied.has(key)) cells[line.kind].add(key);
   }
   return { item: cells.item.size, fluid: cells.fluid.size };
 }

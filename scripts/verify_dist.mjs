@@ -105,6 +105,24 @@ async function main() {
   if (offenders.length) fail(`发现内联资产：\n  ${offenders.join('\n  ')}`);
   checks.push(`${inlinable.length} script/style documents contain no inlined asset payloads`);
 
+  // ---- web edition carries no recognition ---------------------------------
+  // Screenshot/recording recognition ships only in the Windows app (`vite build --mode desktop` →
+  // dist-desktop/). These markers come from its UI, styles and service calls.
+  const recognitionMarkers = [
+    /btnRecognition/,
+    /recognitionDialog/,
+    /recognitionReviewPanel/,
+    /\/api\/jobs/,
+    /blueprint:import-recognition/,
+  ];
+  const leaks = [];
+  for (const file of inlinable) {
+    const text = await readFile(path.join(DIST, file), 'utf8');
+    for (const pattern of recognitionMarkers) if (pattern.test(text)) leaks.push(`${file} (${pattern})`);
+  }
+  if (leaks.length) fail(`网页版产物包含截图/录屏识别代码（应只在桌面版中）：\n  ${leaks.join('\n  ')}`);
+  checks.push('web edition contains no screenshot/recording recognition code');
+
   // The manifest must not carry the data it points at; it is a file list.
   const manifest = JSON.parse(await readFile(path.join(DIST, 'assets-manifest.json'), 'utf8'));
   if (!Array.isArray(manifest.files) || !manifest.files.length) fail('assets-manifest.json 没有文件列表');

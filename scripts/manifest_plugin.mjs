@@ -114,8 +114,12 @@ export async function buildManifest(root) {
 /** Vite plugin that writes and serves `assets-manifest.json`. */
 export function createManifestPlugin() {
   const FILE_NAME = 'assets-manifest.json';
+  let outDir = 'dist';
   return {
     name: 'endfield:assets-manifest',
+    configResolved(config) {
+      outDir = config.build.outDir;
+    },
     async configureServer(server) {
       // Not an Express route: this is a Vite connect middleware, where an async handler is fine.
       // oxlint-disable-next-line no-async-endpoint-handlers -- see comment above
@@ -136,7 +140,7 @@ export function createManifestPlugin() {
     async closeBundle() {
       const root = process.cwd();
       const manifest = await buildManifest(root);
-      await writeFile(path.join(root, 'dist', FILE_NAME), `${JSON.stringify(manifest)}\n`);
+      await writeFile(path.resolve(root, outDir, FILE_NAME), `${JSON.stringify(manifest)}\n`);
       this.info(`manifest: ${manifest.count} files, ${(manifest.bytes / 1048576).toFixed(1)} MiB to load into Pyodide`);
     },
   };

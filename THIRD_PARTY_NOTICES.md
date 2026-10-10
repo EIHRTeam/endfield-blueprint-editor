@@ -32,6 +32,18 @@
 
 Vite、TypeScript、React、React Compiler、Playwright 等通过包管理器安装，不复制到源码仓库。各依赖适用其发行包随附的许可。
 
+## 可选本地截图识别
+
+`scripts/ocr/requirements.txt` 声明的依赖通过 pip 单独安装，不包含在静态站点中：
+
+- RapidOCR (`rapidocr-onnxruntime` 1.4.4)：Apache-2.0；[项目与模型来源](https://github.com/RapidAI/RapidOCR)。
+- ONNX Runtime：MIT；由 RapidOCR 调用，用于本地文字识别。
+- OpenCV、NumPy、Pillow 及其他传递依赖：以安装包随附的许可为准。
+
+视频识别通过本机自行安装的 FFmpeg/FFprobe 解码，不随本项目分发 FFmpeg 可执行文件。
+
+识别设备和物品时仍使用本项目已包含的游戏图片与配置，适用上面的游戏资源说明。
+
 ## 项目自身代码
 
 当前尚未指定开源许可证，`package.json` 标记为 `UNLICENSED`。公开仓库本身不额外授予使用许可。后续若增加代码许可证，游戏资源和字体仍按以上说明单独处理。

@@ -10,6 +10,7 @@
  */
 import { clone, validate } from '../core';
 import type { Layout, PresentationDetails } from '../core/types';
+import { saveFile } from './desktopHost';
 import type { Editor } from './editor';
 import {
   exportPreviewSheet,
@@ -543,14 +544,16 @@ async function exportSheet(editor: Editor, state: PresentationState, base: strin
     const out = await exportPreviewSheet(editor, layout, resolution, base, exportOptions());
     const blob = await new Promise<Blob | null>(resolve => out.toBlob(resolve, 'image/png'));
     if (!blob) throw Error('PNG 编码失败');
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.download = `${(layout.name || 'blueprint').replace(/[<>:"/\\|?*\x00-\x1f]/g, '_')}_蓝图预览.png`;
-    anchor.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
     const message = el('presentationMessage');
+    const saving = saveFile(
+      blob,
+      `${(layout.name || 'blueprint').replace(/[<>:"/\\|?*\x00-\x1f]/g, '_')}_蓝图预览.png`,
+    );
     if (message) message.textContent = `完整预览已导出：${out.width}×${out.height} px。点击“应用并返回画布”保存详情。`;
+    const outcome = await saving;
+    if (message && outcome.cancelled) message.textContent = '已取消保存完整预览。';
+    else if (message && outcome.path)
+      message.textContent = `完整预览已保存到 ${outcome.path}。点击“应用并返回画布”保存详情。`;
   } catch (error) {
     const target = el('presentationError');
     if (target) target.textContent = (error as Error).message;

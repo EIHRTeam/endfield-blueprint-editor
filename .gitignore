@@ -1,5 +1,6 @@
 # Generated output and local research
 /dist/
+/dist-desktop/
 /release/
 /reports/
 /research/
@@ -37,3 +38,18 @@ Desktop.ini
 *.tmp
 *.bak
 *.un~
+
+# Last unrecognized recording kept by scripts/ocr_server.py for diagnosis
+.ocr-debug/
+
+# Windows desktop build (desktop/build_windows.ps1)
+/.venv-desktop/
+/build/
+
+# Source bundle for building the Windows desktop app
+/EndfieldBlueprintEditor-windows-build.zip
+
+# Local test media
+/*.mp4
+/蓝图截图*.zip
+*.ses

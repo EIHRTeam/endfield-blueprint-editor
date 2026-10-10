@@ -1,0 +1,14 @@
+# Windows desktop app (desktop/build_windows.ps1 installs these into .venv-desktop).
+# Exact versions: recognition results were verified with this set (the frozen app gives the same
+# layout as running the scripts). Change them only together with a re-check on a sample recording.
+numpy==2.5.3
+opencv-python==4.14.0.94
+onnxruntime==1.30.0
+rapidocr-onnxruntime==1.4.4
+# Same Pillow as the browser's Pyodide build, so prebaked sprites match the web edition.
+Pillow==12.2.0
+# Window (Microsoft Edge WebView2 through pythonnet/WinForms).
+pywebview==6.2.1
+# Packaging.
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.8

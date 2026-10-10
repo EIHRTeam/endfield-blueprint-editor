@@ -1,0 +1,153 @@
+/* Desktop app only: screenshot/recording recognition dialog and review panel (see main.tsx). */
+/* Screenshot recognition review, shared by local service and offline JSON results. */
+#recognitionDialog {
+  width: min(880px, calc(100vw - 30px));
+}
+.recognition-scroll {
+  overflow: auto;
+  min-height: 0;
+}
+.recognition-source label {
+  display: grid;
+  gap: 6px;
+}
+.recognition-source p {
+  margin: 0;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.recognition-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.recognition-progress {
+  display: grid;
+  gap: 4px;
+}
+.recognition-progress[hidden] {
+  display: none;
+}
+.recognition-progress progress {
+  width: 100%;
+  height: 10px;
+  accent-color: #4fa3e0;
+}
+.recognition-foot {
+  flex-shrink: 0;
+  border-top: 1px solid #3c454f;
+  padding-top: 12px;
+}
+#recognitionResult {
+  margin-top: 18px;
+  border-top: 1px solid #3c454f;
+}
+#recognitionWarnings {
+  padding: 1px 12px;
+  background: #443c27;
+  border: 1px solid #78623b;
+  border-radius: 6px;
+}
+#recognitionWarningList {
+  padding-left: 20px;
+  line-height: 1.7;
+}
+#recognitionPreview,
+#recognitionCoveragePreview {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 14px auto 0;
+}
+#recognitionPreview[hidden] {
+  display: none;
+}
+#recognitionCoverage {
+  margin: 18px 0 0;
+}
+.recognition-coverage-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 8px;
+  font-size: 11px;
+}
+.recognition-coverage-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.recognition-coverage-legend i {
+  width: 11px;
+  height: 11px;
+  border: 1px solid #ffffff80;
+}
+.coverage-complete {
+  background: #2ea66f;
+}
+.coverage-partial {
+  background: #e8ad38;
+}
+.coverage-missing {
+  background: #db4d51;
+}
+.recognition-coverage-legend p {
+  width: 100%;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.recognition-replace {
+  color: #ffcf85;
+  line-height: 1.5;
+}
+.recognition-replace[hidden],
+#recognitionReviewPanel[hidden] {
+  display: none;
+}
+.recognition-locate {
+  text-align: left;
+  width: 100%;
+  line-height: 1.5;
+  margin: 3px 0;
+}
+#recognitionReviewPanel {
+  border-bottom: 1px solid #526577;
+  padding-bottom: 16px;
+  margin-bottom: 12px;
+  display: grid;
+  gap: 9px;
+}
+#recognitionReviewPanel p {
+  margin: 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+#recognitionReviewPanel > label:not(.check) {
+  display: grid;
+  gap: 5px;
+}
+#reviewIssues {
+  max-height: 260px;
+  overflow: auto;
+  display: grid;
+  gap: 6px;
+}
+#reviewIssues > button {
+  text-align: left;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+#reviewIssues > button.done {
+  color: #a9ddbf;
+}
+.review-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.review-heading > button {
+  font-size: 12px;
+  padding: 4px 10px;
+}

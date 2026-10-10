@@ -85,6 +85,24 @@ const editor = {
   },
 };
 
+checks.check('preview inventory retains a pipe card when every pipe cell overlaps a device', () => {
+  const source = layout();
+  source.conveyors = [
+    { x: 12, z: 9, kind: 'fluid', dir: 0 },
+    { x: 12, z: 9, kind: 'item', dir: 0 },
+  ];
+  const model = {
+    ...editor,
+    payload: {
+      ...editor.payload,
+      lineItems: { item: { id: 'belt' }, fluid: { id: 'pipe' } },
+    },
+  };
+  const ids = new Set(P.inventory(model, source).map(item => item.id));
+  assert.ok(ids.has('pipe'));
+  assert.ok(!ids.has('belt'));
+});
+
 await checks.checkAsync(
   'arbitrary cell size exports a tight rotated footprint without changing its source',
   async () => {

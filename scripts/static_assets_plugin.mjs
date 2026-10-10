@@ -118,12 +118,17 @@ async function stagePython(root, outDir) {
  * configured in `vite.config.ts`.
  */
 export function createStaticAssetsPlugin() {
+  let configuredOutDir = 'dist';
   return {
     name: 'endfield:static-assets',
     apply: 'build',
+    configResolved(config) {
+      // `dist` for the web edition, `dist-desktop` for the desktop app.
+      configuredOutDir = config.build.outDir;
+    },
     async closeBundle() {
       const root = process.cwd();
-      const outDir = path.resolve(root, 'dist');
+      const outDir = path.resolve(root, configuredOutDir);
       await mkdir(outDir, { recursive: true });
 
       for (const [source] of TREES) await copyDirectory(root, outDir, source);

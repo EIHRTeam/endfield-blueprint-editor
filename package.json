@@ -13,6 +13,8 @@
     "format": "oxfmt",
     "format:check": "oxfmt --check src scripts tests vite.config.ts index.html",
     "build": "pnpm typecheck && pnpm lint && pnpm format:check && vite build && pnpm verify:dist",
+    "build:desktop": "pnpm typecheck && pnpm lint && pnpm format:check && vite build --mode desktop && pnpm prebake:desktop",
+    "prebake:desktop": "python scripts/prebake_desktop.py dist-desktop",
     "preview": "vite preview --host 127.0.0.1",
     "vendor:pyodide": "node scripts/vendor_pyodide.mjs",
     "verify:inputs": "node scripts/verify_inputs.mjs",

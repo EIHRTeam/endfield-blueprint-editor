@@ -100,7 +100,9 @@ export function inventory(editor: Editor, layout: Layout): InventoryItem[] {
   }
   const occupied = buildingCells(layout, buildingIndex(editor));
   for (const [kind, item] of Object.entries(editor.payload.lineItems)) {
-    if (layout.conveyors.some(belt => belt.kind === kind && !occupied.has(cellKey(belt.x, belt.z)))) {
+    if (
+      layout.conveyors.some(belt => belt.kind === kind && (kind === 'fluid' || !occupied.has(cellKey(belt.x, belt.z))))
+    ) {
       groups.set(item.id, { ...item, count: 0 });
     }
   }

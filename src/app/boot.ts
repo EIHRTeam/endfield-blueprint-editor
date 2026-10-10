@@ -98,6 +98,62 @@ async function decodeInto(
   }
 }
 
+type EncodedImages = Map<string, { extension: 'png' | 'webp'; bytes: ArrayBuffer }>;
+
+/** Restores the bake from IndexedDB, or runs it through Pyodide and stores it. */
+async function bakeOrRestore(
+  cached: Awaited<ReturnType<typeof readCachedBake>>,
+  cacheKey: string,
+  onProgress: ProgressReporter,
+): Promise<{ payloadJson: string; reports: Record<string, string>; images: EncodedImages }> {
+  if (cached) {
+    onProgress({ phase: 'decode', message: '正在读取本机缓存…', ratio: 0 });
+    return { payloadJson: cached.payload, reports: cached.reports, images: cached.images };
+  }
+  const result = await bakeBlueprint(BASE, { onProgress });
+  const images: EncodedImages = new Map(
+    result.assets.map(asset => [asset.key, { extension: asset.extension, bytes: asset.bytes }]),
+  );
+  await writeCachedBake({ key: cacheKey, payload: result.payload, reports: result.reports, images });
+  return { payloadJson: result.payload, reports: result.reports, images };
+}
+
+interface PrebakedIndex {
+  payload: string;
+  reports: Record<string, string>;
+  images: Array<[string, 'png' | 'webp', number, number]>;
+}
+
+/**
+ * Desktop edition: sprites composed at build time (scripts/prebake_desktop.py), so the app opens
+ * without running Pyodide. Returns null when the build has no prebaked set (falls back to baking).
+ */
+async function loadPrebaked(
+  onProgress: ProgressReporter,
+): Promise<{ payload: string; reports: Record<string, string>; images: EncodedImages } | null> {
+  try {
+    onProgress({ phase: 'decode', message: '正在读取素材…', ratio: 0 });
+    const [index, blob] = await Promise.all([
+      fetch(`${BASE}baked/prebaked.json`, { cache: 'no-cache' }).then(response =>
+        response.ok ? (response.json() as Promise<PrebakedIndex>) : null,
+      ),
+      fetch(`${BASE}baked/prebaked.bin`, { cache: 'no-cache' }).then(response =>
+        response.ok ? response.arrayBuffer() : null,
+      ),
+    ]);
+    if (!index || !blob || !Array.isArray(index.images)) return null;
+    const images: EncodedImages = new Map(
+      index.images.map(([key, extension, offset, length]) => [
+        key,
+        { extension, bytes: blob.slice(offset, offset + length) },
+      ]),
+    );
+    return { payload: index.payload, reports: index.reports, images };
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Bakes (or restores) the sprite set, then hands back everything the editor needs.
  *
@@ -106,34 +162,29 @@ async function decodeInto(
  * progress surface.
  */
 export async function boot(onProgress: ProgressReporter): Promise<BootResult> {
-  const manifest = await fetchManifest();
-  const cacheKey = await bakeCacheKey({
-    pyodideVersion: await stagedPyodideVersion(),
-    pythonDigest: await digestPython(manifest),
-    manifestCount: manifest.count,
-    manifestBytes: manifest.bytes,
-  });
+  const prebaked = DESKTOP_EDITION ? await loadPrebaked(onProgress) : null;
 
   const licence = await fetch(`${BASE}assets/fonts/HarmonyOS_Sans_SC/LICENSE.txt`, { cache: 'force-cache' })
     .then(response => (response.ok ? response.text() : ''))
     .catch(() => '');
 
-  const cached = await readCachedBake(cacheKey);
+  let cached: Awaited<ReturnType<typeof readCachedBake>> = null;
   let payloadJson: string;
   let reports: Record<string, string>;
   let images: Map<string, { extension: 'png' | 'webp'; bytes: ArrayBuffer }>;
 
-  if (cached) {
-    onProgress({ phase: 'decode', message: '正在读取本机缓存…', ratio: 0 });
-    payloadJson = cached.payload;
-    reports = cached.reports;
-    images = cached.images;
+  if (prebaked) {
+    ({ payload: payloadJson, reports, images } = prebaked);
   } else {
-    const result = await bakeBlueprint(BASE, { onProgress });
-    payloadJson = result.payload;
-    reports = result.reports;
-    images = new Map(result.assets.map(asset => [asset.key, { extension: asset.extension, bytes: asset.bytes }]));
-    await writeCachedBake({ key: cacheKey, payload: payloadJson, reports, images });
+    const manifest = await fetchManifest();
+    const cacheKey = await bakeCacheKey({
+      pyodideVersion: await stagedPyodideVersion(),
+      pythonDigest: await digestPython(manifest),
+      manifestCount: manifest.count,
+      manifestBytes: manifest.bytes,
+    });
+    cached = await readCachedBake(cacheKey);
+    ({ payloadJson, reports, images } = await bakeOrRestore(cached, cacheKey, onProgress));
   }
 
   const payload = JSON.parse(payloadJson) as BakePayload;
@@ -147,7 +198,15 @@ export async function boot(onProgress: ProgressReporter): Promise<BootResult> {
     if (!urls[key]) urls[key] = assetUrl(key, 'png');
   }
 
-  return { payload, assets, licence, reports, fromCache: Boolean(cached), restoreNotice: '', restoredDevices: false };
+  return {
+    payload,
+    assets,
+    licence,
+    reports,
+    fromCache: Boolean(cached || prebaked),
+    restoreNotice: '',
+    restoredDevices: false,
+  };
 }
 
 /** The message the original's boot tail set, in the same order of precedence. */

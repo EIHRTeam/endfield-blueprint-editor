@@ -258,4 +258,47 @@ checks.check('empty layouts keep the complete canvas and missing bodies retain d
   assert.deepEqual(sceneBounds(source, paint), { x0: -1, z0: -2, x1: 35, z1: 30 });
 });
 
+checks.check('pipes crossing a device remain visible above its product icon and preserve the following corner', () => {
+  const { paint } = fixture();
+  paint.buildings.small.logistic = false;
+  const images = new Map();
+  paint.assets.get = key => {
+    if (!key) return null;
+    if (!images.has(key)) images.set(key, { ...image, key });
+    return images.get(key);
+  };
+  const source = layout(
+    [node('small', 0, 0, { productIcon: 'item' })],
+    [
+      { x: 0, z: 0, kind: 'item', dir: 0 },
+      { x: 2, z: 0, kind: 'item', dir: 0 },
+      { x: 0, z: 0, kind: 'fluid', dir: 0 },
+      { x: 1, z: 0, kind: 'fluid', dir: 1 },
+    ],
+  );
+  const before = structuredClone(source);
+  const stamps = [];
+  const context = {
+    save() {},
+    restore() {},
+    translate() {},
+    rotate() {},
+    drawImage(sprite) {
+      stamps.push(sprite.key);
+    },
+  };
+  paintScene(context, source, paint, { s: 64, ox: 0, oy: 0 });
+  assert.deepEqual(stamps.slice(0, 4), ['icon_belt_grid', 'body', 'product', 'icon_pipe_grid']);
+  assert.match(stamps[4], /^icon_pipe_corner_[12]$/);
+  assert.equal(stamps.length, 5, 'the belt below the device is hidden, but the pipe is drawn');
+  assert.deepEqual(source, before);
+  stamps.length = 0;
+  paintScene(context, source, paint, { s: 64, ox: 0, oy: 0 }, { linesOnly: true });
+  assert.equal(stamps.length, 3);
+  assert.ok(
+    stamps.every(key => key.startsWith('icon_')),
+    'line overlays retain pipes without repainting devices',
+  );
+});
+
 report('scene-bounds', checks);

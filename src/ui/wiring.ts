@@ -14,7 +14,10 @@ import { selectionBounds } from '../core/selection';
 import type { Direction, Layout } from '../core/types';
 import { exportCanvas as renderCanvas } from './canvasExport';
 import type { CanvasExportOptions } from './canvasExport';
+import { saveFile } from './desktopHost';
 import { materialsText } from './materials';
+import { RECOGNITION_IMPORT_EVENT } from './recognition';
+import { EMPTY_LAYOUT } from './editor';
 import type { Editor, Tool } from './editor';
 import { chooseProduct, openProductLibrary, refreshInspector, refreshProductOptions, refreshToolButtons } from './dom';
 
@@ -256,6 +259,7 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
     if (
       el<HTMLDialogElement>('presentationDialog')?.open ||
       el<HTMLDialogElement>('fontLicenseDialog')?.open ||
+      (DESKTOP_EDITION && el<HTMLDialogElement>('recognitionDialog')?.open) ||
       el<HTMLDialogElement>('canvasExportDialog')?.open
     )
       return;
@@ -434,7 +438,13 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
     editor.transact(draft => {
       draft.nodes = [];
       draft.conveyors = [];
+      // The recognition overlay belongs to the cleared content; keeping it would still show the old blueprint.
+      delete draft.ocrReview;
     }, '布局已清空，可撤销');
+  });
+  bind('btnNew', 'click', () => {
+    editor.importLayout(structuredClone(EMPTY_LAYOUT));
+    editor.message('已新建空白蓝图，可撤销');
   });
   bind('btnDemo', 'click', () => editor.importLayout(editor.payload.demo));
   bind('btnCopy', 'click', () => editor.copySelection());
@@ -450,8 +460,8 @@ export function wireEditor(editor: Editor, base: string, hooks: WiringHooks): ()
       await navigator.clipboard.writeText(text);
       editor.message('材料清单已复制');
     } catch {
-      download(new Blob([text], { type: 'text/plain;charset=utf-8' }), filename(editor, '_材料清单.txt'));
       editor.message('剪贴板不可用，已下载材料清单');
+      download(new Blob([text], { type: 'text/plain;charset=utf-8' }), filename(editor, '_材料清单.txt'), editor);
     }
   });
   bind('btnPng', 'click', () => {
@@ -523,8 +533,8 @@ async function exportPng(editor: Editor, base: string): Promise<void> {
     const out = await exportCanvas(editor, base);
     const blob = await new Promise<Blob | null>(resolve => out.toBlob(resolve, 'image/png'));
     if (!blob) throw Error('PNG 编码失败');
-    download(blob, filename(editor, '.png'));
     editor.message(`PNG 已导出：${out.width}×${out.height}`);
+    download(blob, filename(editor, '.png'), editor);
     el<HTMLDialogElement>('canvasExportDialog')?.close();
   } catch (error) {
     if (errorText) errorText.textContent = (error as Error).message;
@@ -575,20 +585,26 @@ export function filename(editor: Editor, extension: string): string {
   return (editor.data.name || 'blueprint').replace(/[<>:"/\\|?*\x00-\x1f]/g, '_') + extension;
 }
 
-function download(blob: Blob, name: string): void {
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement('a');
-  anchor.href = url;
-  anchor.download = name;
-  anchor.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+/** Browser download; in the desktop app a native save dialog, then reports where the file went. */
+function download(blob: Blob, name: string, editor?: Editor): void {
+  void saveFile(blob, name).then(
+    outcome => {
+      if (outcome.cancelled) editor?.message('已取消保存');
+      else if (outcome.path) editor?.message(`已保存到 ${outcome.path}`);
+    },
+    (error: Error) => editor?.message(`保存失败：${error.message}`, true),
+  );
 }
 
 /** `downloadJson()` of the original. */
 function downloadJson(editor: Editor): void {
   commitName(editor);
-  download(new Blob([JSON.stringify(editor.data, null, 2)], { type: 'application/json' }), filename(editor, '.json'));
   editor.message('JSON 已导出');
+  download(
+    new Blob([JSON.stringify(editor.data, null, 2)], { type: 'application/json' }),
+    filename(editor, '.json'),
+    editor,
+  );
 }
 
 /** `#fileIn` handler of the original. */
@@ -598,10 +614,20 @@ async function importFile(editor: Editor, merge = false): Promise<void> {
   if (input) input.value = '';
   if (!file) return;
   try {
-    if (file.size > 10 * 1024 * 1024) throw Error('JSON 文件过大');
-    const parsed = JSON.parse(await file.text());
-    if (merge) editor.mergeLayout(parsed);
-    else editor.importLayout(parsed);
+    // Recognition results embed preview images, so they may exceed a plain layout's limit. The web
+    // edition only takes the layout out of such a result; review mode exists only in the desktop app.
+    if (file.size > 64 * 1024 * 1024) throw Error('JSON 文件过大');
+    const parsed: unknown = JSON.parse(await file.text());
+    const envelope = parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : null;
+    const recognized = Boolean(envelope && 'layout' in envelope && 'report' in envelope);
+    if (DESKTOP_EDITION && !merge && recognized) {
+      // A screenshot/recording recognition result: import it straight into review mode.
+      window.dispatchEvent(new CustomEvent(RECOGNITION_IMPORT_EVENT, { detail: parsed }));
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024 && !recognized) throw Error('JSON 文件过大');
+    if (merge) editor.mergeLayout(envelope && 'layout' in envelope ? envelope.layout : parsed);
+    else editor.importLayout(envelope && 'layout' in envelope ? envelope.layout : parsed);
   } catch (error) {
     editor.message(`导入失败：${(error as Error).message}`, true);
   }

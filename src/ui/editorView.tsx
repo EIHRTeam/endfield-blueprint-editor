@@ -15,6 +15,7 @@ import { publishApi } from './api';
 import { createPresentationState, initPresentation } from './presentation';
 import { Shell } from './shell';
 import { wireEditor } from './wiring';
+import { initRecognition } from './recognition';
 
 export interface EditorViewProps {
   payload: BakePayload;
@@ -77,6 +78,8 @@ export function EditorView({ payload, assets, licence, startupMessage, startupEr
     // The original's presentation script ran its init block at load: the settings button, the colour
     // buttons and the tag suggestions all come from there, not from the template.
     const teardownPresentation = initPresentation(editor, presentation, base);
+    // Recognition ships only in the desktop app; the web build compiles this branch away.
+    const teardownRecognition = DESKTOP_EDITION ? initRecognition(editor) : () => {};
     // The original published this at the end of its script; the same names are kept so embedders and the
     // original's browser tests keep working.
     const teardownApi = publishApi(editor, presentation, base);
@@ -91,6 +94,7 @@ export function EditorView({ payload, assets, licence, startupMessage, startupEr
     return () => {
       teardownEditor();
       teardownPresentation();
+      teardownRecognition();
       teardownApi();
     };
     // Boot runs once; the editor is stable for the life of the component.

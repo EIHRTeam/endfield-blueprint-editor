@@ -157,6 +157,8 @@ export class Editor {
   needsSave = false;
   frame = 0;
   restoreError = '';
+  private readonly documentListeners = new Set<() => void>();
+  private readonly overlayPainters = new Set<(ctx: CanvasRenderingContext2D, view: View) => void>();
 
   /** Set once the shell is mounted; the editor needs the canvas and its container. */
   canvas: HTMLCanvasElement | null = null;
@@ -261,6 +263,39 @@ export class Editor {
     this.onRevision();
     this.scheduleSave();
     if (text) this.message(text);
+    for (const listener of this.documentListeners) listener();
+  }
+
+  subscribeDocument(listener: () => void): () => void {
+    this.documentListeners.add(listener);
+    return () => this.documentListeners.delete(listener);
+  }
+
+  addCanvasOverlay(painter: (ctx: CanvasRenderingContext2D, view: View) => void): () => void {
+    this.overlayPainters.add(painter);
+    return () => {
+      this.overlayPainters.delete(painter);
+      this.requestDraw();
+    };
+  }
+
+  /** Focus evidence bounds without changing the document or its undo history. */
+  focusBounds(area: Bounds): void {
+    this.selectTool('select');
+    this.selected = this.indexAt(area.x0, area.z0);
+    if (this.wrap) {
+      this.view.s = Math.min(
+        96,
+        Math.max(
+          24,
+          Math.min(this.wrap.clientWidth / (area.x1 - area.x0 + 6), this.wrap.clientHeight / (area.z1 - area.z0 + 6)),
+        ),
+      );
+      this.view.ox = this.wrap.clientWidth / 2 - ((area.x0 + area.x1) / 2) * this.view.s;
+      this.view.oy = this.wrap.clientHeight / 2 - ((area.z0 + area.z1) / 2) * this.view.s;
+    }
+    this.onRevision();
+    this.requestDraw();
   }
 
   transact(operation: (draft: Layout) => void, text?: string): boolean {
@@ -563,6 +598,11 @@ export class Editor {
       activePair: this.activePair,
       dimIndex: this.gesture?.type === 'move' && this.gesture.moved ? this.gesture.index : -1,
     });
+    for (const painter of this.overlayPainters) {
+      ctx.save();
+      painter(ctx, this.view);
+      ctx.restore();
+    }
 
     ctx.strokeStyle = '#b5bdc2';
     ctx.lineWidth = 1;

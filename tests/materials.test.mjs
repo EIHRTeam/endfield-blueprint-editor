@@ -60,19 +60,20 @@ checks.check('device aliases aggregate before batch rounding and shared ingredie
   assert.equal(JSON.stringify(layout), before);
 });
 
-checks.check('line demand counts cells, deduplicates same-kind overlaps and excludes rotated devices', () => {
+checks.check('line demand includes pipes over rotated devices while excluding belts below them', () => {
   const layout = data();
   const buildings = { a: building('a', 'a', 2, 1) };
   layout.nodes = [node('a', 0, 0, 1)];
   layout.conveyors = [
     { kind: 'item', x: 0, z: 0, dir: 0 },
     { kind: 'fluid', x: 0, z: 1, dir: 0 },
+    { kind: 'fluid', x: 0, z: 1, dir: 1 },
     { kind: 'item', x: 1, z: 0, dir: 0 },
     { kind: 'item', x: 1, z: 0, dir: 1 },
     { kind: 'fluid', x: 1, z: 0, dir: 1 },
     { kind: 'item', x: 2, z: 0, dir: 0 },
   ];
-  assert.deepEqual(countLineCells(layout, buildings), { item: 2, fluid: 1 });
+  assert.deepEqual(countLineCells(layout, buildings), { item: 2, fluid: 2 });
   const summary = constructionMaterials(
     layout,
     buildings,
@@ -82,7 +83,7 @@ checks.check('line demand counts cells, deduplicates same-kind overlaps and excl
       pipe: recipe([{ id: 'ore', count: 3 }]),
     }),
   );
-  assert.deepEqual(quantities(summary), { ore: 7 });
+  assert.deepEqual(quantities(summary), { ore: 10 });
 });
 
 checks.check('unknown and ambiguous recipes remain visible with device and cell quantities', () => {

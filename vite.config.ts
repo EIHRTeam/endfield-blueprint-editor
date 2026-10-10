@@ -75,7 +75,13 @@ async function serveFile(
   response.end(text ?? body);
 }
 
-export default defineConfig({
+/**
+ * `vite build` produces the static web editor (Cloudflare Pages). `vite build --mode desktop` produces
+ * the Windows app's page into `dist-desktop/`; only that edition contains screenshot/recording
+ * recognition. `DESKTOP_EDITION` is substituted textually, so the web bundle drops the recognition modules.
+ */
+export default defineConfig(({ mode }) => ({
+  define: { DESKTOP_EDITION: JSON.stringify(mode === 'desktop') },
   plugins: [
     // React Compiler runs through @vitejs/plugin-react's `compiler` option.
     react({ compiler: { logDiagnostics: true } }),
@@ -83,7 +89,15 @@ export default defineConfig({
     devStaticAssets(),
     createManifestPlugin(),
   ],
+  server: {
+    // Build outputs and Python environments hold tens of thousands of files; watching them
+    // exhausts the OS watcher limit and is never needed for development.
+    watch: {
+      ignored: ['**/dist/**', '**/dist-desktop/**', '**/build/**', '**/release/**', '**/.venv*/**', '**/.perf-tmp/**'],
+    },
+  },
   build: {
+    outDir: mode === 'desktop' ? 'dist-desktop' : 'dist',
     // Never inline any asset as a data URL. A multi-chunk ES module output is a hard requirement,
     // so `vite-plugin-singlefile` / `build.lib` are deliberately not used either.
     assetsInlineLimit: 0,
@@ -103,4 +117,4 @@ export default defineConfig({
     },
     sourcemap: true,
   },
-});
+}));

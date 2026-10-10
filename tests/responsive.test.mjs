@@ -18,6 +18,8 @@ await build({
   root: ROOT,
   configFile: false,
   logLevel: 'warn',
+  // Matches vite.config.ts: only the desktop edition renders recognition.
+  define: { DESKTOP_EDITION: 'false' },
   build: {
     outDir: OUT,
     emptyOutDir: false,

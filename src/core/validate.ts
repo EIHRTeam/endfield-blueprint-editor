@@ -10,6 +10,7 @@
  */
 import { beltKey, clone, placementError } from './geometry';
 import { undergroundRole } from './underground';
+import { validateReview } from './review';
 import type { BlueprintNode, BuildingIndex, Conveyor, Direction, Layout, PresentationDetails } from './types';
 
 const ENVIRONMENT_EFFECTS: ReadonlySet<string> = new Set(['', 'acid', 'humidity', 'inactive', 'stable', 'xiranite']);
@@ -61,6 +62,11 @@ export function validate(input: unknown, buildings: BuildingIndex): Layout {
   // Occupied cells grow as conveyors are validated, so a duplicate is reported on the later cell.
   const occupied = new Set<string>();
   data.conveyors.forEach((belt, i) => validateConveyor(data, belt, i, occupied));
+
+  if (data.ocrReview != null) {
+    validateReview(data.ocrReview);
+    data.ocrReview.originalLayout = validate(data.ocrReview.originalLayout, buildings);
+  }
 
   data.schemaVersion = 2;
   return data;

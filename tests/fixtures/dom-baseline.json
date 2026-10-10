@@ -1,5 +1,5 @@
 {
-  "nodes": 874,
+  "nodes": 875,
   "unexpectedAttributes": [],
   "body": [
     {
@@ -50,6 +50,15 @@
             "class": "grow"
           },
           "text": "",
+          "children": []
+        },
+        {
+          "tag": "button",
+          "attributes": {
+            "id": "btnNew",
+            "title": "新建空白蓝图：清空设备、线路和识别对照，名称和尺寸恢复默认；可撤销"
+          },
+          "text": "新建",
           "children": []
         },
         {
@@ -6764,6 +6773,6 @@
   ],
   "meta": {
     "derivedFrom": "Reviewed current UI: selection, merge, content export and material totals",
-    "reviewedAddition": "Inline error status before the canvas PNG download button"
+    "reviewedAddition": "Inline error status before the canvas PNG download button; 「新建」button before 「示例」 (new blank blueprint)"
   }
 }

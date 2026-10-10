@@ -18,6 +18,9 @@ import { createProgress } from './app/progress';
 // oxlint-disable-next-line import/no-unassigned-import -- see comment above
 import './styles.css';
 
+// Recognition UI exists only in the desktop app; its rules must follow the base stylesheet.
+if (DESKTOP_EDITION) void import('./ui/recognition.css');
+
 /**
  * `#loading` element.
  *
