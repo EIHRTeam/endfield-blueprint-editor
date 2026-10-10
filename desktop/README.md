@@ -5,7 +5,8 @@
 - 双击即可使用，不需要安装 Python、不需要运行命令，也不用填写服务地址。
 - 截图和录屏只在本机处理，不会上传。
 - 识别时可以切到其他窗口。关掉窗口前如果识别还没完成，程序会先询问。
-- 编辑内容自动保存在 `%LOCALAPPDATA%\EndfieldBlueprintEditor`。卸载或升级时会保留这个文件夹；想彻底清除，手动删除它即可。
+- 免安装版，没有任何安装步骤：解压后整个程序都在同一个文件夹里，编辑内容和日志也保存在程序目录的 `data\` 子文件夹下。想迁移或彻底清除，直接移动或删除整个文件夹即可。
+- 如果程序目录不可写（例如放在只读介质上），才会改用 `%LOCALAPPDATA%\EndfieldBlueprintEditor`。
 
 ## 系统要求
 
@@ -23,7 +24,6 @@
 |---|---|---|
 | Node.js 22.12 或更新版本 | 构建页面；自带的 corepack 会自动准备 pnpm | https://nodejs.org/ |
 | Python 3.12（64 位） | 识别程序和打包。安装时勾选 “py launcher” | https://www.python.org/downloads/windows/ |
-| Inno Setup 6 | 生成安装包；不装也可以，但只会生成免安装 ZIP | https://jrsoftware.org/isdl.php |
 
 ### 2. 运行打包脚本
 
@@ -39,25 +39,22 @@ powershell -ExecutionPolicy Bypass -File desktop\build_windows.ps1
 2. 构建桌面版页面（`dist-desktop`），并预先合成编辑器素材，所以程序打开时不需要再等素材；
 3. 用 PyInstaller 打包；
 4. 自检：启动打包好的程序，检查页面、识别素材、多进程、文字识别模型和视频解码都能用；
-5. 在 `release\` 中生成：
-   - `EndfieldBlueprintEditor-<版本>-setup.exe`：安装包。默认只为当前用户安装，不需要管理员权限；
-   - `EndfieldBlueprintEditor-<版本>-portable.zip`：免安装版，解压后运行 `EndfieldBlueprintEditor.exe`。
+5. 在 `release\` 中生成 `EndfieldBlueprintEditor-<版本>-portable.zip`：免安装版，解压到任意文件夹后运行 `EndfieldBlueprintEditor.exe`。
 
 可选参数：
 
-- `-SkipInstaller`：只生成 ZIP；
 - `-Clean`：删除打包环境后从头开始，依赖出问题时使用；
 - `-Python "C:\Python312\python.exe"`：指定 Python，默认使用 `py -3.12`。
 
-预计安装包约 150 MB，安装后约 350 MB。体积主要来自 OpenCV、文字识别模型和识别用的素材。
+免安装 ZIP 约 150 MB，解压后约 350 MB。体积主要来自 OpenCV、文字识别模型和识别用的素材。
 
 ### 3. 发布新版本
 
-修改 [app.py](app.py) 中的 `VERSION`，再重新打包。安装包会直接覆盖旧版本，编辑内容不受影响。
+修改 [app.py](app.py) 中的 `VERSION`，再重新打包。新版本解压覆盖旧文件夹时，请保留其中的 `data\` 子文件夹，编辑内容就不会丢。
 
 ## 排查问题
 
-- 程序日志：`%LOCALAPPDATA%\EndfieldBlueprintEditor\logs\app.log`。
+- 程序日志：程序目录下的 `data\logs\app.log`（目录不可写时为 `%LOCALAPPDATA%\EndfieldBlueprintEditor\logs\app.log`）。
 - 检查识别组件：`EndfieldBlueprintEditor.exe --self-test 报告.json`，结果写入报告文件。
 - 开发者工具：`EndfieldBlueprintEditor.exe --debug`，可以打开 WebView2 开发者工具。
 - 不打开窗口、只启动服务：`EndfieldBlueprintEditor.exe --serve`，然后用浏览器访问 http://127.0.0.1:47615 。

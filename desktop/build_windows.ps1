@@ -1,28 +1,23 @@
 ﻿<#
 .SYNOPSIS
-  打包终末地蓝图编辑器 Windows 桌面版：安装包 + 免安装 ZIP。
+  打包终末地蓝图编辑器 Windows 桌面版免安装 ZIP。
 
 .DESCRIPTION
   在你自己的 Windows 10/11 x64 电脑上，于项目根目录运行：
 
       powershell -ExecutionPolicy Bypass -File desktop\build_windows.ps1
 
-  需要：Node.js 22.12+（自带 corepack，用来启用 pnpm）、Python 3.12（64 位，python.org 安装版带 py 启动器）、
-  Inno Setup 6（只有生成安装包时需要；没装会跳过安装包，只生成 ZIP）。
-  产物在 release\ 目录。
+  需要：Node.js 22.12+（自带 corepack，用来启用 pnpm）、Python 3.12（64 位，python.org 安装版带 py 启动器）。
+  产物在 release\ 目录：一个免安装 ZIP，解压后直接运行 EndfieldBlueprintEditor.exe。
 
 .PARAMETER Python
   用来创建打包环境的 Python，默认 "py -3.12"。
-
-.PARAMETER SkipInstaller
-  只生成免安装 ZIP，不调用 Inno Setup。
 
 .PARAMETER Clean
   删除打包用虚拟环境 .venv-desktop 和 build\desktop 后重新开始。
 #>
 param(
   [string]$Python = "py -3.12",
-  [switch]$SkipInstaller,
   [switch]$Clean
 )
 
@@ -66,20 +61,6 @@ $pyInfo = & $pyExe @pyArgs -c "import sys, struct; print('%d.%d %d' % (sys.versi
 if ($LASTEXITCODE -ne 0) { Fail "无法运行 $Python。" }
 Write-Host "Node.js $nodeVersion · Python $pyInfo"
 if ($pyInfo -notmatch " 64$") { Fail "需要 64 位 Python。" }
-
-$Iscc = $null
-if (-not $SkipInstaller) {
-  $candidates = @(
-    (Get-Command ISCC.exe -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source),
-    "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe",
-    "$env:ProgramFiles\Inno Setup 6\ISCC.exe",
-    "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe"
-  ) | Where-Object { $_ -and (Test-Path $_) }
-  $Iscc = $candidates | Select-Object -First 1
-  if (-not $Iscc) {
-    Write-Host "没有找到 Inno Setup 6，这次只生成免安装 ZIP。需要安装包请装 https://jrsoftware.org/isdl.php 后重新运行。" -ForegroundColor Yellow
-  }
-}
 
 Step "准备 Python 打包环境（.venv-desktop）"
 if (-not (Test-Path $VenvPython)) { Run $pyExe ($pyArgs + @("-m", "venv", $Venv)) }
@@ -153,14 +134,9 @@ $Zip = Join-Path $Release "EndfieldBlueprintEditor-$Version-portable.zip"
 Remove-Item -Force $Zip -ErrorAction SilentlyContinue
 Compress-Archive -Path $AppDir -DestinationPath $Zip -CompressionLevel Optimal
 
-if ($Iscc) {
-  Step "生成安装包（Inno Setup）"
-  Run $Iscc @("/Q", "/DAppVersion=$Version", "/DSourceDir=$AppDir", "/DOutputDir=$Release", "desktop\installer.iss")
-}
-
 Step "完成"
 Get-ChildItem $Release -Filter "EndfieldBlueprintEditor-$Version-*" | ForEach-Object {
   "{0}  {1:N0} MB" -f $_.FullName, ($_.Length / 1MB)
 }
 $installed = (Get-ChildItem $AppDir -Recurse -File | Measure-Object Length -Sum).Sum
-"安装后占用约 {0:N0} MB。" -f ($installed / 1MB)
+"解压后占用约 {0:N0} MB。" -f ($installed / 1MB)

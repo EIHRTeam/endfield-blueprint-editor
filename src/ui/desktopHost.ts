@@ -70,3 +70,46 @@ export async function saveFile(blob: Blob, name: string): Promise<SaveOutcome> {
     body: blob,
   });
 }
+
+/** Sends one diagnostic line to the app's log, so a broken page can be diagnosed from app.log. */
+export function reportToAppLog(message: string): void {
+  void call('/api/desktop/log', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: message.slice(0, 2000) }),
+  }).catch(() => undefined);
+}
+
+/**
+ * Records image load failures in the app log.
+ *
+ * A broken `<img>` with an empty or undecodable source produces no HTTP request, so it leaves no
+ * trace in the server log; without this the only evidence is a screenshot.
+ */
+export function installAssetDiagnostics(): void {
+  if (!DESKTOP_EDITION) return;
+  const failures = new Set<string>();
+  let reported = 0;
+  document.addEventListener(
+    'error',
+    event => {
+      const target = event.target as HTMLElement | null;
+      if (!(target instanceof HTMLImageElement)) return;
+      const source = target.currentSrc || target.src || '(空 src)';
+      failures.add(`${target.id || target.className || 'img'} <- ${source}`);
+      if (reported >= 20) return;
+      reported += 1;
+      reportToAppLog(`图片加载失败：${target.id || target.className || 'img'} <- ${source}`);
+    },
+    true,
+  );
+  window.addEventListener('load', () => {
+    // Loaded lazily, so report the tally once boot has finished.
+    setTimeout(() => {
+      const broken = [...document.images].filter(image => image.complete && image.naturalWidth === 0).length;
+      reportToAppLog(
+        `素材自检：图片元素 ${document.images.length} 个，加载失败 ${broken} 个，失败种类 ${failures.size} 种`,
+      );
+    }, 3000);
+  });
+}

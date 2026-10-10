@@ -78,14 +78,36 @@ OPEN_TYPES = (
 )
 
 
+def _writable(directory):
+    """True when the folder can be created and written to (portable folders may be read-only)."""
+    try:
+        directory.mkdir(parents=True, exist_ok=True)
+        probe = directory / ".write-probe"
+        probe.write_text("", encoding="utf-8")
+        probe.unlink()
+    except OSError:
+        return False
+    return True
+
+
 def data_dir():
-    """Per-user writable folder: WebView2 profile, logs."""
+    """Writable folder for the WebView2 profile, autosaved layouts and logs.
+
+    The portable build keeps everything beside the executable so the whole app stays in one folder.
+    Only when that folder is not writable (read-only medium, or a protected location) does it fall
+    back to the per-user profile.
+    """
     override = os.environ.get("BLUEPRINT_DESKTOP_DATA")
     if override:
         return Path(override)
-    if sys.platform == "win32":
-        return Path(os.environ.get("LOCALAPPDATA") or Path.home() / "AppData/Local") / APP_ID
-    return Path(os.environ.get("XDG_DATA_HOME") or Path.home() / ".local/share") / APP_ID
+    if getattr(sys, "frozen", False):
+        beside = Path(sys.executable).resolve().parent / "data"
+        if _writable(beside):
+            return beside
+        if sys.platform == "win32":
+            return Path(os.environ.get("LOCALAPPDATA") or Path.home() / "AppData/Local") / APP_ID
+        return Path(os.environ.get("XDG_DATA_HOME") or Path.home() / ".local/share") / APP_ID
+    return ROOT / ".desktop-data"
 
 
 def redirect_output(directory):
@@ -192,7 +214,8 @@ def make_desktop_handler(web_dir, dialogs, origins, recognize=None, loader=None)
         def do_POST(self):
             route = urlparse(self.path)
             handlers = {"/api/jobs/files": self.post_files, "/api/desktop/choose": self.post_choose,
-                        "/api/desktop/save": self.post_save, "/api/desktop/focus": self.post_focus}
+                        "/api/desktop/save": self.post_save, "/api/desktop/focus": self.post_focus,
+                        "/api/desktop/log": self.post_log}
             if route.path not in handlers:
                 return super().do_POST()
             if route.path != "/api/desktop/focus" and not self.same_origin():
@@ -275,6 +298,14 @@ def make_desktop_handler(web_dir, dialogs, origins, recognize=None, loader=None)
             except OSError as error:
                 return self.reply(500, {"error": f"无法保存到 {target}：{error.strerror or error}"})
             return self.reply(200, {"path": str(target), "name": target.name})
+
+        def post_log(self, _route):
+            """Diagnostics from the page (image load failures) land in app.log."""
+            data = self.read_json(limit=64 * 1024)
+            message = str(data.get("message", ""))[:2000]
+            if message:
+                print(f"[页面] {message}", file=sys.stderr, flush=True)
+            return self.reply(200, {"status": "ok"})
 
         def post_focus(self, _route):
             dialogs.focus()

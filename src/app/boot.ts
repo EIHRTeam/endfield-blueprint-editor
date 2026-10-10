@@ -16,6 +16,7 @@
 import { bakeCacheKey, readCachedBake, writeCachedBake } from './cache';
 import { bakeBlueprint } from '../bake/bridge';
 import { AssetStore } from '../render/assets';
+import { installAssetDiagnostics } from '../ui/desktopHost';
 import type { AssetsManifest, BakeProgress } from '../bake/protocol';
 import type { AssetIndex, BakePayload } from '../core/types';
 
@@ -161,6 +162,7 @@ async function loadPrebaked(
  * progress surface.
  */
 export async function boot(onProgress: ProgressReporter): Promise<BootResult> {
+  installAssetDiagnostics();
   const prebaked = DESKTOP_EDITION ? await loadPrebaked(onProgress) : null;
 
   const licence = await fetch(`${BASE}assets/fonts/HarmonyOS_Sans_SC/LICENSE.txt`, { cache: 'force-cache' })

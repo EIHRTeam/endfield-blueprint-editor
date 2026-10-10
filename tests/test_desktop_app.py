@@ -162,3 +162,27 @@ def test_stop_cancels_a_running_recognition(served):
     threading.Timer(.1, jobs.running.release).start()
     app.stop(server, jobs, wait=2)
     assert job["cancel"].is_set()
+
+
+def test_portable_build_keeps_data_beside_the_executable(tmp_path, monkeypatch):
+    """免安装版：编辑内容和日志放在程序目录的 data\\ 下，不写用户目录。"""
+    exe = tmp_path / "EndfieldBlueprintEditor.exe"
+    exe.write_bytes(b"")
+    monkeypatch.delenv("BLUEPRINT_DESKTOP_DATA", raising=False)
+    monkeypatch.setattr(app.sys, "frozen", True, raising=False)
+    monkeypatch.setattr(app.sys, "executable", str(exe), raising=False)
+    assert app.data_dir() == tmp_path / "data"
+    assert (tmp_path / "data").is_dir()
+
+
+def test_read_only_program_folder_falls_back_to_the_user_profile(tmp_path, monkeypatch):
+    """程序目录不可写（只读介质）时回退到用户目录，而不是无法启动。"""
+    exe = tmp_path / "EndfieldBlueprintEditor.exe"
+    exe.write_bytes(b"")
+    monkeypatch.delenv("BLUEPRINT_DESKTOP_DATA", raising=False)
+    monkeypatch.setattr(app.sys, "frozen", True, raising=False)
+    monkeypatch.setattr(app.sys, "executable", str(exe), raising=False)
+    monkeypatch.setenv("LOCALAPPDATA", str(tmp_path / "local"))
+    monkeypatch.setattr(app.sys, "platform", "win32")
+    monkeypatch.setattr(app, "_writable", lambda _directory: False)
+    assert app.data_dir() == tmp_path / "local" / app.APP_ID
