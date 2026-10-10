@@ -508,7 +508,7 @@ export function paintPresentation(
     c.lineTo(2003, y + 23);
     c.stroke();
   }
-  m.description.forEach((line, i) => label(c, line, 1940, m.descY + i * 34, 24, '#4e4e52'));
+  m.description.forEach((line, i) => label(c, line, 1940, m.descY + i * 34, 24, '#d9d9d9'));
   label(c, '设备一览', 1940, m.listY - 38, 29, '#515154');
   m.items.forEach((item, i) =>
     drawCard(c, editor, native, item, 1940 + (i % 4) * 142, m.listY + Math.floor(i / 4) * 143),
