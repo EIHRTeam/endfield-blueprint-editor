@@ -86,8 +86,7 @@ async function decodeInto(
     // oxlint-disable-next-line no-await-in-loop -- see comment above
     await Promise.all(
       entries.slice(i, i + batchSize).map(async ([key, asset]) => {
-        const blob = new Blob([asset.bytes], { type: asset.extension === 'webp' ? 'image/webp' : 'image/png' });
-        assets.put(key, await createImageBitmap(blob));
+        await assets.putEncoded(key, asset.bytes, asset.extension === 'webp' ? 'image/webp' : 'image/png');
       }),
     );
     onProgress({

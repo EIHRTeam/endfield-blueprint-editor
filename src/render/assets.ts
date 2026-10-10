@@ -84,6 +84,20 @@ export class AssetStore {
     this.onLoad();
   }
 
+  /**
+   * Installs an encoded image: decodes it for the canvas renderer and registers a blob URL built
+   * directly from the encoded bytes, synchronously. The previous canvas round-trip registered its
+   * URL asynchronously, so an `<img>` rendered in that window fell back to a manifest URL that may
+   * not exist on disk (desktop/prebaked builds keep images inside prebaked.bin) and stayed broken.
+   */
+  async putEncoded(key: string, bytes: ArrayBuffer, type: string): Promise<void> {
+    if (this.entries.get(key)?.loaded) return;
+    if (typeof URL.createObjectURL === 'function' && !this.objectUrls.has(key)) {
+      this.objectUrls.set(key, URL.createObjectURL(new Blob([bytes], { type })));
+    }
+    this.put(key, await createImageBitmap(new Blob([bytes], { type })));
+  }
+
   /** Creates a blob URL for a bitmap so `<img>` tags can render it. */
   private registerObjectUrl(key: string, image: DrawableImage): void {
     if (this.objectUrls.has(key) || typeof URL.createObjectURL !== 'function') return;
